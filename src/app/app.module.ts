@@ -8,16 +8,12 @@ import {MatButtonModule} from "@angular/material/button";
 import {HeaderComponent} from './header/header.component';
 import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
-import {HomePageComponent} from './home-page/home-page.component';
-import {EtsFormCardComponent} from './shared/ets-form-card/ets-form-card.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        HomePageComponent,
-        EtsFormCardComponent
     ],
     imports: [
         BrowserModule,
