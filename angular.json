@@ -34,8 +34,8 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                   "src/assets/styles"
-                ]
+                "src/assets/styles"
+              ]
             },
             "scripts": []
           },
@@ -107,9 +107,21 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "etims-landing-ui"
+  "defaultProject": "etims-landing-ui",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
