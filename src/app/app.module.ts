@@ -9,6 +9,7 @@ import {HeaderComponent} from './header/header.component';
 import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
         MatIconModule,
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
+        SharedModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
