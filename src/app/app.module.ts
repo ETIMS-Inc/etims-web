@@ -13,6 +13,13 @@ import { SharedModule } from './shared/shared.module';
 import { AccountStarterPageModule } from './account-starter-page/account-starter-page/account-starter-page.module';
 import {I18NextModule} from "angular-i18next";
 import {I18N_PROVIDERS} from "./localization-config";
+import {StoreModule} from "@ngrx/store";
+import {etsReducers} from "./store/reducers";
+import {environment} from "../environments/environment";
+import {EffectsModule} from "@ngrx/effects";
+import {etsEffects} from "./store/effects";
+import {StoreDevtoolsModule} from "@ngrx/store-devtools";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -21,6 +28,7 @@ import {I18N_PROVIDERS} from "./localization-config";
         HeaderComponent,
     ],
     imports: [
+        CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
         MatSlideToggleModule,
@@ -30,7 +38,17 @@ import {I18N_PROVIDERS} from "./localization-config";
         AngularSvgIconModule.forRoot(),
         SharedModule,
         AccountStarterPageModule,
-        I18NextModule.forRoot()
+        I18NextModule.forRoot(),
+        StoreModule.forRoot(etsReducers, environment.production ? {} : {
+            runtimeChecks: {
+                strictActionImmutability: true,
+                strictStateImmutability: true,
+            },
+        }),
+        EffectsModule.forRoot(etsEffects),
+        environment.production ? [] : StoreDevtoolsModule.instrument({
+            logOnly: false,
+        }),
     ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent]
