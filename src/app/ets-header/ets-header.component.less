@@ -1,0 +1,24 @@
+@import url("vars");
+@import url("colors");
+
+.ets-header {
+    ::ng-deep {
+        .p-menubar-start {
+            margin-top: @size-xs;
+            margin-right: @size-sm-md;
+        }
+
+        .p-menubar {
+            padding-left: @size-sm-md;
+            padding-right: @size-sm-md;
+
+            border: none;
+            background-color: @white;
+        }
+
+        .p-menubar-end {
+            display: flex;
+            align-items: center;
+        }
+    }
+}

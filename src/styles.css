@@ -1,3 +1,11 @@
+/* reset all styles to default */
 @import '~normalize.css';
+
+/* component library primeNG custom theme */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+/* white and dark theme */
+@import "assets/styles/themes/dark-theme.less";
+@import "assets/styles/themes/white-theme.less";

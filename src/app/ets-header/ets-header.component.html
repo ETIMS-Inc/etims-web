@@ -1,0 +1,26 @@
+<div class="ets-header">
+    <p-menubar [model]="primaryNavTabs">
+        <ng-template pTemplate="start">
+            <svg-icon
+                class="header__icon"
+                name="logo"
+            ></svg-icon>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <ng-container *ngFor="let item of secondaryNavTabs">
+                <p-button
+                    [icon]="item?.icon"
+                    [styleClass]="item?.styleClass"
+                    [label]="item?.label"
+                    (onClick)="item?.onClick"
+                ></p-button>
+            </ng-container>
+        </ng-template>
+    </p-menubar>
+</div>
+
+<ng-template
+    #searchTemplate
+>
+    <input type="text" pInputText placeholder="Search" class="w-full" />
+</ng-template>
