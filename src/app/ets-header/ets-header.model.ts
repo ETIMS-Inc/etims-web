@@ -1,7 +1,19 @@
 import {MenuItem} from "primeng/api";
 
+export interface Language {
+    name: string;
+    code: string;
+    icon: string;
+}
+
+export type ActionType =
+    | "search"
+    | "globe"
+    | "theme"
+    | "start";
+
 export type HeaderMenuItemType = MenuItem & {
-    onClick?: () => void,
+    type?: ActionType,
 };
 
 export const primaryNavTabsList: MenuItem[] = [
@@ -13,23 +25,31 @@ export const primaryNavTabsList: MenuItem[] = [
 
 export const secondaryNavTabsList: HeaderMenuItemType[] = [
     {
-        id: "search",
         icon: "pi pi-search",
         styleClass: "p-button-rounded p-button-secondary p-button-text p-button-lg",
+        type: "search",
     },
     {
-        id: "globe",
         icon: "pi pi-globe",
         styleClass: "p-button-rounded p-button-secondary p-button-text p-button-lg",
+        type: "globe",
     },
     {
-        id: "sun",
         icon: "pi pi-sun",
         styleClass: "p-button-rounded p-button-secondary p-button-text p-button-lg",
+        type: "theme",
     },
     {
-        id: "start",
         label: "Get Started",
         styleClass: "p-button-rounded",
+        type: "start",
     },
 ];
+
+export const languageList: Language[] = [
+    { name: 'English', code: 'EN', icon: 'english' },
+    { name: 'German', code: 'DE', icon: 'germany' },
+    { name: 'Ukrainian', code: 'UK', icon: 'ukraine' },
+];
+
+export const defaultLanguage: Language = { name: 'English', code: 'EN', icon: 'english' };

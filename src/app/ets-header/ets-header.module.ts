@@ -7,6 +7,12 @@ import {AngularSvgIconModule} from "angular-svg-icon";
 import {CommonModule} from "@angular/common";
 import {MenubarModule} from "primeng/menubar";
 import {InputTextModule} from "primeng/inputtext";
+import {MenuModule} from "primeng/menu";
+import {DirectivesModule} from "../shared/utils/directives/directives.module";
+import {OverlayPanelModule} from "primeng/overlaypanel";
+import {ListboxModule} from "primeng/listbox";
+import {ScrollPanelModule} from "primeng/scrollpanel";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
@@ -16,6 +22,7 @@ import {InputTextModule} from "primeng/inputtext";
         EtsHeaderComponent,
     ],
     imports: [
+        FormsModule,
         CommonModule,
         ToolbarModule,
         ButtonModule,
@@ -23,6 +30,11 @@ import {InputTextModule} from "primeng/inputtext";
         AngularSvgIconModule,
         MenubarModule,
         InputTextModule,
+        MenuModule,
+        DirectivesModule,
+        OverlayPanelModule,
+        ListboxModule,
+        ScrollPanelModule,
     ]
 })
 export class EtsHeaderModule {
