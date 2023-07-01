@@ -1,0 +1,85 @@
+<div class="ets-header">
+    <p-menubar [model]="primaryNavTabs">
+        <ng-template pTemplate="start">
+            <svg-icon
+                class="header__icon"
+                name="logo"
+            ></svg-icon>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
+            <ng-container *ngFor="let item of secondaryNavTabs">
+                <ng-container *ngTemplateOutlet="item?.type !== 'search'
+                    ? buttonTemplate
+                    : searchTemplate;
+                    context: { item: item }"
+                ></ng-container>
+            </ng-container>
+        </ng-template>
+    </p-menubar>
+</div>
+
+<ng-template
+    #searchTemplate
+    let-item="item"
+>
+    <div class="ets-header__search-box">
+        <input
+            class="ets-header__search-input"
+            type="text"
+            placeholder="Start Looking For Something!"
+        />
+        <p-button
+            class="ets-header__search-button"
+            [icon]="item?.icon"
+            [styleClass]="item?.styleClass"
+            [label]="item?.label"
+            (onClick)="handleButtonChange(item?.type)"
+        ></p-button>
+    </div>
+</ng-template>
+
+<ng-template
+    #buttonTemplate
+    let-item="item"
+>
+    <p-button
+        class="ets-header__button"
+        [icon]="item?.icon"
+        [styleClass]="item?.styleClass"
+        [label]="item?.label"
+        (onClick)="handleButtonChange(item?.type)"
+    ></p-button>
+    <label
+        class="ets-header__button-label"
+        *ngIf="item?.type === 'globe'"
+    >
+        {{ selectedLanguage?.name }}
+    </label>
+</ng-template>
+
+<p-overlayPanel
+    #overlayPanel
+    class="ets-header__language-list"
+>
+    <p-scrollPanel [style]="{ width: '100%', height: '150px' }">
+        <p-listbox
+            [options]="languages"
+            [(ngModel)]="selectedLanguage"
+            [style]="{ width: '100%' }"
+        >
+            <ng-template
+                let-country
+                pTemplate="item"
+            >
+                <svg-icon
+                    class="ets-header__language-icon"
+                    [name]="country.icon"
+                ></svg-icon>
+                <div class="flex align-items-center gap-2">
+                    <div>{{ country.name }}</div>
+                </div>
+            </ng-template>
+        </p-listbox>
+    </p-scrollPanel>
+</p-overlayPanel>

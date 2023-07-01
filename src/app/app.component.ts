@@ -21,7 +21,15 @@ export class AppComponent implements OnInit, OnDestroy {
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
     public ngOnInit(): void {
-        this.iconRegSubscription = this.iconReg.loadSvg("assets/icons/logo.svg", "logo")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/logo.svg", "logo")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/global.svg", "global")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/search.svg", "search")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/dark-mode.svg", "dark-mode")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/white-mode.svg", "white-mode")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/flags/english.svg", "english")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/flags/germany.svg", "germany")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/flags/ukraine.svg", "ukraine")?.subscribe();
+
         this.i18NextService.events.initialized.subscribe((e) => {
             if (e) {
                 this.updateState(this.i18NextService.language);

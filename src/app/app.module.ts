@@ -5,7 +5,6 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatButtonModule} from "@angular/material/button";
-import {HeaderComponent} from './header/header.component';
 import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import { HttpClientModule } from '@angular/common/http';
@@ -20,12 +19,12 @@ import {EffectsModule} from "@ngrx/effects";
 import {etsEffects} from "./store/effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {CommonModule} from "@angular/common";
+import {EtsHeaderModule} from "./ets-header/ets-header.module";
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        HeaderComponent,
     ],
     imports: [
         CommonModule,
@@ -49,6 +48,7 @@ import {CommonModule} from "@angular/common";
         environment.production ? [] : StoreDevtoolsModule.instrument({
             logOnly: false,
         }),
+        EtsHeaderModule,
     ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent]
