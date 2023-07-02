@@ -20,6 +20,7 @@ import {etsEffects} from "./store/effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {CommonModule} from "@angular/common";
 import {EtsHeaderModule} from "./ets-header/ets-header.module";
+import {RecoverPasswordPageModule} from "./recover-password-page/recover-password-page.module";
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import {EtsHeaderModule} from "./ets-header/ets-header.module";
             logOnly: false,
         }),
         EtsHeaderModule,
+        RecoverPasswordPageModule,
     ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent]

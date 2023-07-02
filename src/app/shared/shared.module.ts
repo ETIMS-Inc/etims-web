@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
-import { AccountCardComponent } from './account-card/account-card.component';
+import { EtsCardComponent } from './ets-card/ets-card.component';
 
 @NgModule({
     declarations: [
-        AccountCardComponent,
+        EtsCardComponent,
     ],
     exports: [
-        AccountCardComponent,
+        EtsCardComponent,
     ],
 })
 export class SharedModule {
