@@ -9,3 +9,9 @@
 /* white and dark theme */
 @import "assets/styles/themes/dark-theme.less";
 @import "assets/styles/themes/white-theme.less";
+
+html, body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+}

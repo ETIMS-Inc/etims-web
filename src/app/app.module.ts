@@ -9,7 +9,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { AccountStarterPageModule } from './account-starter-page/account-starter-page/account-starter-page.module';
+import { AccountStarterPageModule } from './account-starter-page/account-starter-page.module';
 import {I18NextModule} from "angular-i18next";
 import {I18N_PROVIDERS} from "./localization-config";
 import {StoreModule} from "@ngrx/store";
