@@ -14,5 +14,4 @@ export class EtsCardComponent {
     @Input()
     public height: number;
 
-
 }

@@ -13,7 +13,7 @@ export class RecoverPasswordPageComponent implements OnInit {
     public email: string = "your_mail_box@gmail.com";
 
     @Input()
-    public recoverTypeState: RecoverPasswordType = "successAction"; // TODO remove hardcoded value when logic will be added
+    public recoverTypeState: RecoverPasswordType;
 
     public cardSize: RecoverPasswordCard;
 
@@ -24,8 +24,6 @@ export class RecoverPasswordPageComponent implements OnInit {
     private listenForTypeState = (): void => {
         switch (this.recoverTypeState) {
             case "email":
-                this.cardSize = passwordCardSizes['medium'];
-                break;
             case "password":
                 this.cardSize = passwordCardSizes['medium'];
                 break;
