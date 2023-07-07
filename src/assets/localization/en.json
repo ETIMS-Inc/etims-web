@@ -1,5 +1,14 @@
 {
     "translation": {
-        "welcome": "Welcome to Your Angular App"
+        "recoveryPassword":  "Recovery Password",
+        "recover": "Recover",
+        "newPassword": "Enter New Password",
+        "confirmPassword": "Confirm New Password",
+        "signIn": "Sign In",
+        "logIn": "Log In",
+        "usernameOrEmail": "Username or email address",
+        "enterUsernameOrEmail": "Enter your username or email address",
+        "successRecoverMessage": "We have sent you an email to your <strong>{{ email }}</strong> email account with the instructions to recover your password.",
+        "sendResetPassword": "Enter your <strong> username </strong> or <strong> email password </strong> and we'll send you an email with your username and a link to reset your password."
     }
 }

@@ -5,6 +5,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "../shared/shared.module";
 import {PasswordModule} from "primeng/password";
+import {I18NextModule} from "angular-i18next";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import {PasswordModule} from "primeng/password";
         CommonModule,
         InputTextModule,
         SharedModule,
-        PasswordModule
+        PasswordModule,
+        I18NextModule
     ]
 })
 export class RecoverPasswordPageModule {

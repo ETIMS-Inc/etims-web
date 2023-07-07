@@ -1,5 +1,14 @@
 {
     "translation": {
-        "welcome": "Willkommen zu Deiner Vue.js App"
+        "recoveryPassword":  "Passwort zum Zurücksetzen",
+        "recover": "Genesen",
+        "newPassword": "Neues Passwort eingeben",
+        "confirmPassword": "Bestätige neues Passwort",
+        "signIn": "Anmelden",
+        "logIn": "Anmeldung",
+        "usernameOrEmail": "Benutzername oder E-mail Adresse",
+        "enterUsernameOrEmail": "Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein",
+        "successRecoverMessage": "Wir haben Ihnen eine E-Mail mit den Anweisungen zur Wiederherstellung Ihres Passworts an Ihr <strong>{{ email }}</strong>-E-Mail-Konto gesendet.",
+        "sendResetPassword": "Geben Sie Ihren <strong>Benutzernamen </strong> oder Ihr <strong>E-Mail-Passwort </strong> ein und wir senden Ihnen eine E-Mail mit Ihrem Benutzernamen und einem Link zum Zurücksetzen Ihres Passworts."
     }
 }

@@ -1,5 +1,7 @@
 import translationEn from "../assets/localization/en.json";
 import translationDe from "../assets/localization/de.json";
+import translationFr from "../assets/localization/fr.json";
+import translationUk from "../assets/localization/uk.json";
 import {
     defaultInterpolationFormat,
     I18NEXT_SERVICE,
@@ -17,6 +19,8 @@ const i18nextOptions = {
     resources: {
         en: translationEn,
         de: translationDe,
+        fr: translationFr,
+        uk: translationUk,
     },
     interpolation: {
         format: I18NextModule.interpolationFormat(defaultInterpolationFormat)

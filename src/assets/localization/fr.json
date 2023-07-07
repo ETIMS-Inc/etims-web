@@ -1,0 +1,14 @@
+{
+    "translation": {
+        "recoveryPassword": "Mot de passe de récupération",
+        "recover": "Récupérer",
+        "newPassword": "Entrez un nouveau mot de passe",
+        "confirmPassword": "Confirmer le nouveau mot de passe",
+        "signIn": "S'identifier",
+        "logIn": "Connexion",
+        "usernameOrEmail": "Nom d'utilisateur ou adresse e-mail",
+        "enterUsernameOrEmail": "Entrez votre nom d'utilisateur ou votre adresse e-mail",
+        "successRecoverMessage": "Nous vous avons envoyé un e-mail sur votre compte de messagerie <strong>{{ email }}</strong> avec les instructions pour récupérer votre mot de passe.",
+        "sendResetPassword": "Entrez votre <strong> nom d'utilisateur </strong> ou votre <strong> mot de passe e-mail </strong> et nous vous enverrons un e-mail avec votre nom d'utilisateur et un lien pour réinitialiser votre mot de passe."
+    }
+}
