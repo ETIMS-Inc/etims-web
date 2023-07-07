@@ -1,5 +1,6 @@
 @import url("vars");
 @import url("colors");
+@import url("utils");
 
 @btn-start-width: 160px;
 @search-width: 240px;
@@ -10,6 +11,8 @@
 }
 
 ::ng-deep .ets-header {
+    .shadow-bottom();
+
     .p-menubar-start {
         cursor: pointer;
         margin: @size-xs @size-sm-md 0 @size-xs-sm;
