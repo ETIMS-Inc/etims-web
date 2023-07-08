@@ -24,11 +24,14 @@ import {RouterModule, Routes} from "@angular/router";
 
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
-    // { path: 'home', loadChildren: () => import('./items/items.module').then(m => m.ItemsModule) },
+    {
+        path: 'home',
+        loadChildren: () => import('./components/pages/home-page/home-page.module').then(m => m.HomePageModule),
+    },
     {path: '**', redirectTo: '/404'},
     {
         path: '404',
-        loadChildren: () => import('src/app/components/pages/not-found-page/not-found-page.module').then(m => m.NotFoundPageModule),
+        loadChildren: () => import('./components/pages/not-found-page/not-found-page.module').then(m => m.NotFoundPageModule),
     },
 ];
 
