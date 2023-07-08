@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {EtsHeaderComponent} from "./ets-header.component";
+import {LandingHeaderComponent} from "./landing-header.component";
 import {ToolbarModule} from "primeng/toolbar";
 import {ButtonModule} from "primeng/button";
 import {SplitButtonModule} from "primeng/splitbutton";
@@ -15,10 +15,10 @@ import {FormsModule} from "@angular/forms";
 
 @NgModule({
     declarations: [
-        EtsHeaderComponent,
+        LandingHeaderComponent,
     ],
     exports: [
-        EtsHeaderComponent,
+        LandingHeaderComponent,
     ],
     imports: [
         FormsModule,
@@ -35,5 +35,5 @@ import {FormsModule} from "@angular/forms";
         ScrollPanelModule,
     ]
 })
-export class EtsHeaderModule {
+export class LandingHeaderModule {
 }

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root',
 })
-export class EtsHeaderService {
+export class LandingHeaderService {
 
     public toggleTheme(): void {
         document.body.classList.toggle('dark-theme');

@@ -7,9 +7,9 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
-import { HttpClientModule } from '@angular/common/http';
-import { SharedModule } from './shared/shared.module';
-import { AccountStarterPageModule } from './account-starter-page/account-starter-page/account-starter-page.module';
+import {HttpClientModule} from '@angular/common/http';
+import {SharedModule} from './shared/shared.module';
+import {AccountStarterPageModule} from './components/account-starter-page/account-starter-page.module';
 import {I18NextModule} from "angular-i18next";
 import {I18N_PROVIDERS} from "./localization-config";
 import {StoreModule} from "@ngrx/store";
@@ -19,14 +19,23 @@ import {EffectsModule} from "@ngrx/effects";
 import {etsEffects} from "./store/effects";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {CommonModule} from "@angular/common";
-import {EtsHeaderModule} from "./ets-header/ets-header.module";
+import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
+import {RouterModule, Routes} from "@angular/router";
 
+const routes: Routes = [
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    // { path: 'home', loadChildren: () => import('./items/items.module').then(m => m.ItemsModule) },
+//     { path: 'second-component', component: SecondComponent },
+    { path: '**', redirectTo: '/404' },
+    { path: '404', loadChildren: () => import('src/app/components/not-found-page/not-found-page.module').then(m => m.NotFoundPageModule) },
+];
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
+        RouterModule.forRoot(routes),
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,
@@ -48,7 +57,7 @@ import {EtsHeaderModule} from "./ets-header/ets-header.module";
         environment.production ? [] : StoreDevtoolsModule.instrument({
             logOnly: false,
         }),
-        EtsHeaderModule,
+        LandingHeaderModule,
     ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent]

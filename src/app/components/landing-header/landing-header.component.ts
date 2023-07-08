@@ -8,19 +8,19 @@ import {
     defaultLanguage,
     primaryNavTabsList,
     secondaryNavTabsList
-} from "./ets-header.model";
-import {EtsHeaderService} from "./ets-header.service";
+} from "./landing-header.model";
+import {LandingHeaderService} from "./landing-header.service";
 import {OverlayPanel} from "primeng/overlaypanel";
 
 @Component({
     selector: 'ets-header',
-    templateUrl: './ets-header.component.html',
-    styleUrls: ['./ets-header.component.less'],
+    templateUrl: './landing-header.component.html',
+    styleUrls: ['./landing-header.component.less'],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EtsHeaderComponent {
+export class LandingHeaderComponent {
 
-    constructor(private headerService: EtsHeaderService) {
+    constructor(private headerService: LandingHeaderService) {
     }
 
     @ViewChild('overlayPanel', {static: true})
