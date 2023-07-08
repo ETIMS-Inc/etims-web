@@ -6,10 +6,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {
-    RouterModule,
-    Routes,
-} from "@angular/router";
+import {RouterModule} from "@angular/router";
 import {EffectsModule} from "@ngrx/effects";
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
@@ -17,35 +14,19 @@ import {I18NextModule} from "angular-i18next";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import {environment} from "../environments/environment";
 import {AppComponent} from "./app.component";
+import {AppRoutingModule} from "./app-routing.module";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
 import {I18N_PROVIDERS} from "./localization-config";
 import {SharedModule} from "./shared/shared.module";
 import {etsEffects} from "./store/effects";
 import {etsReducers} from "./store/reducers";
 
-const routes: Routes = [
-    {path: "", redirectTo: "/home", pathMatch: "full"},
-    {
-        path: "home",
-        loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
-    },
-    {
-        path: "account",
-        loadChildren: () => import("./components/pages/account-starter-page/account-starter-page.module").then(m => m.AccountStarterPageModule),
-    },
-    {path: "**", redirectTo: "/404"},
-    {
-        path: "404",
-        loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),
-    },
-];
-
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
-        RouterModule.forRoot(routes),
+        AppRoutingModule,
         CommonModule,
         BrowserModule,
         BrowserAnimationsModule,

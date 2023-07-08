@@ -26,14 +26,11 @@ const i18nextOptions = {
     },
 };
 
-export function appInit(i18next: ITranslationService) {
-    return () => {
-        let promise: Promise<I18NextLoadResult> = i18next
-            .use(LocizeApi)
-            .use<any>(LanguageDetector)
-            .init(i18nextOptions);
-        return promise;
-    };
+export function appInit(i18next: ITranslationService): () => Promise<I18NextLoadResult> {
+    return () => i18next
+        .use(LocizeApi)
+        .use<any>(LanguageDetector)
+        .init(i18nextOptions);
 }
 
 export function localeIdFactory(i18next: ITranslationService) {
