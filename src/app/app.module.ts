@@ -9,7 +9,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './shared/shared.module';
-import {AccountStarterPageModule} from './components/account-starter-page/account-starter-page.module';
+import {AccountStarterPageModule} from './components/pages/account-starter-page/account-starter-page.module';
 import {I18NextModule} from "angular-i18next";
 import {I18N_PROVIDERS} from "./localization-config";
 import {StoreModule} from "@ngrx/store";
@@ -25,9 +25,11 @@ import {RouterModule, Routes} from "@angular/router";
 const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
     // { path: 'home', loadChildren: () => import('./items/items.module').then(m => m.ItemsModule) },
-//     { path: 'second-component', component: SecondComponent },
-    { path: '**', redirectTo: '/404' },
-    { path: '404', loadChildren: () => import('src/app/components/not-found-page/not-found-page.module').then(m => m.NotFoundPageModule) },
+    {path: '**', redirectTo: '/404'},
+    {
+        path: '404',
+        loadChildren: () => import('src/app/components/pages/not-found-page/not-found-page.module').then(m => m.NotFoundPageModule),
+    },
 ];
 
 @NgModule({
@@ -59,6 +61,7 @@ const routes: Routes = [
         }),
         LandingHeaderModule,
     ],
+    exports: [RouterModule],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent]
 })
