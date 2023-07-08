@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
@@ -9,7 +8,6 @@ import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from './shared/shared.module';
-import {AccountStarterPageModule} from './components/pages/account-starter-page/account-starter-page.module';
 import {I18NextModule} from "angular-i18next";
 import {I18N_PROVIDERS} from "./localization-config";
 import {StoreModule} from "@ngrx/store";
@@ -27,6 +25,10 @@ const routes: Routes = [
     {
         path: 'home',
         loadChildren: () => import('./components/pages/home-page/home-page.module').then(m => m.HomePageModule),
+    },
+    {
+        path: 'account',
+        loadChildren: () => import('./components/pages/account-starter-page/account-starter-page.module').then(m => m.AccountStarterPageModule),
     },
     {path: '**', redirectTo: '/404'},
     {
@@ -50,7 +52,6 @@ const routes: Routes = [
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
         SharedModule,
-        AccountStarterPageModule,
         I18NextModule.forRoot(),
         StoreModule.forRoot(etsReducers, environment.production ? {} : {
             runtimeChecks: {
