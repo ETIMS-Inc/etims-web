@@ -1,4 +1,8 @@
-import {ChangeDetectionStrategy, Component, ViewChild} from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ViewChild,
+} from "@angular/core";
 import {MenuItem} from "primeng/api";
 import {
     ActionType,
@@ -7,20 +11,19 @@ import {
     Language,
     languageList,
     primaryNavTabsList,
-    secondaryNavTabsList
+    secondaryNavTabsList,
 } from "./landing-header.model";
 import {LandingHeaderService} from "./landing-header.service";
 import {OverlayPanel} from "primeng/overlaypanel";
 
 @Component({
-    selector: 'ets-header',
-    templateUrl: './landing-header.component.html',
-    styleUrls: ['./landing-header.component.less'],
+    selector: "ets-header",
+    templateUrl: "./landing-header.component.html",
+    styleUrls: ["./landing-header.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LandingHeaderComponent {
-
-    @ViewChild('overlayPanel', {static: true})
+    @ViewChild("overlayPanel", {static: true})
     public overlayPanel: OverlayPanel;
     public languages: Language[] = languageList;
     public selectedLanguage: Language = defaultLanguage;

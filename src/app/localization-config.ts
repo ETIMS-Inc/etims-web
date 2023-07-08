@@ -1,26 +1,29 @@
-import translationEn from "../assets/localization/en.json";
-import translationDe from "../assets/localization/de.json";
+import {
+    APP_INITIALIZER,
+    LOCALE_ID,
+} from "@angular/core";
 import {
     defaultInterpolationFormat,
     I18NEXT_SERVICE,
     I18NextLoadResult,
     I18NextModule,
-    ITranslationService
+    ITranslationService,
 } from "angular-i18next";
-import LocizeApi from "i18next-locize-backend";
 import LanguageDetector from "i18next-browser-languagedetector";
-import {APP_INITIALIZER, LOCALE_ID} from "@angular/core";
+import LocizeApi from "i18next-locize-backend";
+import translationDe from "../assets/localization/de.json";
+import translationEn from "../assets/localization/en.json";
 
 const i18nextOptions = {
     debug: true,
-    fallbackLng: 'en',
+    fallbackLng: "en",
     resources: {
         en: translationEn,
         de: translationDe,
     },
     interpolation: {
-        format: I18NextModule.interpolationFormat(defaultInterpolationFormat)
-    }
+        format: I18NextModule.interpolationFormat(defaultInterpolationFormat),
+    },
 };
 
 export function appInit(i18next: ITranslationService) {
@@ -33,7 +36,7 @@ export function appInit(i18next: ITranslationService) {
     };
 }
 
-export function localeIdFactory(i18next: ITranslationService)  {
+export function localeIdFactory(i18next: ITranslationService) {
     return i18next.language;
 }
 
@@ -42,11 +45,11 @@ export const I18N_PROVIDERS = [
         provide: APP_INITIALIZER,
         useFactory: appInit,
         deps: [I18NEXT_SERVICE],
-        multi: true
+        multi: true,
     },
     {
         provide: LOCALE_ID,
         deps: [I18NEXT_SERVICE],
-        useFactory: localeIdFactory
+        useFactory: localeIdFactory,
     },
 ];

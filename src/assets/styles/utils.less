@@ -10,11 +10,11 @@
 .shadow-bottom() {
     @shadow: 0 0 8px 0 @default-dark-blue-shadow;
     @none-shadow: 0 0 0 transparent;
-    box-shadow:
-        @none-shadow, /* top */
-        @shadow, /* bottom */
-        @none-shadow, /* left */
-        @none-shadow; /* right */
+    box-shadow: @none-shadow, /* top */ @shadow, /* bottom */ @none-shadow, /* left */ @none-shadow; /* right */
     -moz-box-shadow: @shadow;
     -webkit-box-shadow: @shadow;
+}
+
+.account-card-shadow() {
+    box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px;
 }

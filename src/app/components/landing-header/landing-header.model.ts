@@ -47,9 +47,9 @@ export const secondaryNavTabsList: HeaderMenuItemType[] = [
 ];
 
 export const languageList: Language[] = [
-    {name: 'English', code: 'EN', icon: 'english'},
-    {name: 'German', code: 'DE', icon: 'germany'},
-    {name: 'Ukrainian', code: 'UK', icon: 'ukraine'},
+    {name: "English", code: "EN", icon: "english"},
+    {name: "German", code: "DE", icon: "germany"},
+    {name: "Ukrainian", code: "UK", icon: "ukraine"},
 ];
 
-export const defaultLanguage: Language = {name: 'English', code: 'EN', icon: 'english'};
+export const defaultLanguage: Language = {name: "English", code: "EN", icon: "english"};
