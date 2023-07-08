@@ -31,6 +31,22 @@ ij_html_enforce_quotes = true
 ij_html_new_line_after_last_attribute = when_multiline
 ij_html_quote_style = double
 
+[{*.css,*.less}]
+ij_css_blank_lines_between_blocks = 1
+ij_css_block_comment_add_space = true
+ij_css_hex_color_upper_case = true
+ij_css_keep_blank_lines_in_code = 2
+ij_css_space_after_colon = true
+ij_css_space_before_opening_brace = true
+ij_css_use_double_quotes = true
+ij_less_blank_lines_between_blocks = 1
+ij_less_block_comment_add_space = true
+ij_less_hex_color_upper_case = true
+ij_less_keep_blank_lines_in_code = 2
+ij_less_space_after_colon = true
+ij_less_space_before_opening_brace = true
+ij_less_use_double_quotes = true
+
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
@@ -38,5 +54,5 @@ trim_trailing_whitespace = false
 [*.yaml]
 indent_size = 2
 
-[*.sh]
+[{*.bash,*.sh}]
 end_of_line = lf
