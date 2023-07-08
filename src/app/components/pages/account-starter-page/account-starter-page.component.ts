@@ -6,5 +6,4 @@ import {Component} from "@angular/core";
     styleUrls: ["./account-starter-page.component.less"],
 })
 export class AccountStarterPageComponent {
-
 }
