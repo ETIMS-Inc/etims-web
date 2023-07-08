@@ -17,10 +17,10 @@ export type HeaderMenuItemType = MenuItem & {
 };
 
 export const primaryNavTabsList: MenuItem[] = [
-    {label: "Home"},
-    {label: "Features"},
-    {label: "Plans"},
-    {label: "Documentation"},
+    {label: "Home", url: "home"},
+    {label: "Features", url: "features"},
+    {label: "Plans", url: "plans"},
+    {label: "Documentation", url: "docs"},
 ];
 
 export const secondaryNavTabsList: HeaderMenuItemType[] = [
@@ -47,9 +47,9 @@ export const secondaryNavTabsList: HeaderMenuItemType[] = [
 ];
 
 export const languageList: Language[] = [
-    { name: 'English', code: 'EN', icon: 'english' },
-    { name: 'German', code: 'DE', icon: 'germany' },
-    { name: 'Ukrainian', code: 'UK', icon: 'ukraine' },
+    {name: 'English', code: 'EN', icon: 'english'},
+    {name: 'German', code: 'DE', icon: 'germany'},
+    {name: 'Ukrainian', code: 'UK', icon: 'ukraine'},
 ];
 
-export const defaultLanguage: Language = { name: 'English', code: 'EN', icon: 'english' };
+export const defaultLanguage: Language = {name: 'English', code: 'EN', icon: 'english'};
