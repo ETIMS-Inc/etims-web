@@ -29,7 +29,9 @@ export class AppComponent implements OnInit, OnDestroy {
         this.iconReg.loadSvg("assets/icons/flags/english.svg", "english")?.subscribe();
         this.iconReg.loadSvg("assets/icons/flags/germany.svg", "germany")?.subscribe();
         this.iconReg.loadSvg("assets/icons/flags/ukraine.svg", "ukraine")?.subscribe();
-
+        this.iconReg.loadSvg("assets/icons/social-media/facebook.svg", "facebook")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/social-media/google.svg", "google")?.subscribe();
+        this.iconReg.loadSvg("assets/icons/social-media/twitter.svg", "twitter")?.subscribe();
         this.i18NextService.events.initialized.subscribe((e) => {
             if (e) {
                 this.updateState(this.i18NextService.language);

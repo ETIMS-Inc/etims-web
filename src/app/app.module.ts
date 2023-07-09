@@ -9,7 +9,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { AccountStarterPageModule } from './account-starter-page/account-starter-page.module';
+import { LoginPageModule } from './login-page/login-page.module';
 import {I18NextModule} from "angular-i18next";
 import {I18N_PROVIDERS} from "./localization-config";
 import {StoreModule} from "@ngrx/store";
@@ -21,6 +21,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {CommonModule} from "@angular/common";
 import {EtsHeaderModule} from "./ets-header/ets-header.module";
 import {RecoverPasswordPageModule} from "./recover-password-page/recover-password-page.module";
+import {RegisterPageModule} from "./register-page/register-page.module";
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import {RecoverPasswordPageModule} from "./recover-password-page/recover-passwor
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
         SharedModule,
-        AccountStarterPageModule,
+        LoginPageModule,
         I18NextModule.forRoot(),
         StoreModule.forRoot(etsReducers, environment.production ? {} : {
             runtimeChecks: {
@@ -51,6 +52,7 @@ import {RecoverPasswordPageModule} from "./recover-password-page/recover-passwor
         }),
         EtsHeaderModule,
         RecoverPasswordPageModule,
+        RegisterPageModule,
     ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent]
