@@ -1,4 +1,4 @@
-@import url("colors");
+@import url("src/assets/styles/colors");
 
 :host {
     display: block;
@@ -6,14 +6,14 @@
     background-color: @link-water;
 }
 
-.register-page {
+.login-page {
     &__wrapper {
         display: flex;
         justify-content: space-between;
     }
 
     &__wrapper-info {
-        width: 60%;
+        width: 40%;
         height: 100vh;
         display: flex;
         justify-content: center;
@@ -57,7 +57,6 @@
     &__greetings {
         position: absolute;
         top: 40%;
-        left: 58%;
     }
 
     &__welcome {
@@ -99,7 +98,7 @@
         flex-direction: column;
         position: absolute;
         top: 28%;
-        left: 15%;
+        left: 58%;
     }
 
     &__description {
@@ -140,9 +139,8 @@
             line-height: normal;
         }
 
-        &._sign-up {
+        &._sign-in {
             ::ng-deep .p-button {
-                margin-top: 32px;
                 width: 476px;
                 border-radius: 9px;
             }

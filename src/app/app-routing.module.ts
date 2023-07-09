@@ -11,10 +11,6 @@ const routes: Routes = [
         loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
     },
     {
-        path: "account",
-        loadChildren: () => import("./components/pages/account-starter-page/account-starter-page.module").then(m => m.AccountStarterPageModule),
-    },
-    {
         path: "recover-password",
         loadChildren: () => import("./components/pages/recover-password-page/recover-password-page.module").then(m => m.RecoverPasswordPageModule),
     },
