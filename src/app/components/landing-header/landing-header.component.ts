@@ -4,6 +4,7 @@ import {
     ViewChild,
 } from "@angular/core";
 import {MenuItem} from "primeng/api";
+import {OverlayPanel} from "primeng/overlaypanel";
 import {
     ActionType,
     defaultLanguage,
@@ -14,7 +15,6 @@ import {
     secondaryNavTabsList,
 } from "./landing-header.model";
 import {LandingHeaderService} from "./landing-header.service";
-import {OverlayPanel} from "primeng/overlaypanel";
 
 @Component({
     selector: "ets-header",
@@ -28,6 +28,7 @@ export class LandingHeaderComponent {
     public languages: Language[] = languageList;
     public selectedLanguage: Language = defaultLanguage;
     public primaryNavTabs: MenuItem[] = primaryNavTabsList;
+    public _activeItem: MenuItem;
     public secondaryNavTabs: HeaderMenuItemType[] = secondaryNavTabsList;
 
     constructor(private headerService: LandingHeaderService) {
@@ -50,5 +51,9 @@ export class LandingHeaderComponent {
                 const errorType: unknown = type;
                 console.warn("unknown type: ", errorType);
         }
+    }
+
+    public onActiveItemChange(event: MenuItem) {
+        this._activeItem = event;
     }
 }

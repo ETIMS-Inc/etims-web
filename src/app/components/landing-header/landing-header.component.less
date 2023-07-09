@@ -6,7 +6,6 @@
 @search-width: 240px;
 
 :host {
-    flex: 0;
     position: sticky;
     width: 100%;
 }
@@ -14,22 +13,28 @@
 ::ng-deep .ets-header {
     .shadow-bottom();
 
-    .p-menubar-start {
-        cursor: pointer;
-        margin: @size-xs @size-sm-md 0 @size-xs-sm;
-    }
-
     .p-menubar {
+        background-color: @white;
+        border: none;
         padding-left: @size-sm-md;
         padding-right: @size-sm-md;
 
-        border: none;
-        background-color: @white;
-    }
+        &-start {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            gap: @size-sm;
+            margin: @size-xs @size-sm-md 0 @size-xs-sm;
 
-    .p-menubar-end {
-        display: flex;
-        align-items: center;
+            .p-menuitem-text {
+                color: @second-text-color;
+            }
+        }
+
+        &-end {
+            display: flex;
+            align-items: center;
+        }
     }
 
     &__button {
