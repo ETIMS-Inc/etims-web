@@ -1,17 +1,19 @@
 <ets-header></ets-header>
-<ets-account-starter-page></ets-account-starter-page>
+<router-outlet></router-outlet>
+<!--<ets-account-starter-page></ets-account-starter-page>-->
+<!--<ets-account-card></ets-account-card>-->
 
 <!--Temporary solution-->
-<div>
-    <span>{{ 'welcome' | i18next }}</span>
-</div>
+<!--<div>-->
+<!--    <span>{{ 'welcome' | i18next }}</span>-->
+<!--</div>-->
 
-<div *ngFor="let lang of languages; let i = index">
-    <span *ngIf="i !== 0">&nbsp;|&nbsp;</span>
-    <a *ngIf="language !== lang" (click)="changeLanguage(lang)">
-        {{ lang.toUpperCase() }}
-    </a>
-    <span *ngIf="language === lang">
-        {{ lang.toUpperCase() }}
-    </span>
-</div>
+<!--<div *ngFor="let lang of languages; let i = index">-->
+<!--    <span *ngIf="i !== 0">&nbsp;|&nbsp;</span>-->
+<!--    <a *ngIf="language !== lang" (click)="changeLanguage(lang)">-->
+<!--        {{ lang.toUpperCase() }}-->
+<!--    </a>-->
+<!--    <span *ngIf="language === lang">-->
+<!--        {{ lang.toUpperCase() }}-->
+<!--    </span>-->
+<!--</div>-->

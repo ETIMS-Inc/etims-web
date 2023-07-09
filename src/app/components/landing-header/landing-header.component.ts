@@ -1,35 +1,37 @@
-import {ChangeDetectionStrategy, Component, ViewChild} from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    ViewChild,
+} from "@angular/core";
 import {MenuItem} from "primeng/api";
 import {
     ActionType,
+    defaultLanguage,
     HeaderMenuItemType,
     Language,
     languageList,
-    defaultLanguage,
     primaryNavTabsList,
-    secondaryNavTabsList
-} from "./ets-header.model";
-import {EtsHeaderService} from "./ets-header.service";
+    secondaryNavTabsList,
+} from "./landing-header.model";
+import {LandingHeaderService} from "./landing-header.service";
 import {OverlayPanel} from "primeng/overlaypanel";
 
 @Component({
-    selector: 'ets-header',
-    templateUrl: './ets-header.component.html',
-    styleUrls: ['./ets-header.component.less'],
+    selector: "ets-header",
+    templateUrl: "./landing-header.component.html",
+    styleUrls: ["./landing-header.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class EtsHeaderComponent {
-
-    constructor(private headerService: EtsHeaderService) {
-    }
-
-    @ViewChild('overlayPanel', {static: true})
+export class LandingHeaderComponent {
+    @ViewChild("overlayPanel", {static: true})
     public overlayPanel: OverlayPanel;
-
     public languages: Language[] = languageList;
     public selectedLanguage: Language = defaultLanguage;
     public primaryNavTabs: MenuItem[] = primaryNavTabsList;
     public secondaryNavTabs: HeaderMenuItemType[] = secondaryNavTabsList;
+
+    constructor(private headerService: LandingHeaderService) {
+    }
 
     public handleButtonChange(type: ActionType): void {
         switch (type) {
@@ -49,5 +51,4 @@ export class EtsHeaderComponent {
                 console.warn("unknown type: ", errorType);
         }
     }
-
 }

@@ -1,24 +1,24 @@
-import {NgModule} from '@angular/core';
-import {EtsHeaderComponent} from "./ets-header.component";
-import {ToolbarModule} from "primeng/toolbar";
-import {ButtonModule} from "primeng/button";
-import {SplitButtonModule} from "primeng/splitbutton";
-import {AngularSvgIconModule} from "angular-svg-icon";
 import {CommonModule} from "@angular/common";
-import {MenubarModule} from "primeng/menubar";
-import {InputTextModule} from "primeng/inputtext";
-import {MenuModule} from "primeng/menu";
-import {OverlayPanelModule} from "primeng/overlaypanel";
-import {ListboxModule} from "primeng/listbox";
-import {ScrollPanelModule} from "primeng/scrollpanel";
+import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
+import {AngularSvgIconModule} from "angular-svg-icon";
+import {ButtonModule} from "primeng/button";
+import {InputTextModule} from "primeng/inputtext";
+import {ListboxModule} from "primeng/listbox";
+import {MenuModule} from "primeng/menu";
+import {MenubarModule} from "primeng/menubar";
+import {OverlayPanelModule} from "primeng/overlaypanel";
+import {ScrollPanelModule} from "primeng/scrollpanel";
+import {SplitButtonModule} from "primeng/splitbutton";
+import {ToolbarModule} from "primeng/toolbar";
+import {LandingHeaderComponent} from "./landing-header.component";
 
 @NgModule({
     declarations: [
-        EtsHeaderComponent,
+        LandingHeaderComponent,
     ],
     exports: [
-        EtsHeaderComponent,
+        LandingHeaderComponent,
     ],
     imports: [
         FormsModule,
@@ -33,7 +33,7 @@ import {FormsModule} from "@angular/forms";
         OverlayPanelModule,
         ListboxModule,
         ScrollPanelModule,
-    ]
+    ],
 })
-export class EtsHeaderModule {
+export class LandingHeaderModule {
 }
