@@ -17,8 +17,8 @@ import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
 import {I18N_PROVIDERS} from "./localization-config";
-import {SharedModule} from "./shared/shared.module";
 import {etsEffects} from "./store/effects";
+import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {etsReducers} from "./store/reducers";
 
 @NgModule({
@@ -35,7 +35,6 @@ import {etsReducers} from "./store/reducers";
         MatIconModule,
         HttpClientModule,
         AngularSvgIconModule.forRoot(),
-        SharedModule,
         I18NextModule.forRoot(),
         StoreModule.forRoot(etsReducers, environment.production ? {} : {
             runtimeChecks: {
@@ -47,6 +46,7 @@ import {etsReducers} from "./store/reducers";
         environment.production ? [] : StoreDevtoolsModule.instrument({
             logOnly: false,
         }),
+        RecoverPasswordPageModule,
         LandingHeaderModule,
     ],
     exports: [RouterModule],

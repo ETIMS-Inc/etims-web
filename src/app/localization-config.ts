@@ -1,3 +1,7 @@
+import translationEn from "../assets/localization/en.json";
+import translationDe from "../assets/localization/de.json";
+import translationFr from "../assets/localization/fr.json";
+import translationUk from "../assets/localization/uk.json";
 import {
     APP_INITIALIZER,
     LOCALE_ID,
@@ -11,8 +15,6 @@ import {
 } from "angular-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 import LocizeApi from "i18next-locize-backend";
-import translationDe from "../assets/localization/de.json";
-import translationEn from "../assets/localization/en.json";
 
 const i18nextOptions = {
     debug: true,
@@ -20,6 +22,8 @@ const i18nextOptions = {
     resources: {
         en: translationEn,
         de: translationDe,
+        fr: translationFr,
+        uk: translationUk,
     },
     interpolation: {
         format: I18NextModule.interpolationFormat(defaultInterpolationFormat),
