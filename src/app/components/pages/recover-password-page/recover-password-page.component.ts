@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {RecoverPasswordType} from "./recover-password-page.model";
+import {RecoverPassword} from "./recover-password-page.model";
 
 @Component({
     selector: 'ets-recover-password-page',
@@ -13,6 +13,8 @@ export class RecoverPasswordPageComponent {
     public email: string = "your_mail_box@gmail.com";
 
     @Input()
-    public recoverTypeState: RecoverPasswordType;
+    public _recoverTypeState: RecoverPassword;
+
+    public _recoverType = RecoverPassword;
 
 }

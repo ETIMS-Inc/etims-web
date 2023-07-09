@@ -1,4 +1,5 @@
-export type RecoverPasswordType =
-    | "email"
-    | "password"
-    | "successAction";
+export enum RecoverPassword {
+    email,
+    password,
+    successAction
+}
