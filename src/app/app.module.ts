@@ -18,7 +18,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
 import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
-import {RecoverPasswordPageModule} from "./recover-password-page/recover-password-page.module";
+import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {etsReducers} from "./store/reducers";
 
 @NgModule({

@@ -14,6 +14,10 @@ const routes: Routes = [
         path: "account",
         loadChildren: () => import("./components/pages/account-starter-page/account-starter-page.module").then(m => m.AccountStarterPageModule),
     },
+    {
+        path: "recover-password",
+        loadChildren: () => import("./components/pages/recover-password-page/recover-password-page.module").then(m => m.RecoverPasswordPageModule),
+    },
     {path: "**", redirectTo: "/404"},
     {
         path: "404",
