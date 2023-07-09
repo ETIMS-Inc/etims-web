@@ -1,10 +1,11 @@
 <div class="ets-header">
-    <p-menubar [model]="primaryNavTabs">
+    <p-menubar>
         <ng-template pTemplate="start">
             <svg-icon
                 class="header__icon"
                 name="logo"
             ></svg-icon>
+            <p-tabMenu [model]="primaryNavTabs" [activeItem]="_activeItem" (activeItemChange)="onActiveItemChange($event)"></p-tabMenu>
         </ng-template>
         <ng-template pTemplate="end">
             <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
