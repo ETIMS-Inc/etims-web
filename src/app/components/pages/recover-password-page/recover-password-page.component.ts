@@ -13,8 +13,8 @@ export class RecoverPasswordPageComponent {
     public email: string = "your_mail_box@gmail.com";
 
     @Input()
-    public _recoverTypeState: RecoverPassword;
+    public recoverTypeState: RecoverPassword;
 
-    public _recoverType = RecoverPassword;
+    public recoverType = RecoverPassword;
 
 }
