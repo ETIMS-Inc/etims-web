@@ -27,6 +27,10 @@
 }
 
 .selected-border(@border-color: @blue-light, @border-radius: @default-border-radius) {
-    border: 3px solid @border-color;
+    border: @selected-border-size solid @border-color;
     border-radius: @border-radius;
+}
+
+.set-default-control-height() {
+    height: @default-control-height;
 }

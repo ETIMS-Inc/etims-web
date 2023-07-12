@@ -1,31 +1,43 @@
 @import "vars";
 @import "utils";
 
-.p-tabmenu .p-tabmenu-nav {
-    @border-radius: var(--ets-tabmenu-item-border-radius, @default-border-radius);
-    border: none;
+p-tabmenu {
+    .set-default-control-height();
 
-    .p-highlight {
-        .selected-border(@blue-light, @border-radius);
-    }
+    .p-tabmenu {
+        .set-default-control-height();
 
-    .p-tabmenuitem .p-menuitem-link {
-        border-radius: @border-radius;
-        border: none;
-        height: @default-control-height;
-        margin: 0;
-        padding: var(--ets-tabmenu-item-padding, @size-sm @size-md);
+        .p-tabmenu-nav {
+            @border-radius: var(--ets-tabmenu-item-border-radius, @default-border-radius);
+            border: none;
+
+            &, &-content, &-container {
+                .set-default-control-height();
+            }
+
+            .p-highlight {
+                .selected-border(@blue-light, @border-radius);
+            }
+
+            .p-tabmenuitem .p-menuitem-link {
+                border-radius: @border-radius;
+                border: none;
+                height: 100%;
+                margin: 0;
+                padding: var(--ets-tabmenu-item-padding, @size-sm @size-md);
+            }
+        }
     }
 }
 
 p-selectbutton {
     .p-button.p-component {
-        height: @default-control-height;
+        .set-default-control-height();
     }
 }
 
 p-button {
     .p-button.p-component {
-        height: @default-control-height;
+        .set-default-control-height();
     }
 }

@@ -2,6 +2,9 @@
 @import url("vars");
 
 .courses-header::ng-deep {
+    display: flex;
+    flex-direction: column;
+    gap: @size-md;
     padding: @size-md;
 
     .panel {
@@ -31,10 +34,6 @@
     }
 
     .courses-menu {
-        .p-tabmenu-nav {
-            .p-highlight {
-                .selected-border();
-            }
-        }
+
     }
 }
