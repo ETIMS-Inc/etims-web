@@ -33,4 +33,10 @@
             {{item.label}} {{item.courses?.length && "(" + item.courses.length + ")"}}
         </ng-template>
     </p-tabMenu>
+    <ng-container *ngIf="!activeTab.courses?.length else courses">
+        <ets-empty-content [title]="'EMPTY'"></ets-empty-content>
+    </ng-container>
+    <ng-template #courses>
+        <h1>Courses</h1>
+    </ng-template>
 </div>

@@ -35,6 +35,7 @@ export class CoursesListPageComponent {
     ];
     public currentMode: any = this.displayModes[0];
 
-    public onActiveItemChange($event: MenuItem) {
+    public onActiveItemChange(tab: MenuItem) {
+        this.activeTab = tab as Tab;
     }
 }

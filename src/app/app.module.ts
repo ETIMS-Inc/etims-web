@@ -13,12 +13,12 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {I18NextModule} from "angular-i18next";
 import {AngularSvgIconModule} from "angular-svg-icon";
 import {environment} from "../environments/environment";
-import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
+import {AppComponent} from "./app.component";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
+import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
-import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {etsReducers} from "./store/reducers";
 
 @NgModule({
