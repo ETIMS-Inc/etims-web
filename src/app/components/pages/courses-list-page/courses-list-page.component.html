@@ -28,5 +28,9 @@
         </div>
     </div>
 
-    <p-tabMenu class="courses-menu" [model]="tabs" [activeItem]="activeTab" (activeItemChange)="onActiveItemChange($event)"></p-tabMenu>
+    <p-tabMenu class="courses-menu" [model]="tabs" [activeItem]="activeTab" (activeItemChange)="onActiveItemChange($event)">
+        <ng-template pTemplate="item" let-item>
+            {{item.label}} {{item.courses?.length && "(" + item.courses.length + ")"}}
+        </ng-template>
+    </p-tabMenu>
 </div>

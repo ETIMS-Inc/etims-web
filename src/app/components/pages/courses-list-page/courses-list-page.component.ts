@@ -18,7 +18,14 @@ interface Tab {
 })
 export class CoursesListPageComponent {
     public tabs: Tab[] = [
-        {id: "1", label: "All"},
+        {
+            id: "1",
+            label: "All",
+            courses: [
+                {id: "1"},
+                {id: "2"},
+            ],
+        },
         {id: "2", label: "Favourite"},
     ];
     public activeTab: Tab = this.tabs[0];
@@ -26,11 +33,8 @@ export class CoursesListPageComponent {
         {icon: "pi pi-list"},
         {icon: "pi pi-th-large"},
     ];
-
     public currentMode: any = this.displayModes[0];
-    items: any;
 
-    onActiveItemChange($event: MenuItem) {
-
+    public onActiveItemChange($event: MenuItem) {
     }
 }

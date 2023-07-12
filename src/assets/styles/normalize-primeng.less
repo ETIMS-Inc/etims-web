@@ -1,6 +1,10 @@
 @import "vars";
 @import "utils";
 
+*:focus { // FIXME: its temporary(?) solution for disable outline onFocus
+    box-shadow: none !important;
+}
+
 p-tabmenu {
     .set-default-control-height();
 
@@ -9,6 +13,7 @@ p-tabmenu {
 
         .p-tabmenu-nav {
             @border-radius: var(--ets-tabmenu-item-border-radius, @default-border-radius);
+            background: none;
             border: none;
 
             &, &-content, &-container {
@@ -20,6 +25,7 @@ p-tabmenu {
             }
 
             .p-tabmenuitem .p-menuitem-link {
+                background: none;
                 border-radius: @border-radius;
                 border: none;
                 height: 100%;
