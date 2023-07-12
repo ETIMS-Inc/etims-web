@@ -1,0 +1,42 @@
+@import "utils";
+@import url("vars");
+
+.courses-header::ng-deep {
+    padding: @size-md;
+
+    .panel {
+        display: flex;
+
+        &__right {
+            flex: 1;
+
+            .title {
+                .main-title();
+            }
+        }
+
+        &__left {
+            flex: 0;
+
+            .controls {
+                display: flex;
+                gap: @size-sm;
+                width: max-content;
+
+                .filter .pi-filter {
+                    font-size: @size-xs-md;
+                }
+            }
+        }
+    }
+
+    .courses-menu {
+        .p-tabmenu-nav {
+            border: none;
+
+            .p-highlight {
+                .selected-border();
+            }
+        }
+    }
+}

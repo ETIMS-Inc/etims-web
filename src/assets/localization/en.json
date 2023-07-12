@@ -1,6 +1,9 @@
 {
     "translation": {
+        "title.page.courses": "Courses",
         "label.recovery.password":  "Recovery Password",
+        "label.button.create.course":  "Create a course",
+        "label.button.join.course":  "Join a course",
         "button.recover": "Recover",
         "label.new.password": "Enter New Password",
         "label.confirm.password": "Confirm New Password",
