@@ -6,6 +6,13 @@ This project based on **Angular CLI** v16.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
+## Development tools
+- Enable stylelint 
+  - in IDEA: go to File | Settings | Languages & Frameworks | Style Sheets | Stylelint;
+  - tick Enable checkbox;
+  - select stylelint package (if needed);
+  - set mask to {**/\*,*}.{css,less}.
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
