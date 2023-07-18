@@ -26,9 +26,13 @@
     color: @main-text-color;
 }
 
-.selected-border(@border-color: @blue-light, @border-radius: @default-border-radius) {
+.selected-round-border(@border-color: @blue-light, @border-radius: @default-border-radius) {
     border: @selected-border-size solid @border-color;
     border-radius: @border-radius;
+}
+
+.selected-bottom-border(@border-color: @blue-light) {
+    border-bottom: @selected-border-size solid @border-color;
 }
 
 .set-default-control-height() {

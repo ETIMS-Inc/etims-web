@@ -34,9 +34,10 @@
         </ng-template>
     </p-tabMenu>
     <ng-container *ngIf="!activeTab.courses?.length else courses">
-        <ets-empty-content [title]="'EMPTY'"></ets-empty-content>
+        <ets-empty-content [title]="'title.empty.here' | i18next" [message]="'label.you.have.not.added.courses.to.category' | i18next"></ets-empty-content>
     </ng-container>
     <ng-template #courses>
-        <h1>Courses</h1>
+        <h1>Courses List</h1>
+        <ng-container *ngFor="let course of activeTab.courses">{{course | json}}</ng-container>
     </ng-template>
 </div>

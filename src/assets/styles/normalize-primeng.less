@@ -21,7 +21,11 @@ p-tabmenu {
             }
 
             .p-highlight {
-                .selected-border(@blue-light, @border-radius);
+                .selected-bottom-border(@blue-light);
+
+                .p-menuitem-text, .p-menuitem-link {
+                    color: @blue-light;
+                }
             }
 
             .p-tabmenuitem .p-menuitem-link {

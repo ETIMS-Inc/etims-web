@@ -1,12 +1,14 @@
 {
     "translation": {
         "title.page.courses": "Courses",
+        "title.empty.here": "It's empty here",
         "label.recovery.password":  "Recovery Password",
         "label.button.create.course":  "Create a course",
         "label.button.join.course":  "Join a course",
         "button.recover": "Recover",
         "label.new.password": "Enter New Password",
         "label.confirm.password": "Confirm New Password",
+        "label.you.have.not.added.courses.to.category": "You have not added courses to this category yet",
         "button.sign.in": "Sign In",
         "button.log.in": "Log In",
         "input.username.email": "Username or email address",
