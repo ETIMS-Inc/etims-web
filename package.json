@@ -7,7 +7,10 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "lint": "ng lint"
+        "lint": "ng lint",
+        "stylecheck": "stylelint --formatter verbose \"src/**/*.less\"",
+        "stylecheck:format": "stylelint \"src/**/*.less\" --fix",
+        "stylecheck:format-precommit": "stylelint \"{git diff --name-only HEAD | grep -E '.less$'}\" --fix"
     },
     "private": true,
     "dependencies": {
