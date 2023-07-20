@@ -20,7 +20,7 @@ export const primaryNavTabsList: MenuItem[] = [
     {label: "Home", routerLink: "home"},
     {label: "Features", routerLink: "features"},
     {label: "Plans", routerLink: "plans"},
-    {label: "Documentation", routerLink: "docs"},
+    {label: "Courses", routerLink: "courses"},
 ];
 
 export const secondaryNavTabsList: HeaderMenuItemType[] = [

@@ -1,0 +1,43 @@
+<div class="courses-header">
+    <div class="panel">
+        <div class="panel__right">
+            <div class="title">{{"title.page.courses" | i18next}}</div>
+        </div>
+        <div class="panel__left">
+            <div class="controls">
+                <p-button class="filter"
+                          icon="pi pi-filter"
+                          styleClass="p-button-secondary p-button-text"
+                ></p-button>
+                <p-selectButton class="mode-selector"
+                                optionLabel="icon"
+                                [options]="displayModes"
+                                [(ngModel)]="currentMode"
+                >
+                    <ng-template pTemplate
+                                 let-item
+                    >
+                        <i [class]="item.icon"></i>
+                    </ng-template>
+                </p-selectButton>
+                <p-button [label]="'label.button.create.course' | i18next"></p-button>
+                <p-button styleClass="p-button-secondary p-button-outlined "
+                          [label]="'label.button.join.course' | i18next"
+                ></p-button>
+            </div>
+        </div>
+    </div>
+
+    <p-tabMenu class="courses-menu" [model]="tabs" [activeItem]="activeTab" (activeItemChange)="onActiveItemChange($event)">
+        <ng-template pTemplate="item" let-item>
+            {{item.label}} {{item.courses?.length && "(" + item.courses.length + ")"}}
+        </ng-template>
+    </p-tabMenu>
+    <ng-container *ngIf="!activeTab.courses?.length else courses">
+        <ets-empty-content [title]="'title.empty.here' | i18next" [message]="'label.you.have.not.added.courses.to.category' | i18next"></ets-empty-content>
+    </ng-container>
+    <ng-template #courses>
+        <h1>Courses List</h1>
+        <ng-container *ngFor="let course of activeTab.courses">{{course | json}}</ng-container>
+    </ng-template>
+</div>
