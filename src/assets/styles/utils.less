@@ -1,5 +1,5 @@
-@import url("colors");
-@import url("vars");
+@import "colors";
+@import "vars";
 
 .shadow-all(@verticalShift: 0) {
     @shadow: 0 (@verticalShift) 8px 0 @default-dark-blue-shadow;
@@ -17,7 +17,7 @@
 }
 
 .account-card-shadow() {
-    box-shadow: rgba(0, 0, 0, 0.16) 0 10px 36px 0, rgba(0, 0, 0, 0.06) 0 0 0 1px;
+    box-shadow: rgb(0 0 0 / 0.16) 0 10px 36px 0, rgb(0 0 0 / 0.06) 0 0 0 1px;
 }
 
 .main-title() {
