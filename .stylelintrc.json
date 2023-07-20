@@ -4,7 +4,10 @@
     ],
     "overrides": [
         {
-            "files": ["*.less", "**/*.less"],
+            "files": [
+                "*.less",
+                "**/*.less"
+            ],
             "customSyntax": "postcss-less"
         }
     ],
@@ -28,6 +31,14 @@
             {
                 "camelCaseSvgKeywords": true,
                 "ignoreProperties": []
+            }
+        ],
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": [
+                    "ng-deep"
+                ]
             }
         ],
         "alpha-value-notation": "number",
