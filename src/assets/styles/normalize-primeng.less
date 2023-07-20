@@ -1,0 +1,53 @@
+@import "vars";
+@import "utils";
+
+*:focus { // FIXME: its temporary(?) solution for disable outline onFocus
+    box-shadow: none !important;
+}
+
+p-tabmenu {
+    .set-default-control-height();
+
+    .p-tabmenu {
+        .set-default-control-height();
+
+        .p-tabmenu-nav {
+            @border-radius: var(--ets-tabmenu-item-border-radius, @default-border-radius);
+            background: none;
+            border: none;
+
+            &, &-content, &-container {
+                .set-default-control-height();
+            }
+
+            .p-highlight {
+                .selected-bottom-border(@blue-light);
+
+                .p-menuitem-text, .p-menuitem-link {
+                    color: @blue-light;
+                }
+            }
+
+            .p-tabmenuitem .p-menuitem-link {
+                background: none;
+                border-radius: @border-radius;
+                border: none;
+                height: 100%;
+                margin: 0;
+                padding: var(--ets-tabmenu-item-padding, @size-sm @size-md);
+            }
+        }
+    }
+}
+
+p-selectbutton {
+    .p-button.p-component {
+        .set-default-control-height();
+    }
+}
+
+p-button {
+    .p-button.p-component {
+        .set-default-control-height();
+    }
+}

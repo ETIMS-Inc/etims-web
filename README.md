@@ -25,3 +25,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Codestyle
+
+For angular template download [arrangement config](https://drive.google.com/file/d/1VB2Xr9e8qkXIhsLKey3kDLdM0lc6LRKb/view?usp=sharing) and set it in IDEA -> File -> Settings -> Editor -> Codestyle -> HTML -> Import scheme

@@ -1,14 +1,14 @@
 {
     "translation": {
-        "label.recovery.password":  "Passwort zum Zurücksetzen",
-        "button.recover": "Genesen",
-        "label.new.password": "Neues Passwort eingeben",
-        "label.confirm.password": "Bestätige neues Passwort",
-        "button.sign.in": "Anmelden",
         "button.log.in": "Anmeldung",
+        "button.recover": "Genesen",
+        "button.sign.in": "Anmelden",
         "input.username.email": "Benutzername oder E-mail Adresse",
+        "label.confirm.password": "Bestätige neues Passwort",
+        "label.new.password": "Neues Passwort eingeben",
+        "label.recovery.password":  "Passwort zum Zurücksetzen",
         "label.username.email": "Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein",
-        "text.success.recover": "Wir haben Ihnen eine E-Mail mit den Anweisungen zur Wiederherstellung Ihres Passworts an Ihr <strong>{{ email }}</strong>-E-Mail-Konto gesendet.",
-        "text.send.password": "Geben Sie Ihren <strong>Benutzernamen </strong> oder Ihr <strong>E-Mail-Passwort </strong> ein und wir senden Ihnen eine E-Mail mit Ihrem Benutzernamen und einem Link zum Zurücksetzen Ihres Passworts."
+        "text.send.password": "Geben Sie Ihren <strong>Benutzernamen </strong> oder Ihr <strong>E-Mail-Passwort </strong> ein und wir senden Ihnen eine E-Mail mit Ihrem Benutzernamen und einem Link zum Zurücksetzen Ihres Passworts.",
+        "text.success.recover": "Wir haben Ihnen eine E-Mail mit den Anweisungen zur Wiederherstellung Ihres Passworts an Ihr <strong>{{ email }}</strong>-E-Mail-Konto gesendet."
     }
 }
