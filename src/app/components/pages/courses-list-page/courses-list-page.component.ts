@@ -11,12 +11,17 @@ interface Tab {
     courses?: TempCourse[];
 }
 
+interface DisplayMode {
+    icon: string;
+}
+
 @Component({
     selector: "ets-courses-list-page",
     templateUrl: "./courses-list-page.component.html",
     styleUrls: ["./courses-list-page.component.less"],
 })
 export class CoursesListPageComponent {
+    // FIXME: use real data instead of mock
     public tabs: Tab[] = [
         {
             id: "1",
@@ -29,11 +34,11 @@ export class CoursesListPageComponent {
         {id: "2", label: "Favourite"},
     ];
     public activeTab: Tab = this.tabs[0];
-    public displayModes: any[] = [
+    public displayModes: DisplayMode[] = [
         {icon: "pi pi-list"},
         {icon: "pi pi-th-large"},
     ];
-    public currentMode: any = this.displayModes[0];
+    public currentMode: DisplayMode = this.displayModes[0];
 
     public onActiveItemChange(tab: MenuItem) {
         this.activeTab = tab as Tab;
