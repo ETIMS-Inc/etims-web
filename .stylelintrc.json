@@ -1,0 +1,60 @@
+{
+    "extends": [
+        "stylelint-config-standard"
+    ],
+    "overrides": [
+        {
+            "files": [
+                "*.less",
+                "**/*.less"
+            ],
+            "customSyntax": "postcss-less"
+        }
+    ],
+    "rules": {
+        "selector-pseudo-class-no-unknown": [
+            true,
+            {
+                "ignorePseudoClasses": [
+                    "global"
+                ]
+            }
+        ],
+        "no-descending-specificity": [
+            true,
+            {
+                "severity": "warning"
+            }
+        ],
+        "value-keyword-case": [
+            "lower",
+            {
+                "camelCaseSvgKeywords": true,
+                "ignoreProperties": []
+            }
+        ],
+        "selector-pseudo-element-no-unknown": [
+            true,
+            {
+                "ignorePseudoElements": [
+                    "ng-deep"
+                ]
+            }
+        ],
+        "alpha-value-notation": "number",
+        "at-rule-no-vendor-prefix": null,
+        "color-hex-case": "lower",
+        "color-hex-length": "short",
+        "custom-property-empty-line-before": "never",
+        "custom-property-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9)_]+)*$",
+        "declaration-empty-line-before": "never",
+        "font-family-name-quotes": "always-where-recommended",
+        "import-notation": "string",
+        "media-feature-range-notation": "prefix",
+        "property-no-vendor-prefix": null,
+        "selector-class-pattern": null,
+        "selector-pseudo-class-case": "lower",
+        "selector-pseudo-element-colon-notation": "double",
+        "value-no-vendor-prefix": null
+    }
+}
