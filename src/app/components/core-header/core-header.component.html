@@ -1,0 +1,87 @@
+<div class="core-header">
+    <p-menubar>
+        <ng-template pTemplate="start">
+            <svg-icon name="logo"></svg-icon>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
+            <ng-container *ngFor="let item of tabsList">
+                <ng-container *ngTemplateOutlet="item?.type === 'avatar'
+                    ? avatarTemplate
+                    : buttonTemplate;
+                    context: { item: item }"
+                ></ng-container>
+            </ng-container>
+        </ng-template>
+    </p-menubar>
+</div>
+
+<ng-template #searchTemplate>
+    <div class="core-header__search-box">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+                pInputText
+                class="core-header__search-input"
+                type="text"
+                placeholder="Search"
+            />
+        </span>
+    </div>
+</ng-template>
+
+<ng-template
+    #buttonTemplate
+    let-item="item"
+>
+    <div
+        class="core-header__badge"
+        *ngIf="item?.amount"
+        pBadge
+        [value]="item.amount"
+        [severity]="item.severity"
+    >
+        <p-button
+            class="core-header__button"
+            [styleClass]="item?.styleClass"
+            (click)="op.toggle($event)"
+        >
+            <svg-icon [name]="item?.icon" [svgStyle]="{ 'width.px': 24, 'height.px': 24 }"></svg-icon>
+        </p-button>
+    </div>
+</ng-template>
+
+<ng-template
+    #avatarTemplate
+    let-item="item"
+>
+    <p-button
+        class="core-header__avatar-wrapper"
+        [styleClass]="item?.styleClass"
+        (click)="menu.toggle($event)"
+    >
+        <p-avatar
+            class="core-header__avatar-image"
+            styleClass="mr-2"
+            size="large"
+            shape="circle"
+            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+        ></p-avatar>
+        <span class="core-header__avatar-caption">
+            {{ item?.caption }}
+        </span>
+    </p-button>
+</ng-template>
+
+<p-overlayPanel #op>
+    <ng-template pTemplate="content">
+        <h4>Custom Content</h4>
+    </ng-template>
+</p-overlayPanel>
+
+<p-menu
+    #menu
+    class="core-header__user-menu"
+    [model]="items"
+    [popup]="true"
+></p-menu>

@@ -15,6 +15,7 @@ import {AngularSvgIconModule} from "angular-svg-icon";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
+import {CoreHeaderModule} from "./components/core-header/core-header.module";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
 import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {I18N_PROVIDERS} from "./localization-config";
@@ -48,6 +49,7 @@ import {etsReducers} from "./store/reducers";
         }),
         RecoverPasswordPageModule,
         LandingHeaderModule,
+        CoreHeaderModule,
     ],
     exports: [RouterModule],
     providers: [I18N_PROVIDERS],

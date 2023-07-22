@@ -1,0 +1,107 @@
+@import "vars";
+@import "colors";
+@import "utils";
+
+:host {
+    position: sticky;
+    width: 100%;
+}
+
+::ng-deep .core-header {
+    .shadow-bottom();
+
+    &__avatar {
+        &-wrapper {
+            margin: 2px 2px 2px 12px;
+
+            ::ng-deep .p-button.p-button-outlined {
+                height: 54px;
+                width: 196px;
+                padding: 6px 6px 6px 4px;
+                border-radius: 64px;
+            }
+        }
+
+        &-caption {
+            font-size: 16px;
+            margin-left: 8px;
+            color: #457EB2;
+            font-weight: 700;
+        }
+
+        &-image {
+            ::ng-deep .p-avatar img {
+                padding: 2px;
+                margin-top: 2px;
+            }
+        }
+    }
+
+    &__search {
+        &-box {
+            margin-right: 12px;
+        }
+
+        &-input {
+            border-radius: 12px;
+            color: @gray-76;
+        }
+    }
+
+    .p-menubar {
+        background-color: @white;
+        border: none;
+        padding-left: @size-sm-md;
+        padding-right: @size-sm-md;
+
+        &-start {
+            align-items: center;
+            cursor: pointer;
+            display: flex;
+            gap: @size-sm;
+            margin: @size-xs @size-sm-md 0 @size-xs-sm;
+
+            .p-menuitem-text {
+                color: @second-text-color;
+            }
+        }
+
+        &-end {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__badge {
+        margin-top: 4px;
+        margin-right: 12px;
+
+        ::ng-deep .p-badge {
+            height: 1.25rem;
+            min-width: 1.25rem;
+            line-height: 1.25rem;
+        }
+    }
+
+    &__button {
+        ::ng-deep .p-button.p-button-rounded {
+            padding: 6px 8px;
+        }
+    }
+
+    &__user-menu {
+        ::ng-deep .p-menu {
+            width: 196px;
+        }
+
+        ::ng-deep .p-menu.p-menu-overlay {
+            margin-top: 4px;
+            border-radius: 12px;
+        }
+
+        ::ng-deep .p-menu ul {
+            margin-top: 4px;
+        }
+    }
+
+}
