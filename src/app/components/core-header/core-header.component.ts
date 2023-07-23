@@ -2,11 +2,15 @@ import {
     ChangeDetectionStrategy,
     Component,
     OnInit,
+    ViewChild,
 } from "@angular/core";
 import {MenuItem} from "primeng/api";
+import {OverlayPanel} from "primeng/overlaypanel";
 import {
+    ButtonType,
     MenuItemType,
     navTabsList,
+    userMenuList,
 } from "./core-header.model";
 
 @Component({
@@ -17,46 +21,28 @@ import {
 })
 export class CoreHeaderComponent implements OnInit {
 
+    @ViewChild("overlayPanel", {static: true})
+    public overlayPanel: OverlayPanel;
+
+    public selectedControlType: ButtonType;
     public tabsList: MenuItemType[] = navTabsList;
+    public readonly userMenuItems: MenuItem[] = userMenuList;
 
     public ngOnInit(): void {
         this.listenForBadgesChange();
     }
 
     private listenForBadgesChange(): void {
-        this.tabsList = this.tabsList.map((tab: MenuItemType) => ({...tab, amount: 3, caption: "Thomas Shelby"}));
-        console.log(this.tabsList);
+        this.tabsList = this.tabsList
+            .map((tab: MenuItemType) => ({...tab, amount: 3, caption: "Thomas Shelby", avatar: "https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" }));
     }
 
-    public items: MenuItem[] | undefined = [
-        {
-            label: 'Options',
-            items: [
-                {
-                    label: 'Update',
-                    icon: 'pi pi-refresh',
-                },
-                {
-                    label: 'Delete',
-                    icon: 'pi pi-times',
-                }
-            ]
-        },
-        {
-            label: 'Navigate',
-            items: [
-                {
-                    label: 'Angular',
-                    icon: 'pi pi-external-link',
-                    url: 'http://angular.io'
-                },
-                {
-                    label: 'Router',
-                    icon: 'pi pi-upload',
-                    routerLink: '/fileupload'
-                }
-            ]
-        }
-    ];
-
+    public handleControlClick(
+        evt: MouseEvent,
+        target: HTMLDivElement,
+        item: MenuItemType,
+    ): void {
+        this.selectedControlType = item?.type;
+        this.overlayPanel.toggle(evt, target);
+    }
 }

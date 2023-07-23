@@ -13,6 +13,7 @@ import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
 import {LandingHeaderComponent} from "./landing-header.component";
 import {TabMenuModule} from "primeng/tabmenu";
+import {I18NextModule} from "angular-i18next";
 
 @NgModule({
     declarations: [
@@ -35,6 +36,7 @@ import {TabMenuModule} from "primeng/tabmenu";
         ListboxModule,
         ScrollPanelModule,
         TabMenuModule,
+        I18NextModule,
     ],
 })
 export class LandingHeaderModule {

@@ -14,6 +14,11 @@
         "text.send.password": "Enter your <strong> username </strong> or <strong> email password </strong> and we'll send you an email with your username and a link to reset your password.",
         "text.success.recover": "We have sent you an email to your <strong>{{ email }}</strong> email account with the instructions to recover your password.",
         "title.empty.here": "It's empty here",
-        "title.page.courses": "Courses"
+        "title.page.courses": "Courses",
+        "header.popup.see.all": "See all",
+        "header.popup.no.changes": "No Changes Yet",
+        "header.popup.caption.messages": "Incoming Messages",
+        "header.popup.caption.notifications": "Incoming Notifications",
+        "header.search": "Search"
     }
 }

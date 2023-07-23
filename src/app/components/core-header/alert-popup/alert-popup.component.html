@@ -1,0 +1,29 @@
+<div class="alert-popup__header">
+    <span class="alert-popup__header-caption">
+        {{ caption }}
+    </span>
+    <p-button
+        *ngIf="popupItems?.length"
+        styleClass="p-button-link"
+        class="alert-popup__header-redirect"
+        [label]="'header.popup.see.all' | i18next"
+    ></p-button>
+</div>
+<div *ngIf="popupItems?.length; else emptyTemplate">
+    <div
+        class="alert-popup__items"
+        *ngFor="let item of popupItems"
+    >
+        <ets-preview-item
+            class="alert-popup__item"
+            [item]="item"
+        ></ets-preview-item>
+    </div>
+</div>
+
+<ng-template #emptyTemplate>
+    <span class="alert-popup__empty">
+        {{ 'header.popup.no.changes' | i18next }}
+    </span>
+</ng-template>
+

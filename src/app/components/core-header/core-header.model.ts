@@ -12,6 +12,7 @@ export type BadgeSeverity =
 export type MenuItemType = MenuItem & {
     type?: ButtonType,
     amount?: number,
+    avatar?: string,
     severity?: BadgeSeverity,
 };
 
@@ -33,4 +34,38 @@ export const navTabsList: MenuItemType[] = [
         styleClass: "p-button-outlined p-button-secondary",
         type: "avatar",
     },
+];
+
+/**
+ * Mock data, need to recheck them
+ */
+export const userMenuList: MenuItem[] = [
+    {
+        label: 'Options',
+        items: [
+            {
+                label: 'Update',
+                icon: 'pi pi-refresh',
+            },
+            {
+                label: 'Delete',
+                icon: 'pi pi-times',
+            }
+        ]
+    },
+    {
+        label: 'Navigate',
+        items: [
+            {
+                label: 'Angular',
+                icon: 'pi pi-external-link',
+                url: 'http://angular.io'
+            },
+            {
+                label: 'Router',
+                icon: 'pi pi-upload',
+                routerLink: '/fileupload'
+            }
+        ]
+    }
 ];

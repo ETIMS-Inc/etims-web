@@ -24,7 +24,7 @@
                 pInputText
                 class="core-header__search-input"
                 type="text"
-                placeholder="Search"
+                [placeholder]="'header.search' | i18next"
             />
         </span>
     </div>
@@ -35,18 +35,26 @@
     let-item="item"
 >
     <div
+        pBadge
         class="core-header__badge"
         *ngIf="item?.amount"
-        pBadge
         [value]="item.amount"
         [severity]="item.severity"
     >
         <p-button
             class="core-header__button"
             [styleClass]="item?.styleClass"
-            (click)="op.toggle($event)"
+            (onClick)="handleControlClick($event, targetOverlay, item)"
         >
-            <svg-icon [name]="item?.icon" [svgStyle]="{ 'width.px': 24, 'height.px': 24 }"></svg-icon>
+            <div #targetOverlay>
+                <svg-icon
+                    [name]="item?.icon"
+                    [svgStyle]="{
+                        'width.px': 24,
+                        'height.px': 24
+                    }"
+                ></svg-icon>
+            </div>
         </p-button>
     </div>
 </ng-template>
@@ -62,10 +70,9 @@
     >
         <p-avatar
             class="core-header__avatar-image"
-            styleClass="mr-2"
             size="large"
             shape="circle"
-            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+            [image]="item?.avatar"
         ></p-avatar>
         <span class="core-header__avatar-caption">
             {{ item?.caption }}
@@ -73,15 +80,28 @@
     </p-button>
 </ng-template>
 
-<p-overlayPanel #op>
-    <ng-template pTemplate="content">
-        <h4>Custom Content</h4>
-    </ng-template>
-</p-overlayPanel>
-
 <p-menu
     #menu
     class="core-header__user-menu"
-    [model]="items"
+    [model]="userMenuItems"
     [popup]="true"
 ></p-menu>
+
+<p-overlayPanel
+    #overlayPanel
+    class="core-header__overlay-panel"
+>
+    <ng-container
+        *ngIf="selectedControlType === 'message';
+        then messagePopup;
+        else notificationPopup"
+    ></ng-container>
+</p-overlayPanel>
+
+<ng-template #messagePopup>
+    <ets-alert-popup [caption]="'header.popup.caption.messages' | i18next"></ets-alert-popup>
+</ng-template>
+
+<ng-template #notificationPopup>
+    <ets-alert-popup [caption]="'header.popup.caption.notifications' | i18next"></ets-alert-popup>
+</ng-template>

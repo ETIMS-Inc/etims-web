@@ -1,0 +1,24 @@
+<div class="preview-item">
+    <div class="preview-item__avatar">
+        <p-avatar
+            [label]="item?.label"
+            [shape]="item?.shape"
+            [image]="item?.image"
+        ></p-avatar>
+    </div>
+    <div class="preview-item__content">
+        <div class="preview-item__content-header">
+            <span class="preview-item__content-user">
+                {{ item?.userName }}
+            </span>
+            <span class="preview-item__content-time">
+                {{ item?.time }}
+            </span>
+        </div>
+        <div class="preview-item__content-description">
+            <span>
+                {{ item?.description }}
+            </span>
+        </div>
+    </div>
+</div>

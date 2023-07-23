@@ -1,0 +1,42 @@
+@import "colors";
+@import "vars";
+
+.alert-popup {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: @size-xs-sm;
+
+        &-caption {
+            color: @black;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        &-redirect {
+            ::ng-deep .p-button.p-button-link {
+                padding: @size-xs;
+                color: @blue-bright-navy;
+            }
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item {
+        margin-bottom: @size-xxs + @size-xs-sm;
+    }
+
+    &__empty {
+        display: flex;
+        justify-content: center;
+        padding: @size-md;
+        font-size: 18px;
+        letter-spacing: 0.1em;
+        color: @gray-light;
+    }
+}
