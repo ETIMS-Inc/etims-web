@@ -53,7 +53,10 @@ import { ChipComponent } from './components/lib/chip/chip.component';
         RecoverPasswordPageModule,
         LandingHeaderModule,
     ],
-    exports: [RouterModule],
+    exports: [
+        RouterModule,
+        CourseCardComponent,
+    ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent],
 })

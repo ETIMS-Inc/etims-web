@@ -1,1 +1,16 @@
-<p>course-card works!</p>
+<ng-container [ngSwitch]="mode">
+    <ng-container *ngSwitchCase="_courseCardDisplayMode.FULL_WIDTH"
+                  [ngTemplateOutlet]="fullWidthMode"
+    ></ng-container>
+    <ng-container *ngSwitchCase="_courseCardDisplayMode.TILE"
+                  [ngTemplateOutlet]="tileMode"
+    ></ng-container>
+</ng-container>
+
+<ng-template #fullWidthMode>
+    <div class=""></div>
+</ng-template>
+
+<ng-template #tileMode>
+
+</ng-template>
