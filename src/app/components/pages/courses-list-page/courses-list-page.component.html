@@ -45,10 +45,15 @@
         ></ets-empty-content>
     </ng-container>
     <ng-template #courses>
-        <ng-container *ngFor="let course of activeTab.courses">
-            <ets-course-card [card]="course"
-                             [mode]="currentMode.mode"
-            ></ets-course-card>
-        </ng-container>
+        <div class="courses-list" [ngClass]="{
+            'tile': currentMode.mode === courseCardDisplayMode.TILE,
+            'full-width': currentMode.mode === courseCardDisplayMode.FULL_WIDTH,
+        }">
+            <ng-container *ngFor="let course of activeTab.courses">
+                <ets-course-card [card]="course"
+                                 [mode]="currentMode.mode"
+                ></ets-course-card>
+            </ng-container>
+        </div>
     </ng-template>
 </div>

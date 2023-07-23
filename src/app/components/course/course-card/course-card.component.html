@@ -1,8 +1,8 @@
 <ng-container [ngSwitch]="mode">
-    <ng-container *ngSwitchCase="_courseCardDisplayMode.FULL_WIDTH"
+    <ng-container *ngSwitchCase="courseCardDisplayMode.FULL_WIDTH"
                   [ngTemplateOutlet]="fullWidthMode"
     ></ng-container>
-    <ng-container *ngSwitchCase="_courseCardDisplayMode.TILE"
+    <ng-container *ngSwitchCase="courseCardDisplayMode.TILE"
                   [ngTemplateOutlet]="tileMode"
     ></ng-container>
 </ng-container>

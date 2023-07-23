@@ -20,5 +20,5 @@ export class CourseCardComponent {
     @Input() public card: CourseCard;
     @Input() public mode: CourseCardDisplayMode = CourseCardDisplayMode.FULL_WIDTH;
     @Output() public previewClicked = new EventEmitter();
-    public _courseCardDisplayMode = CourseCardDisplayMode;
+    public courseCardDisplayMode = CourseCardDisplayMode;
 }

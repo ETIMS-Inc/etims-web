@@ -15,9 +15,7 @@ import {AngularSvgIconModule} from "angular-svg-icon";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
-import {CourseCardComponent} from "./components/course/course-card/course-card.component";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
-import {ChipComponent} from "./components/lib/chip/chip.component";
 import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
@@ -26,8 +24,6 @@ import {etsReducers} from "./store/reducers";
 @NgModule({
     declarations: [
         AppComponent,
-        CourseCardComponent,
-        ChipComponent,
     ],
     imports: [
         AppRoutingModule,
@@ -55,7 +51,6 @@ import {etsReducers} from "./store/reducers";
     ],
     exports: [
         RouterModule,
-        CourseCardComponent,
     ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent],

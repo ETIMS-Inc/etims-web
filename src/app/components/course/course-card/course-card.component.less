@@ -1,19 +1,34 @@
 @import "utils";
 
+:host {
+    //width: min-content;
+    overflow: hidden;
+}
+
 .card {
     background: #fff;
     .shadow-all();
+
+    .card-image {
+        overflow: hidden;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+            height: 150px;
+            width: 100%;
+        }
+    }
 }
 
 .full-width-card {
     display: flex;
-    flex-direction: column;
 
-    .card {
-
-    }
 }
 
 .tile-card {
     display: flex;
+    flex-direction: column;
+    //width: min-content;
+    min-width: 200px;
 }

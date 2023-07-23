@@ -25,6 +25,7 @@ export class CoursesListPageComponent {
         {icon: "pi pi-th-large", mode: CourseCardDisplayMode.TILE},
     ];
     public currentMode: DisplayMode = this.displayModes[0];
+    public courseCardDisplayMode = CourseCardDisplayMode;
 
     public onActiveItemChange(tab: MenuItem) {
         this.activeTab = tab as CoursesTab;
