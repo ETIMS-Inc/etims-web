@@ -8,9 +8,23 @@
 </ng-container>
 
 <ng-template #fullWidthMode>
-    <div class=""></div>
+    <div class="card full-width-card">
+        <div class="card-image">
+            <img src="assets/images/course-img.jpg" alt>
+        </div>
+        <div class="card-content">
+            {{card.name}}
+        </div>
+    </div>
 </ng-template>
 
 <ng-template #tileMode>
-
+    <div class="card tile-card">
+        <div class="card-image">
+            <img src="assets/images/course-img.jpg" alt>
+        </div>
+        <div class="card-content">
+            {{card.name}}
+        </div>
+    </div>
 </ng-template>
