@@ -21,13 +21,13 @@ import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
 import {etsReducers} from "./store/reducers";
 import { CourseCardComponent } from './components/course/course-card/course-card.component';
-import { CourseTagComponent } from './components/course/course-tag/course-tag.component';
+import { ChipComponent } from './components/lib/chip/chip.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         CourseCardComponent,
-        CourseTagComponent,
+        ChipComponent,
     ],
     imports: [
         AppRoutingModule,

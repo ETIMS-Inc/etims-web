@@ -1,9 +1,9 @@
 import {CourseAuthor} from "../../../models/course-author.model";
-import {CourseTag} from "../course-tag/course-tag.model";
+import {Chip} from "../../lib/chip/chip.model";
 
 export interface CourseCard {
     name: string;
     description?: string;
-    badges?: CourseTag[];
+    badges?: Chip[];
     author: CourseAuthor;
 }

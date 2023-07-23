@@ -1,4 +1,4 @@
-export interface CourseTag {
+export interface Chip {
     name: string;
     color?: string;
 }

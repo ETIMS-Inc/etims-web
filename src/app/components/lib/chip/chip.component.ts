@@ -3,23 +3,23 @@ import {
     Input,
 } from "@angular/core";
 import * as tinycolor from "tinycolor2";
-import {CourseTag} from "./course-tag.model";
-import {generateColor} from "./course-tag.utils";
+import {Chip} from "./chip.model";
+import {generateColor} from "./chip.utils";
 
 @Component({
     selector: "ets-course-tag",
-    templateUrl: "./course-tag.component.html",
-    styleUrls: ["./course-tag.component.less"],
+    templateUrl: "./chip.component.html",
+    styleUrls: ["./chip.component.less"],
 })
-export class CourseTagComponent {
-    private _tag: CourseTag;
+export class ChipComponent {
+    private _tag: Chip;
 
-    get tag(): CourseTag {
+    get tag(): Chip {
         return this._tag;
     }
 
     @Input()
-    set tag(value: CourseTag) {
+    set tag(value: Chip) {
         this._tag = {
             ...value,
             color: tinycolor(value.color).isValid()
