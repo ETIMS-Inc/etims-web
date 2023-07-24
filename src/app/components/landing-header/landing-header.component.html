@@ -68,6 +68,7 @@
             [options]="languages"
             [(ngModel)]="selectedLanguage"
             [style]="{ width: '100%' }"
+            (onChange)="onLanguageChangeHandler($event.value)"
         >
             <ng-template
                 let-country

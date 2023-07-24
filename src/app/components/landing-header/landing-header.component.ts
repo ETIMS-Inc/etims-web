@@ -5,6 +5,7 @@ import {
 } from "@angular/core";
 import {MenuItem} from "primeng/api";
 import {OverlayPanel} from "primeng/overlaypanel";
+import {I18Service} from "../../services/i18.service";
 import {
     ActionType,
     defaultLanguage,
@@ -31,7 +32,9 @@ export class LandingHeaderComponent {
     public _activeItem: MenuItem;
     public secondaryNavTabs: HeaderMenuItemType[] = secondaryNavTabsList;
 
-    constructor(private headerService: LandingHeaderService) {
+    constructor(
+        private headerService: LandingHeaderService,
+        private i18Service: I18Service) {
     }
 
     public handleButtonChange(type: ActionType): void {
@@ -55,5 +58,12 @@ export class LandingHeaderComponent {
 
     public onActiveItemChange(event: MenuItem) {
         this._activeItem = event;
+    }
+
+    onLanguageChangeHandler(value: Language) {
+        if (value) {
+            this.i18Service.changeLanguage(value.code.toLowerCase());
+        }
+
     }
 }
