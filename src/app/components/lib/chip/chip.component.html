@@ -1,7 +1,7 @@
-<div *ngIf="tag"
+<div *ngIf="_tag"
      class="tag-container"
-     [ngStyle]="{'background': tag.color}"
      (click)="clicked.emit()"
+     [ngStyle]="{'--ets-chip-background': _tag.color}"
 >
-    <div class="tag-label">{{tag.name}}</div>
+    <div class="tag-label">{{_tag.name}}</div>
 </div>

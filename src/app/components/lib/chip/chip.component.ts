@@ -15,11 +15,7 @@ import {generateColor} from "./chip.utils";
 })
 export class ChipComponent {
     @Output() public clicked = new EventEmitter();
-    private _tag: Chip;
-
-    get tag(): Chip {
-        return this._tag;
-    }
+    public _tag: Chip;
 
     @Input()
     set tag(value: Chip) {

@@ -3,17 +3,25 @@
 .tag {
     &-container {
         width: min-content;
-        padding: @size-xxs @size-xxs-sm;
-        border-radius: @size-xs;
-        filter: opacity(0.5);
     }
 
-    //&-background {
-    //    filter: opacity(0.5);
-    //}
-
     &-label {
-        backdrop-filter: opacity(0.5);
+        padding: @size-xxs @size-xxs-sm;
         font-weight: 500;
+        position: relative;
+        z-index: 0;
+
+        &::after {
+            background-color: var(--ets-chip-background, #004c99);
+            border-radius: @size-xs;
+            content: '';
+            filter: opacity(0.4);
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
     }
 }
