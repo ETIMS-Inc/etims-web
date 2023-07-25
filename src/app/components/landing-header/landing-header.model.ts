@@ -17,10 +17,10 @@ export type HeaderMenuItemType = MenuItem & {
 };
 
 export const primaryNavTabsList: MenuItem[] = [
-    {label: "Home", url: "home"},
-    {label: "Features", url: "features"},
-    {label: "Plans", url: "plans"},
-    {label: "Documentation", url: "docs"},
+    {label: "Home", routerLink: "home"},
+    {label: "Features", routerLink: "features"},
+    {label: "Plans", routerLink: "plans"},
+    {label: "Courses", routerLink: "courses"},
 ];
 
 export const secondaryNavTabsList: HeaderMenuItemType[] = [

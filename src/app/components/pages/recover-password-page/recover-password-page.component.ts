@@ -8,13 +8,9 @@ import {RecoverPassword} from "./recover-password-page.model";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecoverPasswordPageComponent {
-
     @Input()
     public email: string = "your_mail_box@gmail.com";
-
     @Input()
-    public _recoverTypeState: RecoverPassword;
-
-    public _recoverType = RecoverPassword;
-
+    public recoverTypeState: RecoverPassword;
+    public recoverType = RecoverPassword;
 }
