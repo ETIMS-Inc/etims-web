@@ -12,8 +12,12 @@
         <div class="card-image">
             <img src="assets/images/course-img.jpg" alt>
         </div>
-        <ng-container [ngTemplateOutlet]="courseInfo"
-        ></ng-container>
+        <div class="card-content">
+            <ng-container [ngTemplateOutlet]="courseInfo"
+            ></ng-container>
+            <ng-container [ngTemplateOutlet]="tags"
+            ></ng-container>
+        </div>
     </div>
 </ng-template>
 
@@ -22,10 +26,20 @@
         <div class="card-image">
             <img src="assets/images/course-img.jpg" alt>
         </div>
-        <ng-container [ngTemplateOutlet]="tags"
-        ></ng-container>
-        <ng-container [ngTemplateOutlet]="courseInfo"
-        ></ng-container>
+        <div class="card-content">
+            <div class="card-body">
+                <ng-container [ngTemplateOutlet]="tags"
+                ></ng-container>
+                <ng-container [ngTemplateOutlet]="courseInfo"
+                ></ng-container>
+            </div>
+            <div class="card-footer">
+                <ng-container [ngTemplateOutlet]="author"
+                ></ng-container>
+                <ng-container [ngTemplateOutlet]="previewButton"
+                ></ng-container>
+            </div>
+        </div>
     </div>
 </ng-template>
 
@@ -40,4 +54,16 @@
         <div class="course-info__title">{{card.name}}</div>
         <div class="course-info__description">{{card.description}}</div>
     </div>
+</ng-template>
+
+<ng-template #author>
+    <div class="course-author">
+        <div class="course-author__avatar"><img class="image" [src]="card.author?.avatar || 'assets/icons/person.png'" alt></div>
+        <p-divider class="divider" layout="vertical"></p-divider>
+        <div class="course-author__name">{{card.author.name}}</div>
+    </div>
+</ng-template>
+
+<ng-template #previewButton>
+    <p-button [label]="'label.button.preview' | i18next" styleClass="p-button-outlined"></p-button>
 </ng-template>

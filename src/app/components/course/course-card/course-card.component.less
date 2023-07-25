@@ -1,13 +1,32 @@
 @import "utils";
 
+.flex-column(@gap: @size-sm) {
+    display: flex;
+    flex-direction: column;
+    gap: @gap;
+}
+
+.flex-row(@gap: @size-sm) {
+    display: flex;
+    flex-direction: row;
+    gap: @gap;
+}
+
 :host {
     overflow: hidden;
+    border-radius: @default-border-radius;
     .shadow-all();
 }
 
 .card {
     background: #fff;
-    gap: @size-sm;
+    height: 100%;
+
+    &-content {
+        padding: @size-sm;
+        .flex-column();
+        flex: 1;
+    }
 
     .card-image {
         overflow: hidden;
@@ -21,9 +40,7 @@
     }
 
     .course-info {
-        display: flex;
-        flex-direction: column;
-        gap: @size-xs;
+        .flex-column();
 
         &__title {
             .second-title();
@@ -33,16 +50,45 @@
             .light-text()
         }
     }
+
+    .card-body {
+        .flex-column();
+        flex: 1;
+    }
+
+    .card-footer {
+        .flex-row();
+        justify-content: space-between;
+        width: 100%;
+
+        .course-author {
+            align-items: center;
+            display: flex;
+
+            &__avatar {
+                .image {
+                    @image-size: 35px;
+                    height: @image-size;
+                    width: @image-size;
+                }
+            }
+
+            .divider::ng-deep {
+                .p-divider-vertical {
+                    margin: 0 @size-sm;
+                    padding: @size-sm 0;
+                }
+            }
+        }
+    }
 }
 
 .full-width-card {
     display: flex;
-
 }
 
 .tile-card {
-    display: flex;
-    flex-direction: column;
-    //width: min-content;
+    .flex-column(0);
     min-width: 200px;
+    min-height: 400px;
 }

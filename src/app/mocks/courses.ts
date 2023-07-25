@@ -5,7 +5,7 @@ import {Chips} from "./chips";
 export const withoutTagCourses: CourseCard[] = [
     {
         name: "Course without tag 1",
-        description: "Fav desc",
+        description: "Unknown desc",
         author: Authors.mike,
     },
 ];
@@ -34,19 +34,19 @@ export const favouriteCourses: CourseCard[] = [
 export const programmingCourses: CourseCard[] = [
     {
         name: "Programming 1",
-        description: "Fav desc",
+        description: "Prog desc",
         tags: [Chips.programming],
         author: Authors.heisenberg,
     },
     {
         name: "Programming 2",
-        description: "Fav desc",
+        description: "Prog desc",
         tags: [Chips.programming],
         author: Authors.heisenberg,
     },
     {
         name: "Programming 3",
-        description: "Fav desc",
+        description: "Prog desc",
         tags: [Chips.programming],
         author: Authors.tim,
     },
