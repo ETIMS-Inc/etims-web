@@ -13,10 +13,18 @@
             <img src="assets/images/course-img.jpg" alt>
         </div>
         <div class="card-content">
-            <ng-container [ngTemplateOutlet]="courseInfo"
-            ></ng-container>
-            <ng-container [ngTemplateOutlet]="tags"
-            ></ng-container>
+            <div class="card-content__body">
+                <ng-container [ngTemplateOutlet]="courseInfo"
+                ></ng-container>
+                <ng-container [ngTemplateOutlet]="tags"
+                ></ng-container>
+            </div>
+            <div class="card-content__footer">
+                <ng-container [ngTemplateOutlet]="author"
+                ></ng-container>
+                <ng-container [ngTemplateOutlet]="previewButton"
+                ></ng-container>
+            </div>
         </div>
     </div>
 </ng-template>
@@ -27,13 +35,13 @@
             <img src="assets/images/course-img.jpg" alt>
         </div>
         <div class="card-content">
-            <div class="card-body">
+            <div class="card-content__body">
                 <ng-container [ngTemplateOutlet]="tags"
                 ></ng-container>
                 <ng-container [ngTemplateOutlet]="courseInfo"
                 ></ng-container>
             </div>
-            <div class="card-footer">
+            <div class="card-content__footer">
                 <ng-container [ngTemplateOutlet]="author"
                 ></ng-container>
                 <ng-container [ngTemplateOutlet]="previewButton"

@@ -26,6 +26,37 @@
         padding: @size-sm;
         .flex-column();
         flex: 1;
+
+        &__body {
+            .flex-column();
+            flex: 1;
+        }
+
+        &__footer {
+            .flex-row();
+            justify-content: space-between;
+            width: 100%;
+
+            .course-author {
+                align-items: center;
+                display: flex;
+
+                &__avatar {
+                    .image {
+                        @image-size: 35px;
+                        height: @image-size;
+                        width: @image-size;
+                    }
+                }
+
+                .divider::ng-deep {
+                    .p-divider-vertical {
+                        margin: 0 @size-sm;
+                        padding: @size-sm 0;
+                    }
+                }
+            }
+        }
     }
 
     .card-image {
@@ -48,37 +79,6 @@
 
         &__description {
             .light-text()
-        }
-    }
-
-    .card-body {
-        .flex-column();
-        flex: 1;
-    }
-
-    .card-footer {
-        .flex-row();
-        justify-content: space-between;
-        width: 100%;
-
-        .course-author {
-            align-items: center;
-            display: flex;
-
-            &__avatar {
-                .image {
-                    @image-size: 35px;
-                    height: @image-size;
-                    width: @image-size;
-                }
-            }
-
-            .divider::ng-deep {
-                .p-divider-vertical {
-                    margin: 0 @size-sm;
-                    padding: @size-sm 0;
-                }
-            }
         }
     }
 }
