@@ -1,8 +1,10 @@
 import {
     Component,
+    EventEmitter,
     Input,
+    Output,
 } from "@angular/core";
-import * as tinycolor from "tinycolor2";
+import tinycolor from "tinycolor2";
 import {Chip} from "./chip.model";
 import {generateColor} from "./chip.utils";
 
@@ -12,6 +14,7 @@ import {generateColor} from "./chip.utils";
     styleUrls: ["./chip.component.less"],
 })
 export class ChipComponent {
+    @Output() public clicked = new EventEmitter();
     private _tag: Chip;
 
     get tag(): Chip {

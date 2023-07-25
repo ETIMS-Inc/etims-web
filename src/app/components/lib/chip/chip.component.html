@@ -1,1 +1,7 @@
-<div class="tag-container" [ngStyle]="{'background': tag.color}">{{tag.name}}</div>
+<div *ngIf="tag"
+     class="tag-container"
+     [ngStyle]="{'background': tag.color}"
+     (click)="clicked.emit()"
+>
+    <div class="tag-label">{{tag.name}}</div>
+</div>

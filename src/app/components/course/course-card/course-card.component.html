@@ -12,9 +12,8 @@
         <div class="card-image">
             <img src="assets/images/course-img.jpg" alt>
         </div>
-        <div class="card-content">
-            {{card.name}}
-        </div>
+        <ng-container [ngTemplateOutlet]="courseInfo"
+        ></ng-container>
     </div>
 </ng-template>
 
@@ -23,8 +22,22 @@
         <div class="card-image">
             <img src="assets/images/course-img.jpg" alt>
         </div>
-        <div class="card-content">
-            {{card.name}}
-        </div>
+        <ng-container [ngTemplateOutlet]="tags"
+        ></ng-container>
+        <ng-container [ngTemplateOutlet]="courseInfo"
+        ></ng-container>
+    </div>
+</ng-template>
+
+<ng-template #tags>
+    <div class="course-tags">
+        <ets-course-tag *ngFor="let tag of card.tags" class="course-tag" [tag]="tag"></ets-course-tag>
+    </div>
+</ng-template>
+
+<ng-template #courseInfo>
+    <div class="course-info">
+        <div class="course-info__title">{{card.name}}</div>
+        <div class="course-info__description">{{card.description}}</div>
     </div>
 </ng-template>

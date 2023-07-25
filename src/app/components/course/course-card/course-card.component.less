@@ -1,13 +1,13 @@
 @import "utils";
 
 :host {
-    //width: min-content;
     overflow: hidden;
+    .shadow-all();
 }
 
 .card {
     background: #fff;
-    .shadow-all();
+    gap: @size-sm;
 
     .card-image {
         overflow: hidden;
@@ -17,6 +17,20 @@
             object-position: center;
             height: 150px;
             width: 100%;
+        }
+    }
+
+    .course-info {
+        display: flex;
+        flex-direction: column;
+        gap: @size-xs;
+
+        &__title {
+            .second-title();
+        }
+
+        &__description {
+            .light-text()
         }
     }
 }
