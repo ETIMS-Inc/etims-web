@@ -13,9 +13,9 @@
 }
 
 :host {
-    overflow: hidden;
-    border-radius: @default-border-radius;
     .shadow-all();
+    border-radius: @default-border-radius;
+    overflow: hidden;
 }
 
 .card {
@@ -23,9 +23,9 @@
     height: 100%;
 
     &-content {
-        padding: @size-sm;
         .flex-column();
         flex: 1;
+        padding: @size-sm;
 
         &__body {
             .flex-column();
@@ -63,9 +63,9 @@
         overflow: hidden;
 
         img {
+            height: 150px;
             object-fit: cover;
             object-position: center;
-            height: 150px;
             width: 100%;
         }
     }
@@ -85,10 +85,29 @@
 
 .full-width-card {
     display: flex;
+
+    .card-content__body {
+        .flex-row();
+        justify-content: space-between;
+
+        .course-info__description {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            overflow: hidden;
+        }
+    }
 }
 
 .tile-card {
     .flex-column(0);
-    min-width: 200px;
     min-height: 400px;
+    min-width: 200px;
+
+    .course-info__description {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        display: -webkit-box;
+        overflow: hidden;
+    }
 }

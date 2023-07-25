@@ -25,7 +25,7 @@ export const favouriteCourses: CourseCard[] = [
     },
     {
         name: "Favourite 3",
-        description: "Fav desc",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam maecenas ultricies. Tortor at risus viverra adipiscing at. Amet consectetur adipiscing elit ut aliquam purus sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam maecenas ultricies. Tortor at risus viverra adipiscing at. Amet consectetur adipiscing elit ut aliquam purus sit amet.",
         tags: [Chips.favourite],
         author: Authors.steve,
     },
@@ -46,7 +46,7 @@ export const programmingCourses: CourseCard[] = [
     },
     {
         name: "Programming 3",
-        description: "Prog desc",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut pharetra sit amet aliquam id diam maecenas ultricies. Tortor at risus viverra adipiscing at. Amet consectetur adipiscing elit ut aliquam purus sit amet.",
         tags: [Chips.programming],
         author: Authors.tim,
     },
