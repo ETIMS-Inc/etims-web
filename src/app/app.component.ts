@@ -22,7 +22,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "en",
         "de",
     ];
-    public title = "etims-landing-ui";
+    public title = "etims-web";
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
     constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService,
