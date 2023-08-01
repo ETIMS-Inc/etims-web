@@ -48,3 +48,15 @@
 .set-default-control-height() {
     height: @default-control-height;
 }
+
+.flex-column(@gap: @size-sm) {
+    display: flex;
+    flex-direction: column;
+    gap: @gap;
+}
+
+.flex-row(@gap: @size-sm) {
+    display: flex;
+    flex-direction: row;
+    gap: @gap;
+}

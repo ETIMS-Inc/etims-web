@@ -1,17 +1,5 @@
 @import "utils";
 
-.flex-column(@gap: @size-sm) {
-    display: flex;
-    flex-direction: column;
-    gap: @gap;
-}
-
-.flex-row(@gap: @size-sm) {
-    display: flex;
-    flex-direction: row;
-    gap: @gap;
-}
-
 :host {
     .shadow-all();
     border-radius: @default-border-radius;
@@ -33,9 +21,15 @@
         }
 
         &__footer {
-            .flex-row();
+            .flex-row(@size-md);
             justify-content: space-between;
+            align-items: center;
             width: 100%;
+
+            &-progress::ng-deep {
+                flex: 1;
+                max-width: 60%;
+            }
 
             .course-author {
                 align-items: center;

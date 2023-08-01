@@ -6,4 +6,5 @@ export interface CourseCard {
     description?: string;
     tags?: Chip[];
     author: CourseAuthor;
+    progress?: number;
 }

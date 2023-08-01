@@ -10,7 +10,9 @@
 <ng-template #fullWidthMode>
     <div class="card full-width-card">
         <div class="card-image">
-            <img src="assets/images/course-img.jpg" alt>
+            <img alt
+                 src="assets/images/course-img.jpg"
+            >
         </div>
         <div class="card-content">
             <div class="card-content__body">
@@ -22,6 +24,10 @@
             <div class="card-content__footer">
                 <ng-container [ngTemplateOutlet]="author"
                 ></ng-container>
+                <ets-progress-bar *ngIf="card.progress"
+                                  class="card-content__footer-progress"
+                                  [progress]="card.progress"
+                ></ets-progress-bar>
                 <ng-container [ngTemplateOutlet]="previewButton"
                 ></ng-container>
             </div>
@@ -32,7 +38,9 @@
 <ng-template #tileMode>
     <div class="card tile-card">
         <div class="card-image">
-            <img src="assets/images/course-img.jpg" alt>
+            <img alt
+                 src="assets/images/course-img.jpg"
+            >
         </div>
         <div class="card-content">
             <div class="card-content__body">
@@ -53,7 +61,10 @@
 
 <ng-template #tags>
     <div class="course-tags">
-        <ets-course-tag *ngFor="let tag of card.tags" class="course-tag" [tag]="tag"></ets-course-tag>
+        <ets-course-tag *ngFor="let tag of card.tags"
+                        class="course-tag"
+                        [tag]="tag"
+        ></ets-course-tag>
     </div>
 </ng-template>
 
@@ -66,12 +77,19 @@
 
 <ng-template #author>
     <div class="course-author">
-        <div class="course-author__avatar"><img class="image" [src]="card.author?.avatar || 'assets/icons/person.png'" alt></div>
-        <p-divider class="divider" layout="vertical"></p-divider>
+        <div class="course-author__avatar"><img alt
+                                                class="image"
+                                                [src]="card.author?.avatar || 'assets/icons/person.png'"
+        ></div>
+        <p-divider class="divider"
+                   layout="vertical"
+        ></p-divider>
         <div class="course-author__name">{{card.author.name}}</div>
     </div>
 </ng-template>
 
 <ng-template #previewButton>
-    <p-button [label]="'label.button.preview' | i18next" styleClass="p-button-outlined"></p-button>
+    <p-button styleClass="p-button-outlined"
+              [label]="'label.button.preview' | i18next"
+    ></p-button>
 </ng-template>
