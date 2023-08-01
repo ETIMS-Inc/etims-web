@@ -1,7 +1,22 @@
 <landing-header></landing-header>
+<!--<ets-register-page></ets-register-page>-->
 <div class="route-content">
-    <router-outlet></router-outlet>
+    <app-unauthorized></app-unauthorized>
+    <ets-protected></ets-protected>
+<!--    <ets-login-page></ets-login-page>-->
+<!--    <router-outlet></router-outlet>-->
 </div>
+
+<h2>Authentication with ngrx</h2>
+
+<div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
+    <button (click)="logout()">Logout</button>
+</div>
+
+<ng-template #noAuth>
+    <button (click)="login()">Login</button>
+</ng-template>
+
 <!--<ets-account-starter-page></ets-account-starter-page>-->
 <!--<ets-account-card></ets-account-card>-->
 

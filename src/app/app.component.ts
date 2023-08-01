@@ -1,3 +1,4 @@
+import {HttpClient} from "@angular/common/http";
 import {
     Component,
     Inject,
@@ -5,11 +6,27 @@ import {
     OnInit,
 } from "@angular/core";
 import {
+    select,
+    Store,
+} from "@ngrx/store";
+import {OidcSecurityService} from "angular-auth-oidc-client";
+import {
     I18NEXT_SERVICE,
     ITranslationService,
 } from "angular-i18next";
 import {SvgIconRegistryService} from "angular-svg-icon";
-import {Subscription} from "rxjs";
+import {
+    Observable,
+    of,
+    Subscription,
+} from "rxjs";
+import {catchError} from "rxjs/operators";
+import {
+    checkAuth,
+    login,
+    logout,
+} from "./store/actions/auth.actions";
+import {selectIsAuthenticated} from "./store/selectors/auth.selectors";
 
 @Component({
     selector: "app-root",
@@ -17,6 +34,7 @@ import {Subscription} from "rxjs";
     styleUrls: ["./app.component.less"],
 })
 export class AppComponent implements OnInit, OnDestroy {
+    isAuthenticated$: Observable<boolean>;
     public language: string = "en";
     public readonly languages: string[] = [
         "en",
@@ -26,10 +44,21 @@ export class AppComponent implements OnInit, OnDestroy {
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
     constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService,
-                private iconReg: SvgIconRegistryService) {
+                private httpClient: HttpClient,
+                private iconReg: SvgIconRegistryService,
+                private oidcSecurityService: OidcSecurityService,
+                private store: Store<any>) {
     }
 
     public ngOnInit(): void {
+        // this.store.dispatch(checkAuth());
+        // this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
+
+        this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData}) => {
+            console.log(isAuthenticated);
+            console.log(userData);
+        });
+
         this.iconReg.loadSvg("assets/icons/logo.svg", "logo")?.subscribe();
         this.iconReg.loadSvg("assets/icons/global.svg", "global")?.subscribe();
         this.iconReg.loadSvg("assets/icons/search.svg", "search")?.subscribe();
@@ -46,6 +75,26 @@ export class AppComponent implements OnInit, OnDestroy {
                 this.updateState(this.i18NextService.language);
             }
         });
+    }
+
+    login() {
+        // console.log(window.location.origin);
+        // console.log("login clicked");
+        // this.store.dispatch(login());
+        this.oidcSecurityService.getAuthorizeUrl().subscribe((value) => {
+            console.log(value);
+            this.httpClient
+                .get(value, {headers: { 'Sec-Fetch-Mode': 'document' }})
+                .subscribe((result) => {
+                    console.log(result);
+                });
+        });
+        // this.oidcSecurityService.authorize();
+    }
+
+    logout() {
+        // this.store.dispatch(logout());
+        this.oidcSecurityService.logoff().subscribe((result) => console.log(result));
     }
 
     public changeLanguage(lang: string): void {
