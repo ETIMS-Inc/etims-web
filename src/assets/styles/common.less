@@ -29,27 +29,23 @@ body, app-root {
     border-radius: @scrollbar-radius;
     background-color: @blue-alice;
 
-    &:hover {
-        background-color: @link-water;
-    }
-
-    &:active {
+    &:hover, &:active {
         background-color: @link-water;
     }
 }
 
 *::-webkit-scrollbar-thumb {
     border-radius: @scrollbar-radius;
-    background-color: @blue-sky;
+    background-color: @gray-lava-light;
     border: @size-xs solid @blue-alice;
 
     &:hover {
-        background-color: @blue-navy;
+        background-color: @gray-lava;
         border-color: @link-water;
     }
 
     &:active {
-        background-color: @blue-midnight;
+        background-color: @gray-ice;
         border-color: @link-water;
     }
 }
