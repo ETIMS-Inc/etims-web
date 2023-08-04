@@ -37,9 +37,9 @@ export class LandingHeaderComponent implements OnInit{
         private i18Service: I18Service) {
     }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this.selectedLanguage = languageList.find(language =>
-            language.code.toLowerCase() === this.i18Service.language.toLowerCase(),
+            language.code.toLowerCase() === this.i18Service.languageCode.toLowerCase(),
         )
     }
 
@@ -67,9 +67,7 @@ export class LandingHeaderComponent implements OnInit{
     }
 
     onLanguageChangeHandler(value: Language) {
-        if (value) {
-            this.i18Service.changeLanguage(value.code.toLowerCase());
-        }
+        this.i18Service.changeLanguage(value.code.toLowerCase());
     }
 
 }
