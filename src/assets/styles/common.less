@@ -1,8 +1,51 @@
 @import "colors";
+@import "vars";
 
 body, app-root {
     color: @main-text-color;
     height: 100vh;
     width: 100vw;
     font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+
+// SCROLLBAR
+@scrollbar-width: @size-xs-sm;
+@scrollbar-radius: calc(@scrollbar-width / 2);
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: @blue-sky @blue-alice;
+}
+
+/* Chrome, Edge, Opera Safari */
+*::-webkit-scrollbar {
+    height: @scrollbar-width;
+    width: @scrollbar-width;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: @scrollbar-radius;
+    background-color: @blue-alice;
+
+    &:hover, &:active {
+        background-color: @link-water;
+    }
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: @scrollbar-radius;
+    background-color: @gray-lava-light;
+    border: @size-xs solid @blue-alice;
+
+    &:hover {
+        background-color: @gray-lava;
+        border-color: @link-water;
+    }
+
+    &:active {
+        background-color: @gray-ice;
+        border-color: @link-water;
+    }
 }

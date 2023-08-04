@@ -17,7 +17,12 @@ import {Subscription} from "rxjs";
     styleUrls: ["./app.component.less"],
 })
 export class AppComponent implements OnInit, OnDestroy {
-    public title = "etims-landing-ui";
+    public language: string = "en";
+    public readonly languages: string[] = [
+        "en",
+        "de",
+    ];
+    public title = "etims-web";
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
     constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService,
