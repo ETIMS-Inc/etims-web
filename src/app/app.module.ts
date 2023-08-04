@@ -20,10 +20,12 @@ import {RecoverPasswordPageModule} from "./components/pages/recover-password-pag
 import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
 import {etsReducers} from "./store/reducers";
+import { TranslateObjectPropPipe } from './pipes/translate-object-prop.pipe';
 
 @NgModule({
     declarations: [
         AppComponent,
+        TranslateObjectPropPipe,
     ],
     imports: [
         AppRoutingModule,
