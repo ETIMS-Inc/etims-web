@@ -1,4 +1,5 @@
 import {
+    ChangeDetectionStrategy,
     Component,
     EventEmitter,
     Input,
@@ -12,14 +13,15 @@ import {generateColor} from "./chip.utils";
     selector: "ets-course-tag",
     templateUrl: "./chip.component.html",
     styleUrls: ["./chip.component.less"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChipComponent {
     @Output() public clicked = new EventEmitter();
-    public _tag: Chip;
+    public chip: Chip;
 
     @Input()
-    set tag(value: Chip) {
-        this._tag = {
+    set value(value: Chip) {
+        this.chip = {
             ...value,
             color: tinycolor(value.color).isValid()
                 ? tinycolor(value.color).toHexString()

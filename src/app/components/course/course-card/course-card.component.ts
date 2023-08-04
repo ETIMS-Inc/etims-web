@@ -1,4 +1,5 @@
 import {
+    ChangeDetectionStrategy,
     Component,
     EventEmitter,
     Input,
@@ -15,6 +16,7 @@ export enum CourseCardDisplayMode {
     selector: "ets-course-card",
     templateUrl: "./course-card.component.html",
     styleUrls: ["./course-card.component.less"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CourseCardComponent {
     @Input() public card: CourseCard;

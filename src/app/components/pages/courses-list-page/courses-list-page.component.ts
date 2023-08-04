@@ -1,4 +1,7 @@
-import {Component} from "@angular/core";
+import {
+    ChangeDetectionStrategy,
+    Component,
+} from "@angular/core";
 import {MenuItem} from "primeng/api";
 import {coursesTabs} from "../../../mocks/courses-tabs";
 import {CourseCardDisplayMode} from "../../course/course-card/course-card.component";
@@ -14,6 +17,7 @@ interface DisplayMode {
     selector: "ets-courses-list-page",
     templateUrl: "./courses-list-page.component.html",
     styleUrls: ["./courses-list-page.component.less"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursesListPageComponent {
     // FIXME: use real data instead of mock
