@@ -49,7 +49,9 @@ import {etsReducers} from "./store/reducers";
         RecoverPasswordPageModule,
         LandingHeaderModule,
     ],
-    exports: [RouterModule],
+    exports: [
+        RouterModule,
+    ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent],
 })
