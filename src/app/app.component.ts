@@ -1,13 +1,8 @@
 import {
     Component,
-    Inject,
     OnDestroy,
     OnInit,
 } from "@angular/core";
-import {
-    I18NEXT_SERVICE,
-    ITranslationService,
-} from "angular-i18next";
 import {SvgIconRegistryService} from "angular-svg-icon";
 import {Subscription} from "rxjs";
 
@@ -17,16 +12,10 @@ import {Subscription} from "rxjs";
     styleUrls: ["./app.component.less"],
 })
 export class AppComponent implements OnInit, OnDestroy {
-    public language: string = "en";
-    public readonly languages: string[] = [
-        "en",
-        "de",
-    ];
     public title = "etims-web";
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
-    constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService,
-                private iconReg: SvgIconRegistryService) {
+    constructor(private iconReg: SvgIconRegistryService) {
     }
 
     public ngOnInit(): void {

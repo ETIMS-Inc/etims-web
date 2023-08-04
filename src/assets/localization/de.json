@@ -9,6 +9,7 @@
         "label.recovery.password":  "Passwort zum Zurücksetzen",
         "label.username.email": "Geben Sie Ihren Benutzernamen oder Ihre E-Mail-Adresse ein",
         "text.send.password": "Geben Sie Ihren <strong>Benutzernamen </strong> oder Ihr <strong>E-Mail-Passwort </strong> ein und wir senden Ihnen eine E-Mail mit Ihrem Benutzernamen und einem Link zum Zurücksetzen Ihres Passworts.",
-        "text.success.recover": "Wir haben Ihnen eine E-Mail mit den Anweisungen zur Wiederherstellung Ihres Passworts an Ihr <strong>{{ email }}</strong>-E-Mail-Konto gesendet."
+        "text.success.recover": "Wir haben Ihnen eine E-Mail mit den Anweisungen zur Wiederherstellung Ihres Passworts an Ihr <strong>{{ email }}</strong>-E-Mail-Konto gesendet.",
+        "title.page.courses": "Kurse"
     }
 }
