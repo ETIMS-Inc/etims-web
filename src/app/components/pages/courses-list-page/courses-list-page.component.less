@@ -34,3 +34,18 @@
         }
     }
 }
+
+.courses-list {
+    gap: @size-md;
+
+    &.tile {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    &.full-width {
+        display: flex;
+        flex-direction: column;
+    }
+}

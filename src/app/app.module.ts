@@ -51,7 +51,9 @@ import {etsReducers} from "./store/reducers";
         LandingHeaderModule,
         CoreHeaderModule,
     ],
-    exports: [RouterModule],
+    exports: [
+        RouterModule,
+    ],
     providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent],
 })

@@ -11,6 +11,7 @@
         "input.username.email": "Username or email address",
         "label.button.create.course": "Create a course",
         "label.button.join.course": "Join a course",
+        "label.button.preview": "Preview",
         "label.confirm.password": "Confirm New Password",
         "label.new.password": "Enter New Password",
         "label.recovery.password": "Recovery Password",

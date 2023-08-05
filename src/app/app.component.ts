@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "en",
         "de",
     ];
-    public title = "etims-landing-ui";
+    public title = "etims-web";
     public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
