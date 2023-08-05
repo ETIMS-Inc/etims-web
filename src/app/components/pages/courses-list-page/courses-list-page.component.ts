@@ -1,46 +1,37 @@
-import {Component} from "@angular/core";
+import {
+    ChangeDetectionStrategy,
+    Component,
+} from "@angular/core";
 import {MenuItem} from "primeng/api";
-
-interface TempCourse { // TODO: use the real course model
-    id: string;
-}
-
-interface Tab {
-    id: string;
-    label: string;
-    courses?: TempCourse[];
-}
+import {coursesTabs} from "../../../mocks/courses-tabs";
+import {CourseCardDisplayMode} from "../../course/course-card/course-card.component";
+import {CourseCard} from "../../course/course-card/course-card.model";
+import {CoursesTab} from "./courses-tab.model";
 
 interface DisplayMode {
     icon: string;
+    mode: CourseCardDisplayMode;
 }
 
 @Component({
     selector: "ets-courses-list-page",
     templateUrl: "./courses-list-page.component.html",
     styleUrls: ["./courses-list-page.component.less"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursesListPageComponent {
     // FIXME: use real data instead of mock
-    public tabs: Tab[] = [
-        {
-            id: "1",
-            label: "All",
-            courses: [
-                {id: "1"},
-                {id: "2"},
-            ],
-        },
-        {id: "2", label: "Favourite"},
-    ];
-    public activeTab: Tab = this.tabs[0];
+    // TODO: support pagination
+    public tabs: CoursesTab[] = coursesTabs; // TODO: get tabs from be
+    public activeTab: CoursesTab = this.tabs[0];
     public displayModes: DisplayMode[] = [
-        {icon: "pi pi-list"},
-        {icon: "pi pi-th-large"},
+        {icon: "pi pi-list", mode: CourseCardDisplayMode.FULL_WIDTH},
+        {icon: "pi pi-th-large", mode: CourseCardDisplayMode.TILE},
     ];
     public currentMode: DisplayMode = this.displayModes[0];
+    public courseCardDisplayMode = CourseCardDisplayMode;
 
     public onActiveItemChange(tab: MenuItem) {
-        this.activeTab = tab as Tab;
+        this.activeTab = tab as CoursesTab;
     }
 }

@@ -46,7 +46,7 @@
         "color-hex-case": "lower",
         "color-hex-length": "short",
         "custom-property-empty-line-before": "never",
-        "custom-property-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9)_]+)*$",
+        "custom-property-pattern": "^ets(-[a-z0-9)_]+)*$",
         "declaration-empty-line-before": "never",
         "font-family-name-quotes": "always-where-recommended",
         "import-notation": "string",
