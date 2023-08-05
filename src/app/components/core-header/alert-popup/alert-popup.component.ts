@@ -12,20 +12,8 @@ import {PreviewItem} from "../preview-item/preview-item.model";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AlertPopupComponent {
-
     @Input()
     public caption: string;
-
     @Input()
-    /**
-     * Mock data
-     */
-    public popupItems: PreviewItem[] = [{
-        description: "Hello, Mr John  i am yet to get your class b restart",
-        userName: "Adepoju Ademola",
-        shape: "circle",
-        time: "6 min ago",
-        image: "https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-    }];
-
+    public popupItems: PreviewItem[];
 }

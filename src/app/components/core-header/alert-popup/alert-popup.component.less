@@ -1,6 +1,8 @@
 @import "colors";
 @import "vars";
 
+@popup-width: 326px;
+
 .alert-popup {
     &__header {
         display: flex;
@@ -32,11 +34,26 @@
     }
 
     &__empty {
+        width: @popup-width;
         display: flex;
         justify-content: center;
         padding: @size-md;
         font-size: 18px;
         letter-spacing: 0.1em;
         color: @gray-light;
+    }
+
+    &__scroll-wrapper {
+        ::ng-deep {
+            .p-scrollpanel-content {
+                padding: 0;
+            }
+
+            .p-scrollpanel .p-scrollpanel-bar {
+                width: @size-xxs-xs;
+                margin-left: @size-xxs + @size-xs-sm;
+                background: @gray-light;
+            }
+        }
     }
 }

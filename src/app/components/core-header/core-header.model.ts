@@ -41,31 +41,31 @@ export const navTabsList: MenuItemType[] = [
  */
 export const userMenuList: MenuItem[] = [
     {
-        label: 'Options',
+        label: "Options",
         items: [
             {
-                label: 'Update',
-                icon: 'pi pi-refresh',
+                label: "Update",
+                icon: "pi pi-refresh",
             },
             {
-                label: 'Delete',
-                icon: 'pi pi-times',
-            }
-        ]
+                label: "Delete",
+                icon: "pi pi-times",
+            },
+        ],
     },
     {
-        label: 'Navigate',
+        label: "Navigate",
         items: [
             {
-                label: 'Angular',
-                icon: 'pi pi-external-link',
-                url: 'http://angular.io'
+                label: "Angular",
+                icon: "pi pi-external-link",
+                url: "http://angular.io",
             },
             {
-                label: 'Router',
-                icon: 'pi pi-upload',
-                routerLink: '/fileupload'
-            }
-        ]
-    }
+                label: "Router",
+                icon: "pi pi-upload",
+                routerLink: "/fileupload",
+            },
+        ],
+    },
 ];

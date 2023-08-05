@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {I18NextModule} from "angular-i18next";
 import {ButtonModule} from "primeng/button";
+import {ScrollPanelModule} from "primeng/scrollpanel";
 import {PreviewItemModule} from "../preview-item/preview-item.module";
 import {AlertPopupComponent} from "./alert-popup.component";
 
@@ -19,6 +20,7 @@ import {AlertPopupComponent} from "./alert-popup.component";
         PreviewItemModule,
         ButtonModule,
         I18NextModule,
+        ScrollPanelModule,
     ],
 })
 export class AlertPopupModule {

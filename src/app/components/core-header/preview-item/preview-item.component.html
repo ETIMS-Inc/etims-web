@@ -1,10 +1,8 @@
 <div class="preview-item">
-    <div class="preview-item__avatar">
-        <p-avatar
-            [label]="item?.label"
-            [shape]="item?.shape"
-            [image]="item?.image"
-        ></p-avatar>
+    <div *ngIf="!item?.userStatus; else statusBadgeTemp">
+        <div class="preview-item__avatar">
+            <ng-container *ngTemplateOutlet="avatar"></ng-container>
+        </div>
     </div>
     <div class="preview-item__content">
         <div class="preview-item__content-header">
@@ -15,10 +13,42 @@
                 {{ item?.time }}
             </span>
         </div>
-        <div class="preview-item__content-description">
+        <div
+            *ngIf="!item?.eventStatus; else statusTemp"
+            class="preview-item__content-description"
+        >
             <span>
                 {{ item?.description }}
             </span>
         </div>
     </div>
 </div>
+
+<ng-template #statusBadgeTemp>
+    <div
+        pBadge
+        class="preview-item__avatar"
+        [severity]="item?.userStatus | previewStatus"
+    >
+        <ng-container *ngTemplateOutlet="avatar"></ng-container>
+    </div>
+</ng-template>
+
+<ng-template #avatar>
+    <p-avatar
+        [label]="item?.label"
+        [shape]="item?.shape"
+        [image]="item?.image"
+    ></p-avatar>
+</ng-template>
+
+<ng-template #statusTemp>
+    <div class="preview-item__status-wrapper">
+        <div class="preview-item__status-description">
+            {{ item?.description }}
+        </div>
+        <div class="preview-item__status-item _green">
+            {{ item?.eventStatus }}
+        </div>
+    </div>
+</ng-template>

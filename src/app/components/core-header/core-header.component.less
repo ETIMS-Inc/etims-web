@@ -2,9 +2,8 @@
 @import "colors";
 @import "utils";
 
-@avatar-height: 52px;
-@avatar-width: 196px;
-@popup-width: 364px;
+@avatar-btn-height: 52px;
+@avatar-btn-width: 196px;
 
 :host {
     position: sticky;
@@ -19,9 +18,9 @@
             margin-left: @size-xs-sm;
 
             ::ng-deep .p-button.p-button-outlined {
-                width: @avatar-width;
-                height: @avatar-height;
-                padding: @size-xxs-xs @size-xxs-xs @size-xxs-xs @size-xs;
+                width: @avatar-btn-width;
+                height: @avatar-btn-height;
+                padding: @size-xxs-xs @size-xxs-xs @size-xxs-xs @size-xxs;
                 border-radius: @size-xl;
             }
         }
@@ -95,7 +94,7 @@
 
     &__user-menu {
         ::ng-deep .p-menu {
-            width: @avatar-width;
+            width: @avatar-btn-width;
         }
 
         ::ng-deep .p-menu.p-menu-overlay {
@@ -110,7 +109,6 @@
 
     &__overlay-panel {
         .p-overlaypanel {
-            width: @popup-width;
             border-radius: @size-sm;
         }
 

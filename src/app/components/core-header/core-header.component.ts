@@ -7,11 +7,17 @@ import {
 import {MenuItem} from "primeng/api";
 import {OverlayPanel} from "primeng/overlaypanel";
 import {
+    headerTab,
+    messagePreviewItems,
+    notificationPreviewItems,
+} from "../../mocks/core-header";
+import {
     ButtonType,
     MenuItemType,
     navTabsList,
     userMenuList,
 } from "./core-header.model";
+import {PreviewItem} from "./preview-item/preview-item.model";
 
 @Component({
     selector: "ets-core-header",
@@ -27,6 +33,8 @@ export class CoreHeaderComponent implements OnInit {
     public selectedControlType: ButtonType;
     public tabsList: MenuItemType[] = navTabsList;
     public readonly userMenuItems: MenuItem[] = userMenuList;
+    public readonly messageItems: PreviewItem[] = messagePreviewItems;
+    public readonly notificationItems: PreviewItem[] = notificationPreviewItems;
 
     public ngOnInit(): void {
         this.listenForBadgesChange();
@@ -34,7 +42,10 @@ export class CoreHeaderComponent implements OnInit {
 
     private listenForBadgesChange(): void {
         this.tabsList = this.tabsList
-            .map((tab: MenuItemType) => ({...tab, amount: 3, caption: "Thomas Shelby", avatar: "https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" }));
+            .map((tab: MenuItemType) => ({
+                ...tab,
+                ...headerTab,
+            }));
     }
 
     public handleControlClick(

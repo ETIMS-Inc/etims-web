@@ -10,15 +10,23 @@
     ></p-button>
 </div>
 <div *ngIf="popupItems?.length; else emptyTemplate">
-    <div
-        class="alert-popup__items"
-        *ngFor="let item of popupItems"
+    <p-scrollPanel
+        class="alert-popup__scroll-wrapper"
+        [style]="{
+            width: '100%',
+            height: '100%'
+        }"
     >
-        <ets-preview-item
-            class="alert-popup__item"
-            [item]="item"
-        ></ets-preview-item>
-    </div>
+        <div
+            class="alert-popup__items"
+            *ngFor="let item of popupItems"
+        >
+            <ets-preview-item
+                class="alert-popup__item"
+                [item]="item"
+            ></ets-preview-item>
+        </div>
+    </p-scrollPanel>
 </div>
 
 <ng-template #emptyTemplate>

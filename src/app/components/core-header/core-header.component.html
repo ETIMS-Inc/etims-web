@@ -89,19 +89,27 @@
 
 <p-overlayPanel
     #overlayPanel
-    class="core-header__overlay-panel"
+    [style]="{'width': '366px'}"
 >
-    <ng-container
-        *ngIf="selectedControlType === 'message';
-        then messagePopup;
-        else notificationPopup"
-    ></ng-container>
+    <div class="core-header__overlay-panel">
+        <ng-container
+            *ngIf="selectedControlType === 'message';
+                then messagePopup;
+                else notificationPopup"
+        ></ng-container>
+    </div>
 </p-overlayPanel>
 
 <ng-template #messagePopup>
-    <ets-alert-popup [caption]="'header.popup.caption.messages' | i18next"></ets-alert-popup>
+    <ets-alert-popup
+        [caption]="'header.popup.caption.messages' | i18next"
+        [popupItems]="messageItems"
+    ></ets-alert-popup>
 </ng-template>
 
 <ng-template #notificationPopup>
-    <ets-alert-popup [caption]="'header.popup.caption.notifications' | i18next"></ets-alert-popup>
+    <ets-alert-popup
+        [caption]="'header.popup.caption.notifications' | i18next"
+        [popupItems]="notificationItems"
+    ></ets-alert-popup>
 </ng-template>
