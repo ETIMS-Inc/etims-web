@@ -1,36 +1,14 @@
 <landing-header></landing-header>
-<!--<ets-register-page></ets-register-page>-->
 <div class="route-content">
-    <app-unauthorized></app-unauthorized>
-    <ets-protected></ets-protected>
-<!--    <ets-login-page></ets-login-page>-->
-<!--    <router-outlet></router-outlet>-->
+    <router-outlet></router-outlet>
 </div>
 
-<h2>Authentication with ngrx</h2>
+<!--<h2>Authentication with ngrx</h2>-->
 
-<div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">
-    <button (click)="logout()">Logout</button>
-</div>
-
-<ng-template #noAuth>
-    <button (click)="login()">Login</button>
-</ng-template>
-
-<!--<ets-account-starter-page></ets-account-starter-page>-->
-<!--<ets-account-card></ets-account-card>-->
-
-<!--Temporary solution-->
-<!--<div>-->
-<!--    <span>{{ 'welcome' | i18next }}</span>-->
+<!--<div *ngIf="isAuthenticated$ | async as isAuthenticated; else noAuth">-->
+<!--    <button (click)="logout()">Logout</button>-->
 <!--</div>-->
 
-<!--<div *ngFor="let lang of languages; let i = index">-->
-<!--    <span *ngIf="i !== 0">&nbsp;|&nbsp;</span>-->
-<!--    <a *ngIf="language !== lang" (click)="changeLanguage(lang)">-->
-<!--        {{ lang.toUpperCase() }}-->
-<!--    </a>-->
-<!--    <span *ngIf="language === lang">-->
-<!--        {{ lang.toUpperCase() }}-->
-<!--    </span>-->
-<!--</div>-->
+<!--<ng-template #noAuth>-->
+<!--    <button (click)="login()">Login</button>-->
+<!--</ng-template>-->

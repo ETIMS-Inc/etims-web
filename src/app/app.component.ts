@@ -1,10 +1,15 @@
-import {HttpClient} from "@angular/common/http";
 import {
+    HttpClient,
+    HttpHeaders,
+} from "@angular/common/http";
+import {
+    ChangeDetectorRef,
     Component,
     Inject,
     OnDestroy,
     OnInit,
 } from "@angular/core";
+import {DomSanitizer} from "@angular/platform-browser";
 import {
     select,
     Store,
@@ -20,7 +25,10 @@ import {
     of,
     Subscription,
 } from "rxjs";
-import {catchError} from "rxjs/operators";
+import {
+    catchError,
+    map,
+} from "rxjs/operators";
 import {
     checkAuth,
     login,
@@ -47,12 +55,17 @@ export class AppComponent implements OnInit, OnDestroy {
                 private httpClient: HttpClient,
                 private iconReg: SvgIconRegistryService,
                 private oidcSecurityService: OidcSecurityService,
+                private cdr: ChangeDetectorRef,
+                protected _sanitizer: DomSanitizer,
                 private store: Store<any>) {
     }
 
     public ngOnInit(): void {
         // this.store.dispatch(checkAuth());
         // this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
+        this.oidcSecurityService.getAuthorizeUrl().subscribe((res) => {
+            console.log(res);
+        })
 
         this.oidcSecurityService.checkAuth().subscribe(({ isAuthenticated, userData}) => {
             console.log(isAuthenticated);
@@ -77,16 +90,32 @@ export class AppComponent implements OnInit, OnDestroy {
         });
     }
 
+    public result: any;
+
     login() {
+        let headers = new HttpHeaders()
+        headers=headers.append('content-type','text/html')
+        headers=headers.append('Access-Control-Allow-Origin', '*')
+        headers=headers.append('customer-header', 'custom')
+        const headers123 = new HttpHeaders();
+        headers123.set("Content-Type", "text/html");
+        headers123.set("Accept", "text/html");
         // console.log(window.location.origin);
         // console.log("login clicked");
         // this.store.dispatch(login());
         this.oidcSecurityService.getAuthorizeUrl().subscribe((value) => {
+            // this.result = value;
+
+            this.result = this._sanitizer.bypassSecurityTrustResourceUrl(value);
+            this.cdr.markForCheck();
+            this.cdr.detectChanges();
             console.log(value);
+            const result = value.replace("8081", "4200");
             this.httpClient
-                .get(value, {headers: { 'Sec-Fetch-Mode': 'document' }})
-                .subscribe((result) => {
-                    console.log(result);
+                .get<any>(result, { headers: headers, responseType: "text" as any })
+                .subscribe((result: any) => {
+                    // console.log(result);
+                    // this.result = result;
                 });
         });
         // this.oidcSecurityService.authorize();

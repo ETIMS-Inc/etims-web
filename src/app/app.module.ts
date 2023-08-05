@@ -52,7 +52,7 @@ import {etsReducers} from "./store/reducers";
         AngularSvgIconModule.forRoot(),
         AuthModule.forRoot({
             config: {
-                authority: "http://localhost:8081/realms/etims",
+                authority: "http://192.168.0.104:8081/realms/etims",
                 redirectUrl: window.location.origin,
                 postLogoutRedirectUri: window.location.origin,
                 clientId: "web-ui",
@@ -61,6 +61,7 @@ import {etsReducers} from "./store/reducers";
                 silentRenew: true,
                 useRefreshToken: true,
                 logLevel: LogLevel.Debug,
+                ngswBypass: false,
             },
         }),
         I18NextModule.forRoot(),
