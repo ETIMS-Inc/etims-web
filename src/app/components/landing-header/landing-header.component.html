@@ -5,7 +5,7 @@
                 class="header__icon"
                 name="logo"
             ></svg-icon>
-            <p-tabMenu [model]="primaryNavTabs" [activeItem]="_activeItem" (activeItemChange)="onActiveItemChange($event)"></p-tabMenu>
+            <p-tabMenu [model]="primaryNavTabs" [activeItem]="activeItem" (activeItemChange)="onActiveItemChange($event)"></p-tabMenu>
         </ng-template>
         <ng-template pTemplate="end">
             <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>

@@ -29,7 +29,7 @@ export class LandingHeaderComponent implements OnInit{
     public languages: Language[] = languageList;
     public selectedLanguage: Language;
     public primaryNavTabs: MenuItem[] = primaryNavTabsList;
-    public _activeItem: MenuItem;
+    public activeItem: MenuItem;
     public secondaryNavTabs: HeaderMenuItemType[] = secondaryNavTabsList;
 
     constructor(
@@ -63,7 +63,7 @@ export class LandingHeaderComponent implements OnInit{
     }
 
     public onActiveItemChange(event: MenuItem) {
-        this._activeItem = event;
+        this.activeItem = event;
     }
 
     onLanguageChangeHandler(value: Language) {
