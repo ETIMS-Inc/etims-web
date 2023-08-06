@@ -20,9 +20,9 @@ gulp.task("build-svgs", function () {
             }
 
             const svgExtension = ".svg";
-            const codeSvgNamesList = "export const etsIconList: string[] = [" +
+            const codeSvgNamesList = "export const etsIconList = [" +
                 files.filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
-                "];";
+                "] as const;";
 
             fs.writeFile(iconsListPath, codeSvgNamesList, function (err) {
                 if (err) {
@@ -51,29 +51,4 @@ gulp.task("build-svgs", function () {
             },
         }))
         .pipe(gulp.dest(imageHolderFolder));
-});
-
-gulp.task("get-file-names", function (done) {
-    const directoryPath = "src/assets/images/icons";
-    const iconsListPath = "src/app/components/lib/icon/icons.list.ts";
-
-    fs.readdir(directoryPath, function (err, files) {
-        if (err) {
-            return done(err);
-        }
-
-        const svgExtension = ".svg";
-        const codeSvgNamesList = "export const etsIconList = [" +
-            files.filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
-            "];";
-
-        fs.writeFile(iconsListPath, codeSvgNamesList, function (err) {
-            if (err) {
-                console.error("Icons list doesn't updated.")
-                return done(err);
-            }
-            console.log(`Icons list array was updated in "${iconsListPath}"`);
-            done();
-        });
-    });
 });
