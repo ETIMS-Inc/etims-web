@@ -4,6 +4,7 @@ import {
     HostBinding,
     Input,
 } from "@angular/core";
+import {EtcIconType} from "./icon.model";
 
 @Component({
     selector: "ets-icon",
@@ -13,5 +14,5 @@ import {
 })
 export class IconComponent {
     @HostBinding("class") public hostClass = "ets-icon";
-    @Input() public icon: string;
+    @Input() public icon: EtcIconType;
 }
