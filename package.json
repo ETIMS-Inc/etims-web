@@ -11,8 +11,7 @@
         "stylecheck": "stylelint --formatter verbose \"src/**/*.less\"",
         "stylecheck:format": "stylelint \"src/**/*.less\" --fix",
         "stylecheck:format-precommit": "stylelint \"{git diff --name-only HEAD | grep -E '.less$'}\" --fix",
-        "svg": "gulp build-svgs",
-        "svg:colorless": "gulp build-svgs --colorless"
+        "svg": "gulp build-svgs"
     },
     "private": true,
     "dependencies": {
@@ -53,6 +52,7 @@
         "@angular-eslint/template-parser": "^16.0.3",
         "@angular/cli": "^16.1.3",
         "@angular/compiler-cli": "^16.1.3",
+        "@types/gulp": "^4.0.13",
         "@types/jasmine": "~3.10.0",
         "@types/node": "^12.11.1",
         "@typescript-eslint/eslint-plugin": "5.27.1",
@@ -75,6 +75,7 @@
         "postcss-less": "^6.0.0",
         "stylelint": "^15.10.1",
         "stylelint-config-standard": "^34.0.0",
+        "ts-node": "^10.9.1",
         "typescript": "~5.1.6"
     }
 }

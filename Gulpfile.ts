@@ -7,7 +7,9 @@ const replace = require("gulp-replace");
 const svgSprite = require("gulp-svg-sprites");
 const svgmin = require("gulp-svgmin");
 
-gulp.task("build-svgs", function () {
+type FileError = NodeJS.ErrnoException | null;
+
+gulp.task("build-svgs", () => {
     const imageHolderFolder = "src/app/components/lib/icon/icon-holder";
     const imageHolderTemplateName = "icon-holder.component.html";
     const iconsPath = "src/assets/images/icons/*.svg";
@@ -20,18 +22,18 @@ gulp.task("build-svgs", function () {
 
         const error = () => console.error("Icons list doesn't updated.")
 
-        const writeSvgNamesList = (svgNames) => {
+        const writeSvgNamesList = (svgNames: string[]) => {
             const svgExtension = ".svg";
             const codeSvgNamesList = "export const etsIconList = [" +
                 svgNames.filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
                 "] as const;";
 
-            fs.writeFile(iconsListPath, codeSvgNamesList, (err) =>
+            fs.writeFile(iconsListPath, codeSvgNamesList, (err: FileError) =>
                 err ? error() : console.log(`Icons list array was updated in "${iconsListPath}"`));
         }
 
-        fs.readdir(dirIconsPath, (err, iconsFiles) =>
-            fs.readdir(dirIconsColorfulPath, (errCol, iconsColorfulFiles) =>
+        fs.readdir(dirIconsPath, (err: FileError, iconsFiles: string[]) =>
+            fs.readdir(dirIconsColorfulPath, (errCol: FileError, iconsColorfulFiles: string[]) =>
                 err || errCol ? error() : writeSvgNamesList([
                     ...iconsFiles,
                     ...iconsColorfulFiles,
@@ -39,12 +41,12 @@ gulp.task("build-svgs", function () {
             ));
     }
 
-    function getIcons(iconsPath, removeColors) {
+    const getIcons = (iconsPath: string, removeColors: boolean = false): NodeJS.ReadWriteStream => {
         if (removeColors) {
             // remove redundant "fill", "style" props
             return gulp.src(iconsPath)
                 .pipe(cheerio({
-                    run: function ($) {
+                    run: function ($: any) {
                         $("[fill]").removeAttr("fill");
                         $("[style]").removeAttr("style");
                     },
