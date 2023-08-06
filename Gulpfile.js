@@ -20,30 +20,23 @@ gulp.task("build-svgs", function () {
 
         const error = () => console.error("Icons list doesn't updated.")
 
-        fs.readdir(dirIconsPath, function (err, iconsFiles) {
-            fs.readdir(dirIconsColorfulPath, function (errCol, iconsColorfulFiles) {
-                if (err || errCol) {
-                    error();
-                    return;
-                }
+        const writeSvgNamesList = (svgNames) => {
+            const svgExtension = ".svg";
+            const codeSvgNamesList = "export const etsIconList = [" +
+                svgNames.filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
+                "] as const;";
 
-                const svgExtension = ".svg";
-                const codeSvgNamesList = "export const etsIconList = [" +
-                    [
-                        ...iconsFiles,
-                        ...iconsColorfulFiles,
-                    ].filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
-                    "] as const;";
+            fs.writeFile(iconsListPath, codeSvgNamesList, (err) =>
+                err ? error() : console.log(`Icons list array was updated in "${iconsListPath}"`));
+        }
 
-                fs.writeFile(iconsListPath, codeSvgNamesList, function (err) {
-                    if (err) {
-                        error();
-                        return;
-                    }
-                    console.log(`Icons list array was updated in "${iconsListPath}"`);
-                });
-            });
-        });
+        fs.readdir(dirIconsPath, (err, iconsFiles) =>
+            fs.readdir(dirIconsColorfulPath, (errCol, iconsColorfulFiles) =>
+                err || errCol ? error() : writeSvgNamesList([
+                    ...iconsFiles,
+                    ...iconsColorfulFiles,
+                ]),
+            ));
     }
 
     function getIcons(iconsPath, removeColors) {
