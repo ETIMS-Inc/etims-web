@@ -3,6 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const svgSprite = require("gulp-svg-sprites");
 const svgmin = require("gulp-svgmin");
+const cheerio = require("gulp-cheerio");
+const replace = require("gulp-replace");
 
 gulp.task("build-svgs", function () {
     const imageHolderFolder = "src/app/components/lib/icon/icon-holder";
@@ -74,7 +76,6 @@ gulp.task("build-svgs", function () {
         "sortDefsChildren",
     ]; // to disable: .map(plugin => ({name: plugin, active: false}));
 
-    // NOTE: "cheerio" allows remove fill/style attrs, in this case we should use also "replace('&gt;', '>')" (it's a cheerio bug)
     return gulp.src(iconsPath)
         // minify svg
         .pipe(svgmin({
@@ -88,6 +89,16 @@ gulp.task("build-svgs", function () {
                 ...disabledPlugins,
             ],
         }))
+        // remove redundant(for us) prop
+        .pipe(cheerio({
+            run: function ($) {
+                $('[fill]').removeAttr('fill');
+                // $('[style]').removeAttr('style');
+            },
+            parserOptions: { xmlMode: true }
+        }))
+        // cheerio plugin create unnecessary string '>', so replace it.
+        .pipe(replace('&gt;', '>'))
         // build svg sprite
         .pipe(svgSprite({
             mode: "symbols",
