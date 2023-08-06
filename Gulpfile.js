@@ -14,27 +14,34 @@ gulp.task("build-svgs", function () {
     const iconsColorfulPath = "src/assets/images/icons/colorful/*.svg";
 
     function updateIconsList() {
-        const directoryPath = "src/assets/images/icons";
+        const dirIconsPath = "src/assets/images/icons";
+        const dirIconsColorfulPath = "src/assets/images/icons/colorful";
         const iconsListPath = "src/app/components/lib/icon/icons.list.ts";
 
-        // TODO: read from 2 places
-        fs.readdir(directoryPath, function (err, files) {
-            if (err) {
-                console.error("Icons list doesn't updated.")
-                return;
-            }
+        const error = () => console.error("Icons list doesn't updated.")
 
-            const svgExtension = ".svg";
-            const codeSvgNamesList = "export const etsIconList = [" +
-                files.filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
-                "] as const;";
-
-            fs.writeFile(iconsListPath, codeSvgNamesList, function (err) {
-                if (err) {
-                    console.error("Icons list doesn't updated.")
+        fs.readdir(dirIconsPath, function (err, iconsFiles) {
+            fs.readdir(dirIconsColorfulPath, function (errCol, iconsColorfulFiles) {
+                if (err || errCol) {
+                    error();
                     return;
                 }
-                console.log(`Icons list array was updated in "${iconsListPath}"`);
+
+                const svgExtension = ".svg";
+                const codeSvgNamesList = "export const etsIconList = [" +
+                    [
+                        ...iconsFiles,
+                        ...iconsColorfulFiles,
+                    ].filter(file => path.extname(file) === svgExtension).map(file => `"${file.replace(svgExtension, "")}"`).join(", ") +
+                    "] as const;";
+
+                fs.writeFile(iconsListPath, codeSvgNamesList, function (err) {
+                    if (err) {
+                        error();
+                        return;
+                    }
+                    console.log(`Icons list array was updated in "${iconsListPath}"`);
+                });
             });
         });
     }
