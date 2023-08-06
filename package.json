@@ -10,7 +10,8 @@
         "lint": "ng lint",
         "stylecheck": "stylelint --formatter verbose \"src/**/*.less\"",
         "stylecheck:format": "stylelint \"src/**/*.less\" --fix",
-        "stylecheck:format-precommit": "stylelint \"{git diff --name-only HEAD | grep -E '.less$'}\" --fix"
+        "stylecheck:format-precommit": "stylelint \"{git diff --name-only HEAD | grep -E '.less$'}\" --fix",
+        "svg": "gulp build-svgs"
     },
     "private": true,
     "dependencies": {
@@ -56,6 +57,9 @@
         "@typescript-eslint/eslint-plugin": "5.27.1",
         "@typescript-eslint/parser": "5.27.1",
         "eslint": "^8.17.0",
+        "gulp": "^4.0.2",
+        "gulp-svg-sprites": "^4.1.2",
+        "gulp-svgmin": "^4.1.0",
         "husky": "^8.0.3",
         "jasmine-core": "~4.0.0",
         "karma": "~6.3.0",
