@@ -5,7 +5,10 @@
                 class="header__icon"
                 name="logo"
             ></svg-icon>
-            <p-tabMenu [model]="primaryNavTabs" [activeItem]="_activeItem" (activeItemChange)="onActiveItemChange($event)"></p-tabMenu>
+            <p-tabMenu [activeItem]="_activeItem"
+                       [model]="primaryNavTabs"
+                       (activeItemChange)="onActiveItemChange($event)"
+            ></p-tabMenu>
         </ng-template>
         <ng-template pTemplate="end">
             <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
@@ -27,14 +30,14 @@
     <div class="landing-header__search-box">
         <input
             class="landing-header__search-input"
-            type="text"
             placeholder="Start Looking For Something!"
+            type="text"
         />
         <p-button
             class="landing-header__search-button"
             [icon]="item?.icon"
-            [styleClass]="item?.styleClass"
             [label]="item?.label"
+            [styleClass]="item?.styleClass"
             (onClick)="handleButtonChange(item?.type)"
         ></p-button>
     </div>
@@ -47,13 +50,13 @@
     <p-button
         class="landing-header__button"
         [icon]="item?.icon"
-        [styleClass]="item?.styleClass"
         [label]="item?.label"
+        [styleClass]="item?.styleClass"
         (onClick)="handleButtonChange(item?.type)"
     ></p-button>
     <label
-        class="landing-header__button-label"
         *ngIf="item?.type === 'globe'"
+        class="landing-header__button-label"
     >
         {{ selectedLanguage?.name }}
     </label>
@@ -66,18 +69,17 @@
     <p-scrollPanel [style]="{ width: '100%', height: '150px' }">
         <p-listbox
             [options]="languages"
-            [(ngModel)]="selectedLanguage"
             [style]="{ width: '100%' }"
+            [(ngModel)]="selectedLanguage"
             (onChange)="onLanguageChangeHandler($event.value)"
         >
             <ng-template
-                let-country
                 pTemplate="item"
+                let-country
             >
-                <svg-icon
-                    class="landing-header__language-icon"
-                    [name]="country.icon"
-                ></svg-icon>
+                <ets-icon class="landing-header__language-icon"
+                          [icon]="country.icon"
+                ></ets-icon>
                 <div class="flex align-items-center gap-2">
                     <div>{{ country.name }}</div>
                 </div>

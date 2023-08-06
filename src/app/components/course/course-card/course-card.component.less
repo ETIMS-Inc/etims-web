@@ -1,0 +1,108 @@
+@import "utils";
+
+:host {
+    .shadow-all();
+    border-radius: @default-border-radius;
+    overflow: hidden;
+}
+
+.card {
+    background: @white;
+    height: 100%;
+
+    &-content {
+        .flex-column();
+        flex: 1;
+        padding: @size-sm;
+
+        &__body {
+            .flex-column();
+            flex: 1;
+        }
+
+        &__footer {
+            .flex-row(@size-md);
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+
+            &-progress::ng-deep {
+                flex: 1;
+                max-width: 60%;
+            }
+
+            .course-author {
+                align-items: center;
+                display: flex;
+
+                &__avatar {
+                    .image {
+                        @image-size: 35px;
+                        height: @image-size;
+                        width: @image-size;
+                    }
+                }
+
+                .divider::ng-deep {
+                    .p-divider-vertical {
+                        margin: 0 @size-sm;
+                        padding: @size-sm 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-image {
+        height: 150px;
+        overflow: hidden;
+
+        img {
+            height: 150px;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;
+        }
+    }
+
+    .course-info {
+        .flex-column();
+
+        &__title {
+            .second-title();
+        }
+
+        &__description {
+            .light-text()
+        }
+    }
+}
+
+.full-width-card {
+    display: flex;
+
+    .card-content__body {
+        .flex-row();
+        justify-content: space-between;
+
+        .course-info__description {
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            overflow: hidden;
+        }
+    }
+}
+
+.tile-card {
+    .flex-column(0);
+    min-height: 400px;
+    min-width: 200px;
+
+    .course-info__description {
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 6;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+}

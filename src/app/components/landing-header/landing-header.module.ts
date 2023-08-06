@@ -11,6 +11,7 @@ import {OverlayPanelModule} from "primeng/overlaypanel";
 import {ScrollPanelModule} from "primeng/scrollpanel";
 import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
+import {LibModule} from "../lib/lib.module";
 import {LandingHeaderComponent} from "./landing-header.component";
 import {TabMenuModule} from "primeng/tabmenu";
 
@@ -35,6 +36,7 @@ import {TabMenuModule} from "primeng/tabmenu";
         ListboxModule,
         ScrollPanelModule,
         TabMenuModule,
+        LibModule,
     ],
 })
 export class LandingHeaderModule {
