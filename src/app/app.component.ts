@@ -25,8 +25,4 @@ export class AppComponent implements OnInit {
         this.iconReg.loadSvg("assets/images/icons/colorful/logo.svg", "logo")
             .pipe(untilDestroyed(this))?.subscribe();
     }
-
-    public ngOnDestroy(): void {
-        this.iconRegSubscription?.unsubscribe();
-    }
 }
