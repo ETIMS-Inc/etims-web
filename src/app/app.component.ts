@@ -30,14 +30,14 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     public ngOnInit(): void {
-        this.iconReg.loadSvg("assets/images/icons/logo.svg", "logo")?.subscribe();
+        this.iconReg.loadSvg("assets/images/icons/colorful/logo.svg", "logo")?.subscribe();
         this.iconReg.loadSvg("assets/images/icons/global.svg", "global")?.subscribe();
         this.iconReg.loadSvg("assets/images/icons/search.svg", "search")?.subscribe();
         this.iconReg.loadSvg("assets/images/icons/dark-mode.svg", "dark-mode")?.subscribe();
         this.iconReg.loadSvg("assets/images/icons/white-mode.svg", "white-mode")?.subscribe();
-        this.iconReg.loadSvg("assets/images/icons/english.svg", "english")?.subscribe();
-        this.iconReg.loadSvg("assets/images/icons/germany.svg", "germany")?.subscribe();
-        this.iconReg.loadSvg("assets/images/icons/ukraine.svg", "ukraine")?.subscribe();
+        this.iconReg.loadSvg("assets/images/icons/colorful/english.svg", "english")?.subscribe();
+        this.iconReg.loadSvg("assets/images/icons/colorful/germany.svg", "germany")?.subscribe();
+        this.iconReg.loadSvg("assets/images/icons/colorful/ukraine.svg", "ukraine")?.subscribe();
 
         this.i18NextService.events.initialized.subscribe((e) => {
             if (e) {
