@@ -61,7 +61,7 @@ gulp.task("build-svgs", () => {
 
     updateIconsList();
 
-    const disabledPlugins = [
+    const plugins = [
         "cleanupAttrs",
         "cleanupEnableBackground",
         "cleanupNumericValues",
@@ -108,9 +108,7 @@ gulp.task("build-svgs", () => {
                 pretty: true,
                 indent: 2,
             },
-            plugins: [
-                ...disabledPlugins,
-            ],
+            plugins, // enable all
         }))
         // build svg sprite
         .pipe(svgSprite({
