@@ -43,7 +43,7 @@ gulp.task("build-svgs", () => {
 
     const getIcons = (iconsPath: string, removeColors: boolean = false): NodeJS.ReadWriteStream => {
         if (removeColors) {
-            // remove redundant "fill", "style" props
+            // here remove redundant "fill", "style" attrs
             return gulp.src(iconsPath)
                 .pipe(cheerio({
                     run: function ($: any) {
@@ -52,6 +52,9 @@ gulp.task("build-svgs", () => {
                     },
                     parserOptions: {xmlMode: true},
                 }))
+                // cheerio plugin create unnecessary string '>', so replace it.
+                .pipe(replace("&gt;", ">"))
+
         }
         return gulp.src(iconsPath);
     }
@@ -109,8 +112,6 @@ gulp.task("build-svgs", () => {
                 ...disabledPlugins,
             ],
         }))
-        // cheerio plugin create unnecessary string '>', so replace it.
-        .pipe(replace("&gt;", ">"))
         // build svg sprite
         .pipe(svgSprite({
             mode: "symbols",
