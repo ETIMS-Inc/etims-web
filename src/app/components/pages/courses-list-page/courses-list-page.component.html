@@ -28,32 +28,16 @@
         </div>
     </div>
 
-    <p-tabMenu class="courses-menu"
-               [activeItem]="activeTab"
-               [model]="tabs"
-               (activeItemChange)="onActiveItemChange($event)"
-    >
-        <ng-template pTemplate="item"
-                     let-item
-        >
+    <p-tabMenu class="courses-menu" [model]="tabs" [activeItem]="activeTab" (activeItemChange)="onActiveItemChange($event)">
+        <ng-template pTemplate="item" let-item>
             {{item.label}} {{item.courses?.length && "(" + item.courses.length + ")"}}
         </ng-template>
     </p-tabMenu>
     <ng-container *ngIf="!activeTab.courses?.length else courses">
-        <ets-empty-content [message]="'label.you.have.not.added.courses.to.category' | i18next"
-                           [title]="'title.empty.here' | i18next"
-        ></ets-empty-content>
+        <ets-empty-content [title]="'title.empty.here' | i18next" [message]="'label.you.have.not.added.courses.to.category' | i18next"></ets-empty-content>
     </ng-container>
     <ng-template #courses>
-        <div class="courses-list" [ngClass]="{
-            'tile': currentMode.mode === courseCardDisplayMode.TILE,
-            'full-width': currentMode.mode === courseCardDisplayMode.FULL_WIDTH,
-        }">
-            <ng-container *ngFor="let course of activeTab.courses">
-                <ets-course-card [card]="course"
-                                 [mode]="currentMode.mode"
-                ></ets-course-card>
-            </ng-container>
-        </div>
+        <h1>Courses List</h1>
+        <ng-container *ngFor="let course of activeTab.courses">{{course | json}}</ng-container>
     </ng-template>
 </div>

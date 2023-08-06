@@ -21,8 +21,21 @@ export class AppComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        // TODO: remove SvgIconRegistryService and the corresponding dependency
         this.iconReg.loadSvg("assets/icons/logo.svg", "logo")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/global.svg", "global")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/search.svg", "search")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/dark-mode.svg", "dark-mode")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/white-mode.svg", "white-mode")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/flags/english.svg", "english")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/flags/germany.svg", "germany")
+            .pipe(untilDestroyed(this))?.subscribe();
+        this.iconReg.loadSvg("assets/icons/flags/ukraine.svg", "ukraine")
             .pipe(untilDestroyed(this))?.subscribe();
     }
 }
