@@ -5,6 +5,7 @@ const svgSprite = require("gulp-svg-sprites");
 const svgmin = require("gulp-svgmin");
 const cheerio = require("gulp-cheerio");
 const replace = require("gulp-replace");
+const gulpUtil = require('gulp-util');
 
 gulp.task("build-svgs", function () {
     const imageHolderFolder = "src/app/components/lib/icon/icon-holder";
@@ -92,8 +93,10 @@ gulp.task("build-svgs", function () {
         // remove redundant(for us) prop
         .pipe(cheerio({
             run: function ($) {
-                $('[fill]').removeAttr('fill');
-                // $('[style]').removeAttr('style');
+                if (gulpUtil.env.colorless) {
+                    $('[fill]').removeAttr('fill');
+                    $('[style]').removeAttr('style');
+                }
             },
             parserOptions: { xmlMode: true }
         }))
