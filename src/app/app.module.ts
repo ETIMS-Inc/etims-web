@@ -17,6 +17,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 import {CoreHeaderModule} from "./components/core-header/core-header.module";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
+import {IconLazyHolderModule} from "./components/lib/icon/icon-lazy-holder/icon-lazy-holder.module";
 import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
@@ -50,6 +51,7 @@ import {etsReducers} from "./store/reducers";
         RecoverPasswordPageModule,
         LandingHeaderModule,
         CoreHeaderModule,
+        IconLazyHolderModule,
     ],
     exports: [
         RouterModule,

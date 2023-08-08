@@ -3,6 +3,8 @@
     else landingHeader"
 ></ng-container>
 
+<ets-icon-lazy-holder></ets-icon-lazy-holder>
+
 <div class="route-content">
     <router-outlet></router-outlet>
 </div>
@@ -14,21 +16,3 @@
 <ng-template #coreHeader>
     <ets-core-header></ets-core-header>
 </ng-template>
-
-<!--<ets-account-starter-page></ets-account-starter-page>-->
-<!--<ets-account-card></ets-account-card>-->
-
-<!--Temporary solution-->
-<!--<div>-->
-<!--    <span>{{ 'welcome' | i18next }}</span>-->
-<!--</div>-->
-
-<!--<div *ngFor="let lang of languages; let i = index">-->
-<!--    <span *ngIf="i !== 0">&nbsp;|&nbsp;</span>-->
-<!--    <a *ngIf="language !== lang" (click)="changeLanguage(lang)">-->
-<!--        {{ lang.toUpperCase() }}-->
-<!--    </a>-->
-<!--    <span *ngIf="language === lang">-->
-<!--        {{ lang.toUpperCase() }}-->
-<!--    </span>-->
-<!--</div>-->
