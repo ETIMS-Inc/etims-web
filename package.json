@@ -31,7 +31,6 @@
         "@ngrx/store-devtools": "^16.0.1",
         "@types/tinycolor2": "^1.4.3",
         "angular-i18next": "^16.0.0",
-        "angular-svg-icon": "13.0.0",
         "i18next": "^22.4.11",
         "i18next-browser-languagedetector": "^7.0.1",
         "i18next-locize-backend": "^6.2.1",

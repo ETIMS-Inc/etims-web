@@ -25,14 +25,10 @@ export class AppComponent implements OnInit, OnDestroy {
     public title = "etims-web";
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
-    constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService,
-                private iconReg: SvgIconRegistryService) {
+    constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService) {
     }
 
     public ngOnInit(): void {
-        // TODO: remove SvgIconRegistryService and the corresponding dependency
-        this.iconReg.loadSvg("assets/images/icons/colorful/logo.svg", "logo")?.subscribe();
-
         this.i18NextService.events.initialized.subscribe((e) => {
             if (e) {
                 this.updateState(this.i18NextService.language);
