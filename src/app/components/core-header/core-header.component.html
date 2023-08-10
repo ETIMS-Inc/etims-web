@@ -6,7 +6,7 @@
         <ng-template pTemplate="end">
             <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
             <ng-container *ngFor="let item of tabsList">
-                <ng-container *ngTemplateOutlet="item?.type === 'avatar'
+                <ng-container *ngTemplateOutlet="item?.type === buttonType.avatar
                     ? avatarTemplate
                     : buttonTemplate;
                     context: { item: item }"
@@ -21,10 +21,10 @@
         <span class="p-input-icon-left">
             <i class="pi pi-search"></i>
             <input
-                pInputText
-                class="core-header__search-input"
-                type="text"
                 [placeholder]="'header.search' | i18next"
+                class="core-header__search-input"
+                pInputText
+                type="text"
             />
         </span>
     </div>
@@ -35,25 +35,19 @@
     let-item="item"
 >
     <div
-        pBadge
-        class="core-header__badge"
         *ngIf="item?.amount"
-        [value]="item.amount"
         [severity]="item.severity"
+        [value]="item.amount"
+        class="core-header__badge"
+        pBadge
     >
         <p-button
-            class="core-header__button"
-            [styleClass]="item?.styleClass"
             (onClick)="handleControlClick($event, targetOverlay, item)"
+            [styleClass]="item?.styleClass"
+            class="core-header__button"
         >
             <div #targetOverlay>
-                <svg-icon
-                    [name]="item?.icon"
-                    [svgStyle]="{
-                        'width.px': 24,
-                        'height.px': 24
-                    }"
-                ></svg-icon>
+                <ets-icon [icon]="item?.icon"></ets-icon>
             </div>
         </p-button>
     </div>
@@ -64,15 +58,15 @@
     let-item="item"
 >
     <p-button
-        class="core-header__avatar-wrapper"
-        [styleClass]="item?.styleClass"
         (click)="menu.toggle($event)"
+        [styleClass]="item?.styleClass"
+        class="core-header__avatar-wrapper"
     >
         <p-avatar
-            class="core-header__avatar-image"
-            size="large"
-            shape="circle"
             [image]="item?.avatar"
+            class="core-header__avatar-image"
+            shape="circle"
+            size="large"
         ></p-avatar>
         <span class="core-header__avatar-caption">
             {{ item?.caption }}
@@ -82,9 +76,9 @@
 
 <p-menu
     #menu
-    class="core-header__user-menu"
     [model]="userMenuItems"
     [popup]="true"
+    class="core-header__user-menu"
 ></p-menu>
 
 <p-overlayPanel
@@ -93,7 +87,7 @@
 >
     <div class="core-header__overlay-panel">
         <ng-container
-            *ngIf="selectedControlType === 'message';
+            *ngIf="selectedControlType === buttonType.message;
                 then messagePopup;
                 else notificationPopup"
         ></ng-container>

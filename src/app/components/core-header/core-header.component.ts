@@ -30,6 +30,7 @@ export class CoreHeaderComponent implements OnInit {
     @ViewChild("overlayPanel", {static: true})
     public overlayPanel: OverlayPanel;
 
+    public buttonType = ButtonType;
     public selectedControlType: ButtonType;
     public tabsList: MenuItemType[] = navTabsList;
     public readonly userMenuItems: MenuItem[] = userMenuList;

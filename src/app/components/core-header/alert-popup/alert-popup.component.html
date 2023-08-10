@@ -4,26 +4,26 @@
     </span>
     <p-button
         *ngIf="popupItems?.length"
-        styleClass="p-button-link"
-        class="alert-popup__header-redirect"
         [label]="'header.popup.see.all' | i18next"
+        class="alert-popup__header-redirect"
+        styleClass="p-button-link"
     ></p-button>
 </div>
 <div *ngIf="popupItems?.length; else emptyTemplate">
     <p-scrollPanel
-        class="alert-popup__scroll-wrapper"
         [style]="{
             width: '100%',
             height: '100%'
         }"
+        class="alert-popup__scroll-wrapper"
     >
         <div
-            class="alert-popup__items"
             *ngFor="let item of popupItems"
+            class="alert-popup__items"
         >
             <ets-preview-item
-                class="alert-popup__item"
                 [item]="item"
+                class="alert-popup__item"
             ></ets-preview-item>
         </div>
     </p-scrollPanel>

@@ -16,11 +16,9 @@
             font-weight: 600;
         }
 
-        &-redirect {
-            ::ng-deep .p-button.p-button-link {
-                padding: @size-xs;
-                color: @blue-bright-navy;
-            }
+        &-redirect::ng-deep .p-button.p-button-link {
+            padding: @size-xs;
+            color: @blue-bright-navy;
         }
     }
 
@@ -43,17 +41,15 @@
         color: @gray-light;
     }
 
-    &__scroll-wrapper {
-        ::ng-deep {
-            .p-scrollpanel-content {
-                padding: 0;
-            }
+    &__scroll-wrapper::ng-deep {
+        .p-scrollpanel-content {
+            padding: 0;
+        }
 
-            .p-scrollpanel .p-scrollpanel-bar {
-                width: @size-xxs-xs;
-                margin-left: @size-xxs + @size-xs-sm;
-                background: @gray-light;
-            }
+        .p-scrollpanel .p-scrollpanel-bar {
+            width: @size-xxs-xs;
+            margin-left: @size-xxs + @size-xs-sm;
+            background: @gray-light;
         }
     }
 }

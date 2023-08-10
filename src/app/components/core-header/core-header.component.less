@@ -92,17 +92,17 @@
         }
     }
 
-    &__user-menu {
-        ::ng-deep .p-menu {
+    &__user-menu::ng-deep {
+        .p-menu {
             width: @avatar-btn-width;
         }
 
-        ::ng-deep .p-menu.p-menu-overlay {
+        .p-menu.p-menu-overlay {
             margin-top: @size-xs;
             border-radius: @size-xs-sm;
         }
 
-        ::ng-deep .p-menu ul {
+        .p-menu ul {
             margin-top: @size-xs;
         }
     }
@@ -110,10 +110,10 @@
     &__overlay-panel {
         .p-overlaypanel {
             border-radius: @size-sm;
-        }
 
-        .p-overlaypanel .p-overlaypanel-content {
-            padding-top: @size-xs-sm;
+            .p-overlaypanel-content {
+                padding-top: @size-xs-sm;
+            }
         }
     }
 

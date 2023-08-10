@@ -1,9 +1,10 @@
 import {MenuItem} from "primeng/api";
 
-export type ButtonType =
-    | "message"
-    | "notification"
-    | "avatar";
+export enum ButtonType {
+    avatar,
+    message,
+    notification,
+}
 
 export type BadgeSeverity =
     | "info"
@@ -20,19 +21,19 @@ export const navTabsList: MenuItemType[] = [
     {
         icon: "message",
         styleClass: "p-button-rounded p-button-text",
-        type: "message",
+        type: ButtonType.message,
         severity: "danger",
     },
     {
         icon: "bell",
         styleClass: "p-button-rounded p-button-text",
-        type: "notification",
+        type: ButtonType.notification,
         severity: "info",
     },
     {
         icon: "avatar",
         styleClass: "p-button-outlined p-button-secondary",
-        type: "avatar",
+        type: ButtonType.avatar,
     },
 ];
 

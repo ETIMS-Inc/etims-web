@@ -26,9 +26,9 @@
 
 <ng-template #statusBadgeTemp>
     <div
-        pBadge
-        class="preview-item__avatar"
         [severity]="item?.userStatus | previewStatus"
+        class="preview-item__avatar"
+        pBadge
     >
         <ng-container *ngTemplateOutlet="avatar"></ng-container>
     </div>
@@ -36,9 +36,9 @@
 
 <ng-template #avatar>
     <p-avatar
+        [image]="item?.image"
         [label]="item?.label"
         [shape]="item?.shape"
-        [image]="item?.image"
     ></p-avatar>
 </ng-template>
 

@@ -14,14 +14,14 @@
     border-radius: @size-sm;
     background-color: @blue-alice;
 
-    &__avatar {
-        ::ng-deep .p-avatar {
+    &__avatar::ng-deep {
+        .p-avatar {
             width: @default-control-width;
             height: @default-control-height;
             margin: @size-sm;
         }
 
-        ::ng-deep .p-badge {
+        .p-badge {
             top: @size-sm + @size-xs-lg;
             right: @size-xxs + @size-xs-sm;
         }
