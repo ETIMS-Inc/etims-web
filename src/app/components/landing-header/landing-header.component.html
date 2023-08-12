@@ -5,9 +5,10 @@
                 class="header__icon"
                 name="logo"
             ></svg-icon>
-            <p-tabMenu [activeItem]="_activeItem"
-                       [model]="primaryNavTabs"
-                       (activeItemChange)="onActiveItemChange($event)"
+            <p-tabMenu
+                [activeItem]="_activeItem"
+                [model]="primaryNavTabs"
+                (activeItemChange)="onActiveItemChange($event)"
             ></p-tabMenu>
         </ng-template>
         <ng-template pTemplate="end">
@@ -30,7 +31,7 @@
     <div class="landing-header__search-box">
         <input
             class="landing-header__search-input"
-            placeholder="Start Looking For Something!"
+            [placeholder]="'header.search' | i18next"
             type="text"
         />
         <p-button

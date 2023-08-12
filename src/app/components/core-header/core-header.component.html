@@ -1,0 +1,109 @@
+<div class="core-header">
+    <p-menubar>
+        <ng-template pTemplate="start">
+            <svg-icon name="logo"></svg-icon>
+        </ng-template>
+        <ng-template pTemplate="end">
+            <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
+            <ng-container *ngFor="let item of tabsList">
+                <ng-container *ngTemplateOutlet="item?.type === buttonType.avatar
+                    ? avatarTemplate
+                    : buttonTemplate;
+                    context: { item: item }"
+                ></ng-container>
+            </ng-container>
+        </ng-template>
+    </p-menubar>
+</div>
+
+<ng-template #searchTemplate>
+    <div class="core-header__search-box">
+        <span class="p-input-icon-left">
+            <i class="pi pi-search"></i>
+            <input
+                [placeholder]="'header.search' | i18next"
+                class="core-header__search-input"
+                pInputText
+                type="text"
+            />
+        </span>
+    </div>
+</ng-template>
+
+<ng-template
+    #buttonTemplate
+    let-item="item"
+>
+    <div
+        *ngIf="item?.amount"
+        [severity]="item.severity"
+        [value]="item.amount"
+        class="core-header__badge"
+        pBadge
+    >
+        <p-button
+            (onClick)="handleControlClick($event, targetOverlay, item)"
+            [styleClass]="item?.styleClass"
+            class="core-header__button"
+        >
+            <div #targetOverlay>
+                <ets-icon [icon]="item?.icon"></ets-icon>
+            </div>
+        </p-button>
+    </div>
+</ng-template>
+
+<ng-template
+    #avatarTemplate
+    let-item="item"
+>
+    <p-button
+        (click)="menu.toggle($event)"
+        [styleClass]="item?.styleClass"
+        class="core-header__avatar-wrapper"
+    >
+        <p-avatar
+            [image]="item?.avatar"
+            class="core-header__avatar-image"
+            shape="circle"
+            size="large"
+        ></p-avatar>
+        <span class="core-header__avatar-caption">
+            {{ item?.caption }}
+        </span>
+    </p-button>
+</ng-template>
+
+<p-menu
+    #menu
+    [model]="userMenuItems"
+    [popup]="true"
+    class="core-header__user-menu"
+></p-menu>
+
+<p-overlayPanel
+    #overlayPanel
+    [style]="{'width': '366px'}"
+>
+    <div class="core-header__overlay-panel">
+        <ng-container
+            *ngIf="selectedControlType === buttonType.message;
+                then messagePopup;
+                else notificationPopup"
+        ></ng-container>
+    </div>
+</p-overlayPanel>
+
+<ng-template #messagePopup>
+    <ets-alert-popup
+        [caption]="'header.popup.caption.messages' | i18next"
+        [popupItems]="messageItems"
+    ></ets-alert-popup>
+</ng-template>
+
+<ng-template #notificationPopup>
+    <ets-alert-popup
+        [caption]="'header.popup.caption.notifications' | i18next"
+        [popupItems]="notificationItems"
+    ></ets-alert-popup>
+</ng-template>

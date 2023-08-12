@@ -1,0 +1,98 @@
+@import "colors";
+@import "vars";
+
+@item-popup-width: 326px;
+@content-width: 260px;
+
+:host {
+    cursor: pointer;
+}
+
+.preview-item {
+    display: flex;
+    width: @item-popup-width;
+    border-radius: @size-sm;
+    background-color: @blue-alice;
+
+    &__avatar::ng-deep {
+        .p-avatar {
+            width: @default-control-width;
+            height: @default-control-height;
+            margin: @size-sm;
+        }
+
+        .p-badge {
+            top: @size-sm + @size-xs-lg;
+            right: @size-xxs + @size-xs-sm;
+        }
+    }
+
+    &__content {
+        &-description {
+            width: @content-width;
+            margin-left: @size-xs;
+            color: @gray-suva;
+            font-size: 12px;
+            font-weight: 400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: @size-xxs-xs @size-xxs-xs @size-xxs-xs @size-xs;
+        }
+
+        &-time {
+            color: @gray-suva;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        &-user {
+            color: @black;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    &__status {
+        &-wrapper {
+            width: @content-width;
+            display: flex;
+            justify-content: space-between;
+            margin-left: @size-xs;
+        }
+
+        &-description {
+            color: @gray-suva;
+            font-size: 12px;
+            font-weight: 400;
+            white-space: nowrap;
+            width: 182px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        &-item {
+            margin-right: @size-xs;
+            font-size: 12px;
+            font-weight: 700;
+
+            &._orange {
+                color: @orange;
+            }
+
+            &._red {
+                color: @red;
+            }
+
+            &._green {
+                color: @green;
+            }
+        }
+    }
+}

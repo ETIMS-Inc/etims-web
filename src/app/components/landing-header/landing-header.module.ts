@@ -14,6 +14,7 @@ import {ToolbarModule} from "primeng/toolbar";
 import {LibModule} from "../lib/lib.module";
 import {LandingHeaderComponent} from "./landing-header.component";
 import {TabMenuModule} from "primeng/tabmenu";
+import {I18NextModule} from "angular-i18next";
 
 @NgModule({
     declarations: [
@@ -37,6 +38,7 @@ import {TabMenuModule} from "primeng/tabmenu";
         ScrollPanelModule,
         TabMenuModule,
         LibModule,
+        I18NextModule,
     ],
 })
 export class LandingHeaderModule {
