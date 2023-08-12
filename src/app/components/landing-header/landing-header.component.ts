@@ -17,7 +17,7 @@ import {
 import {LandingHeaderService} from "./landing-header.service";
 
 @Component({
-    selector: "landing-header",
+    selector: "ets-landing-header",
     templateUrl: "./landing-header.component.html",
     styleUrls: ["./landing-header.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,

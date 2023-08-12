@@ -1,4 +1,5 @@
 import {
+    ChangeDetectionStrategy,
     Component,
     Input,
 } from "@angular/core";
@@ -9,9 +10,10 @@ export enum EmptyImage {
 }
 
 @Component({
-  selector: 'ets-empty-content',
-  templateUrl: './empty-content.component.html',
-  styleUrls: ['./empty-content.component.less']
+    selector: "ets-empty-content",
+    templateUrl: "./empty-content.component.html",
+    styleUrls: ["./empty-content.component.less"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmptyContentComponent {
     @Input() public title: string;

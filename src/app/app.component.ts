@@ -9,7 +9,10 @@ import {
     ITranslationService,
 } from "angular-i18next";
 import {SvgIconRegistryService} from "angular-svg-icon";
-import {Subscription} from "rxjs";
+import {
+    BehaviorSubject,
+    Subscription,
+} from "rxjs";
 
 @Component({
     selector: "app-root",
@@ -23,6 +26,7 @@ export class AppComponent implements OnInit, OnDestroy {
         "de",
     ];
     public title = "etims-web";
+    public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
     private iconRegSubscription: Subscription | undefined = new Subscription();
 
     constructor(@Inject(I18NEXT_SERVICE) private i18NextService: ITranslationService,
