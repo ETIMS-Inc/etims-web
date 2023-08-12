@@ -2,6 +2,10 @@ import {
     ChangeDetectionStrategy,
     Component,
 } from "@angular/core";
+import {
+    DetailsTabPanel,
+    tabPanels,
+} from "./course-details-overview.model";
 
 @Component({
     selector: "ets-course-details-overview",
@@ -11,4 +15,5 @@ import {
 })
 export class CourseDetailsOverviewComponent {
 
+    public tabPanels: DetailsTabPanel[] = tabPanels;
 }

@@ -1,0 +1,52 @@
+.course-details-metrics {
+    ::ng-deep {
+        .p-card-content {
+            padding: 0;
+        }
+
+        .p-card .p-card-body {
+            padding: 0;
+        }
+
+        .p-card {
+            border-radius: 12px;
+        }
+    }
+
+    &__purchase, &__control {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__purchase {
+        padding: 24px 32px;
+        background-color: #D1D6E3;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
+    }
+
+    &__price {
+        display: flex;
+
+        &-discount, &-section, &-caption {
+            display: flex;
+        }
+
+        &-discount {
+            --ets-icon-color: red;
+        }
+
+        &-section {
+            margin-bottom: 32px;
+            justify-content: space-between;
+        }
+
+        &._old {
+            text-decoration: line-through;
+        }
+
+        &._new {
+
+        }
+    }
+}
