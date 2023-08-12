@@ -1,0 +1,14 @@
+<div class="course-details-header__wrapper">
+    <div class="course-details-header__caption">
+        Programming for beginners in Python
+    </div>
+    <div class="course-details-header__controls">
+        <p-button
+            *ngFor="let item of detailControls"
+            class="course-details-header__controls-item"
+            [icon]="item?.icon"
+            [styleClass]="item?.styleClass"
+            (onClick)="handleControlsChange(item?.type)"
+        ></p-button>
+    </div>
+</div>
