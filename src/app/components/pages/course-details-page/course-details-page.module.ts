@@ -8,6 +8,7 @@ import {CourseDetailsPageRoutingModule} from "./course-details-page-routing.modu
 import {CourseDetailsPageComponent} from "./course-details-page.component";
 import {CourseDetailsOverviewModule} from "../../course-details/course-details-overview/course-details-overview.module";
 import {CourseDetailsMetricsModule} from "../../course-details/course-details-metrics/course-details-metrics.module";
+import {CourseDetailsCatalogModule} from "../../course-details/course-details-catalog/course-details-catalog.module";
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import {CourseDetailsMetricsModule} from "../../course-details/course-details-me
         CourseDetailsMetricsModule,
         CourseDetailsAttributesModule,
         CourseDetailsPreviewMediaModule,
+        CourseDetailsCatalogModule,
     ],
 })
 export class CourseDetailsPageModule {
