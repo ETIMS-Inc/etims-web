@@ -1,1 +1,40 @@
-<p>home-page works!</p>
+<div class="home-page">
+    <div class="home-page__welcoming">
+        <div class="home-page__welcoming-caption">
+            {{"home.page.caption" | i18next}}
+        </div>
+        <div class="home-page__welcoming-description">
+            {{"home.page.description" | i18next}}
+        </div>
+        <div class="home-page__welcoming-controls">
+            <p-button
+                class="home-page__welcoming-controls-item"
+                [label]="'home.page.get.started' | i18next"
+                (onClick)="handleStartedChange()"
+            ></p-button>
+            <p-button
+                class="home-page__welcoming-controls-item"
+                [label]="'home.page.request.demo' | i18next"
+                (onClick)="handleDemoChange()"
+            ></p-button>
+        </div>
+    </div>
+    <div class="home-page__preview">
+        <p-galleria
+            class="home-page__preview-galleria"
+            [showIndicators]="true"
+            [showThumbnails]="false"
+            [value]="images"
+        >
+            <ng-template
+                let-item
+                pTemplate="item"
+            >
+                <img
+                    class="home-page__preview-img"
+                    [src]="item.itemImageSrc"
+                />
+            </ng-template>
+        </p-galleria>
+    </div>
+</div>

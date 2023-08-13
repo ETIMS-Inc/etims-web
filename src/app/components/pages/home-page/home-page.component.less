@@ -1,1 +1,65 @@
-/* stylelint-disable no-empty-source */
+@import "vars";
+@import "colors";
+
+@preview-img-width: 542px;
+@preview-img-height: 352px;
+
+:host {
+    display: block;
+    height: calc(100vh - @header-height);
+    background: linear-gradient(180deg, @lavender-blush 0%, @blue-very-pale 100%);
+}
+
+.home-page {
+    position: relative;
+    top: 25%;
+    display: flex;
+    margin: 0 (@size-xs + @size-xl);
+
+    &__welcoming {
+        margin-top: 6vh;
+        margin-right: 8vh;
+
+        &-caption {
+            width: 75%;
+            margin-bottom: @size-xxs-md;
+            color: @blue-navy;
+            font-size: 50px;
+            font-weight: 300;
+        }
+
+        &-caption::first-letter {
+            font-weight: 400;
+        }
+
+        &-description {
+            text-align: justify;
+            color: @gray-light-stale;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: (@size-xs + @size-sm-md);
+            letter-spacing: 0.45px;
+        }
+
+        &-controls {
+            margin-top: @size-sm-md;
+
+            &-item {
+                margin-right: @size-sm-md;
+
+                ::ng-deep .p-button {
+                    border-radius: @size-xs-sm;
+                }
+            }
+        }
+    }
+
+    &__preview {
+        &-img {
+            display: block;
+            width: @preview-img-width;
+            height: @preview-img-height;
+            border-radius: @size-lg;
+        }
+    }
+}

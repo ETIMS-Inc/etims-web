@@ -20,6 +20,10 @@
         "text.send.password": "Enter your <strong> username </strong> or <strong> email password </strong> and we'll send you an email with your username and a link to reset your password.",
         "text.success.recover": "We have sent you an email to your <strong>{{ email }}</strong> email account with the instructions to recover your password.",
         "title.empty.here": "It's empty here",
-        "title.page.courses": "Courses"
+        "title.page.courses": "Courses",
+        "home.page.caption": "Educative Ticketing Management System",
+        "home.page.description": "The system is intended to control learning process. Register right now and get free access to perform eLearning process with ETIMS LMS. You will get access to create projects and to be participants of them, assign tasks to your students or coworkers and lots of other stuff.",
+        "home.page.get.started": "Get started",
+        "home.page.request.demo": "Request a demo"
     }
 }

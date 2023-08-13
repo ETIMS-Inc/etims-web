@@ -4,7 +4,10 @@ import {
     RouterModule,
     Routes,
 } from "@angular/router";
+import {I18NextModule} from "angular-i18next";
+import {ButtonModule} from "primeng/button";
 import {HomePageComponent} from "./home-page.component";
+import {GalleriaModule} from "primeng/galleria";
 
 const routes: Routes = [
     {path: "", component: HomePageComponent},
@@ -17,6 +20,9 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
+        GalleriaModule,
+        ButtonModule,
+        I18NextModule,
     ],
 })
 export class HomePageModule {
