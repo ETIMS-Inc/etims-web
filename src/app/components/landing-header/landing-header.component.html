@@ -30,7 +30,7 @@
     <div class="landing-header__search-box">
         <input
             class="landing-header__search-input"
-            placeholder="Start Looking For Something!"
+            [placeholder]="'header.search' | i18next"
             type="text"
         />
         <p-button
@@ -71,7 +71,6 @@
             [options]="languages"
             [style]="{ width: '100%' }"
             [(ngModel)]="selectedLanguage"
-            (onChange)="onLanguageChangeHandler($event.value)"
         >
             <ng-template
                 pTemplate="item"
