@@ -1,7 +1,9 @@
 <div class="landing-header">
     <p-menubar>
         <ng-template pTemplate="start">
-            <ets-icon [icon]="'logo-little-bg'"></ets-icon>
+            <ets-icon [icon]="'logo'"
+                      [viewBox]="'0 0 2 1'"
+            ></ets-icon>
             <p-tabMenu [activeItem]="_activeItem"
                        [model]="primaryNavTabs"
                        (activeItemChange)="onActiveItemChange($event)"
