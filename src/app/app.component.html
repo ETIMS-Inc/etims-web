@@ -1,5 +1,18 @@
-<landing-header></landing-header>
+<ng-container *ngIf="(isLoggedIn$ | async);
+    then coreHeader;
+    else landingHeader"
+></ng-container>
+
 <ets-icon-lazy-holder></ets-icon-lazy-holder>
+
 <div class="route-content">
     <router-outlet></router-outlet>
 </div>
+
+<ng-template #landingHeader>
+    <ets-landing-header></ets-landing-header>
+</ng-template>
+
+<ng-template #coreHeader>
+    <ets-core-header></ets-core-header>
+</ng-template>

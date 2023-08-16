@@ -1,0 +1,123 @@
+@import "vars";
+@import "colors";
+@import "utils";
+
+@avatar-btn-height: 52px;
+@avatar-btn-width: 196px;
+
+:host {
+    position: sticky;
+    width: 100%;
+}
+
+::ng-deep .core-header {
+    .shadow-bottom();
+
+    &__avatar {
+        &-wrapper {
+            margin-left: @size-xs-sm;
+
+            ::ng-deep .p-button.p-button-outlined {
+                width: @avatar-btn-width;
+                height: @avatar-btn-height;
+                padding: @size-xxs-xs @size-xxs-xs @size-xxs-xs @size-xxs;
+                border-radius: @size-xl;
+            }
+        }
+
+        &-caption {
+            margin-left: @size-sm;
+            font-size: 16px;
+            font-weight: 700;
+            color: @blue-bright-navy;
+        }
+
+        &-image {
+            ::ng-deep .p-avatar img {
+                padding: @size-xxs;
+                margin-top: @size-xxs;
+            }
+        }
+    }
+
+    &__search {
+        &-box {
+            margin-right: @size-xs-sm;
+        }
+
+        &-input {
+            border-radius: @size-xs-sm;
+            color: @gray-76;
+        }
+    }
+
+    .p-menubar {
+        border: none;
+        padding-left: @size-sm-md;
+        padding-right: @size-sm-md;
+        background-color: @white;
+
+        &-start {
+            display: flex;
+            gap: @size-sm;
+            margin: @size-xs @size-sm-md 0 @size-xs-sm;
+            align-items: center;
+            cursor: pointer;
+
+            .p-menuitem-text {
+                color: @second-text-color;
+            }
+        }
+
+        &-end {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__badge {
+        margin-top: @size-xs;
+        margin-right: @size-xs-sm;
+
+        ::ng-deep .p-badge {
+            height: @size-xs-md;
+            min-width: @size-xs-md;
+            line-height: @size-xs-md;
+        }
+    }
+
+    &__button {
+        ::ng-deep .p-button.p-button-rounded {
+            padding: @size-xxs-xs @size-sm;
+
+            --ets-icon-color: @gray-ice;
+            --ets-icon-size: @size-sm-md;
+        }
+    }
+
+    &__user-menu::ng-deep {
+        .p-menu {
+            width: @avatar-btn-width;
+        }
+
+        .p-menu.p-menu-overlay {
+            margin-top: @size-xs;
+            border-radius: @size-xs-sm;
+        }
+
+        .p-menu ul {
+            margin-top: @size-xs;
+        }
+    }
+
+    &__overlay-panel {
+        .p-overlaypanel {
+            border-radius: @size-sm;
+
+            .p-overlaypanel-content {
+                padding-top: @size-xs-sm;
+            }
+        }
+    }
+
+}

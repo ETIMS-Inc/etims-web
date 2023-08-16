@@ -10,7 +10,7 @@
     .panel {
         display: flex;
 
-        &__right {
+        &__left {
             flex: 1;
 
             .title {
@@ -18,8 +18,9 @@
             }
         }
 
-        &__left {
+        &__right {
             flex: 0;
+            z-index: -1;
 
             .controls {
                 display: flex;
