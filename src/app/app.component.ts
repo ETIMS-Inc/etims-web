@@ -8,7 +8,6 @@ import {
     I18NEXT_SERVICE,
     ITranslationService,
 } from "angular-i18next";
-import {SvgIconRegistryService} from "angular-svg-icon";
 import {
     BehaviorSubject,
     Subscription,
@@ -34,9 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     public ngOnInit(): void {
         this.i18NextService.events.initialized.subscribe((e) => {
-            if (e) {
-                this.updateState(this.i18NextService.language);
-            }
+            e && this.updateState(this.i18NextService.language);
         });
     }
 
