@@ -71,6 +71,7 @@
             [options]="languages"
             [style]="{ width: '100%' }"
             [(ngModel)]="selectedLanguage"
+            (onChange)="onLanguageChangeHandler($event.value)"
         >
             <ng-template
                 pTemplate="item"
