@@ -6,7 +6,6 @@ import {
     UntilDestroy,
     untilDestroyed,
 } from "@ngneat/until-destroy";
-import {SvgIconRegistryService} from "angular-svg-icon";
 import {
     BehaviorSubject,
     Subscription,
