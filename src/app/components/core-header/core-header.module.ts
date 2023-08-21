@@ -2,7 +2,6 @@ import {CommonModule} from "@angular/common";
 import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
 import {I18NextModule} from "angular-i18next";
-import {AngularSvgIconModule} from "angular-svg-icon";
 import {AvatarModule} from "primeng/avatar";
 import {BadgeModule} from "primeng/badge";
 import {ButtonModule} from "primeng/button";
@@ -25,7 +24,6 @@ import {LibModule} from "../lib/lib.module";
         FormsModule,
         CommonModule,
         MenubarModule,
-        AngularSvgIconModule,
         AvatarModule,
         ButtonModule,
         BadgeModule,
