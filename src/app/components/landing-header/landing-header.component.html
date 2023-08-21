@@ -4,7 +4,7 @@
             <ets-icon [icon]="'logo'"
                       [viewBox]="'0 0 2 1'"
             ></ets-icon>
-            <p-tabMenu [activeItem]="_activeItem"
+            <p-tabMenu [activeItem]="activeItem"
                        [model]="primaryNavTabs"
                        (activeItemChange)="onActiveItemChange($event)"
             ></p-tabMenu>
@@ -69,6 +69,7 @@
             [options]="languages"
             [style]="{ width: '100%' }"
             [(ngModel)]="selectedLanguage"
+            (onChange)="onLanguageChangeHandler($event.value)"
         >
             <ng-template
                 pTemplate="item"
