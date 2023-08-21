@@ -1,1 +1,1 @@
-export const etsIconList = ["bell", "dark-mode", "global", "message", "search", "white-mode", "english", "germany", "logo", "ukraine"] as const;
+export const etsIconList = ["bell", "dark-mode", "global", "logo", "message", "search", "white-mode", "english", "germany", "ukraine"] as const;
