@@ -1,7 +1,9 @@
 <div class="core-header">
     <p-menubar>
         <ng-template pTemplate="start">
-            <svg-icon name="logo"></svg-icon>
+            <ets-icon [icon]="'logo'"
+                      [viewBox]="'0 0 2 1'"
+            ></ets-icon>
         </ng-template>
         <ng-template pTemplate="end">
             <ng-container *ngTemplateOutlet="searchTemplate"></ng-container>
