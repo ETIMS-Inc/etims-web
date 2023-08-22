@@ -11,7 +11,6 @@ import {EffectsModule} from "@ngrx/effects";
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {I18NextModule} from "angular-i18next";
-import {AngularSvgIconModule} from "angular-svg-icon";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
@@ -36,7 +35,6 @@ import {etsReducers} from "./store/reducers";
         MatButtonModule,
         MatIconModule,
         HttpClientModule,
-        AngularSvgIconModule.forRoot(),
         I18NextModule.forRoot(),
         StoreModule.forRoot(etsReducers, environment.production ? {} : {
             runtimeChecks: {

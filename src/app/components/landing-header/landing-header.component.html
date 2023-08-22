@@ -1,14 +1,12 @@
 <div class="landing-header">
     <p-menubar>
         <ng-template pTemplate="start">
-            <svg-icon
-                class="header__icon"
-                name="logo"
-            ></svg-icon>
-            <p-tabMenu
-                [activeItem]="_activeItem"
-                [model]="primaryNavTabs"
-                (activeItemChange)="onActiveItemChange($event)"
+            <ets-icon [icon]="'logo'"
+                      [viewBox]="'0 0 2 1'"
+            ></ets-icon>
+            <p-tabMenu [activeItem]="activeItem"
+                       [model]="primaryNavTabs"
+                       (activeItemChange)="onActiveItemChange($event)"
             ></p-tabMenu>
         </ng-template>
         <ng-template pTemplate="end">
@@ -29,10 +27,9 @@
     let-item="item"
 >
     <div class="landing-header__search-box">
-        <input
-            class="landing-header__search-input"
-            [placeholder]="'header.search' | i18next"
-            type="text"
+        <input class="landing-header__search-input"
+               type="text"
+               [placeholder]="'header.search' | i18next"
         />
         <p-button
             class="landing-header__search-button"
@@ -72,6 +69,7 @@
             [options]="languages"
             [style]="{ width: '100%' }"
             [(ngModel)]="selectedLanguage"
+            (onChange)="onLanguageChangeHandler($event.value)"
         >
             <ng-template
                 pTemplate="item"

@@ -15,4 +15,5 @@ import {EtcIconType} from "./icon.model";
 export class IconComponent {
     @HostBinding("class") public hostClass = "ets-icon";
     @Input() public icon: EtcIconType;
+    @Input() public viewBox: string = "0 0 1 1";
 }
