@@ -1,3 +1,4 @@
 {
-    "*.{css,less}": "npm run stylecheck:format-precommit"
+    "*.{css,less}": "npm run stylecheck:format-precommit",
+    "*.svg": "npm run svg"
 }

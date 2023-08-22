@@ -1,7 +1,6 @@
 import {CommonModule} from "@angular/common";
 import {NgModule} from "@angular/core";
 import {FormsModule} from "@angular/forms";
-import {AngularSvgIconModule} from "angular-svg-icon";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {ListboxModule} from "primeng/listbox";
@@ -11,8 +10,10 @@ import {OverlayPanelModule} from "primeng/overlaypanel";
 import {ScrollPanelModule} from "primeng/scrollpanel";
 import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
+import {LibModule} from "../lib/lib.module";
 import {LandingHeaderComponent} from "./landing-header.component";
 import {TabMenuModule} from "primeng/tabmenu";
+import {I18NextModule} from "angular-i18next";
 
 @NgModule({
     declarations: [
@@ -27,7 +28,6 @@ import {TabMenuModule} from "primeng/tabmenu";
         ToolbarModule,
         ButtonModule,
         SplitButtonModule,
-        AngularSvgIconModule,
         MenubarModule,
         InputTextModule,
         MenuModule,
@@ -35,6 +35,8 @@ import {TabMenuModule} from "primeng/tabmenu";
         ListboxModule,
         ScrollPanelModule,
         TabMenuModule,
+        LibModule,
+        I18NextModule,
     ],
 })
 export class LandingHeaderModule {

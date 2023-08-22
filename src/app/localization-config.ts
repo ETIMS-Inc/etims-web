@@ -17,7 +17,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 import LocizeApi from "i18next-locize-backend";
 
 const i18nextOptions = {
-    debug: true,
+    debug: false,
     fallbackLng: "en",
     resources: {
         en: translationEn,

@@ -1,13 +1,14 @@
 import {
     ChangeDetectionStrategy,
     Component,
+    OnInit,
     ViewChild,
 } from "@angular/core";
 import {MenuItem} from "primeng/api";
 import {OverlayPanel} from "primeng/overlaypanel";
+import {I18Service} from "../../services/i18.service";
 import {
     ActionType,
-    defaultLanguage,
     HeaderMenuItemType,
     Language,
     languageList,
@@ -17,21 +18,29 @@ import {
 import {LandingHeaderService} from "./landing-header.service";
 
 @Component({
-    selector: "landing-header",
+    selector: "ets-landing-header",
     templateUrl: "./landing-header.component.html",
     styleUrls: ["./landing-header.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingHeaderComponent {
+export class LandingHeaderComponent implements OnInit{
     @ViewChild("overlayPanel", {static: true})
     public overlayPanel: OverlayPanel;
     public languages: Language[] = languageList;
-    public selectedLanguage: Language = defaultLanguage;
+    public selectedLanguage: Language;
     public primaryNavTabs: MenuItem[] = primaryNavTabsList;
-    public _activeItem: MenuItem;
+    public activeItem: MenuItem;
     public secondaryNavTabs: HeaderMenuItemType[] = secondaryNavTabsList;
 
-    constructor(private headerService: LandingHeaderService) {
+    constructor(
+        private headerService: LandingHeaderService,
+        private i18Service: I18Service) {
+    }
+
+    public ngOnInit(): void {
+        this.selectedLanguage = this.languages.find(language =>
+            language.code.toLowerCase() === this.i18Service.languageCode.toLowerCase(),
+        )
     }
 
     public handleButtonChange(type: ActionType): void {
@@ -54,6 +63,11 @@ export class LandingHeaderComponent {
     }
 
     public onActiveItemChange(event: MenuItem) {
-        this._activeItem = event;
+        this.activeItem = event;
     }
+
+    public onLanguageChangeHandler(value: Language) {
+        this.i18Service.changeLanguage(value.code.toLowerCase());
+    }
+
 }

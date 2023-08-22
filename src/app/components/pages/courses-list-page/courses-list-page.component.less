@@ -10,7 +10,7 @@
     .panel {
         display: flex;
 
-        &__right {
+        &__left {
             flex: 1;
 
             .title {
@@ -18,8 +18,9 @@
             }
         }
 
-        &__left {
+        &__right {
             flex: 0;
+            z-index: -1;
 
             .controls {
                 display: flex;
@@ -31,5 +32,20 @@
                 }
             }
         }
+    }
+}
+
+.courses-list {
+    gap: @size-md;
+
+    &.tile {
+        display: grid;
+        grid-auto-rows: auto;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    &.full-width {
+        display: flex;
+        flex-direction: column;
     }
 }

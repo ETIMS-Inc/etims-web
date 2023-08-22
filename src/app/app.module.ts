@@ -25,11 +25,13 @@ import {RouterModule} from "@angular/router";
 import {EffectsModule} from "@ngrx/effects";
 import {StoreModule} from "@ngrx/store";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
-import {AngularSvgIconModule} from "angular-svg-icon";
+import {I18NextModule} from "angular-i18next";
 import {environment} from "../environments/environment";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
+import {CoreHeaderModule} from "./components/core-header/core-header.module";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
+import {IconLazyHolderModule} from "./components/lib/icon/icon-lazy-holder/icon-lazy-holder.module";
 import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
 import {etsEffects} from "./store/effects";
 import {RegisterPageModule} from "./components/pages/register-page/register-page.module";
@@ -49,7 +51,6 @@ import {etsReducers} from "./store/reducers";
         MatIconModule,
         HttpClientModule,
         LoginPageModule,
-        AngularSvgIconModule.forRoot(),
         AuthModule.forRoot({
             config: {
                 authority: "http://192.168.0.104:8081/realms/etims",
@@ -64,7 +65,6 @@ import {etsReducers} from "./store/reducers";
                 ngswBypass: false,
             },
         }),
-        I18NextModule.forRoot(),
         StoreModule.forRoot(etsReducers, environment.production ? {} : {
             runtimeChecks: {
                 strictActionImmutability: true,
@@ -78,18 +78,20 @@ import {etsReducers} from "./store/reducers";
         RecoverPasswordPageModule,
         RegisterPageModule,
         LandingHeaderModule,
+        CoreHeaderModule,
+        IconLazyHolderModule,
         UnauthorizedModule,
         ProtectedModule,
     ],
-    exports: [RouterModule],
-    providers: [
-        I18N_PROVIDERS,
+    exports: [
+        RouterModule,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
             multi: true,
         },
     ],
+    providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent],
 })
 export class AppModule {

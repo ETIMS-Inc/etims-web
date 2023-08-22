@@ -3,7 +3,7 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "etims-landing-ui": {
+        "etims-web": {
             "projectType": "application",
             "schematics": {
                 "@schematics/angular:application": {
@@ -20,7 +20,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "dist/etims-landing-ui",
+                        "outputPath": "dist/etims-web",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -78,10 +78,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "etims-landing-ui:build:production"
+                            "browserTarget": "etims-web:build:production"
                         },
                         "development": {
-                            "browserTarget": "etims-landing-ui:build:development"
+                            "browserTarget": "etims-web:build:development"
                         }
                     },
                     "defaultConfiguration": "development",
@@ -92,7 +92,7 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "etims-landing-ui:build"
+                        "browserTarget": "etims-web:build"
                     }
                 },
                 "test": {
