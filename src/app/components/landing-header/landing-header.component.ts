@@ -4,6 +4,7 @@ import {
     OnInit,
     ViewChild,
 } from "@angular/core";
+import {Router} from "@angular/router";
 import {MenuItem} from "primeng/api";
 import {OverlayPanel} from "primeng/overlaypanel";
 import {I18Service} from "../../services/i18.service";
@@ -34,7 +35,9 @@ export class LandingHeaderComponent implements OnInit{
 
     constructor(
         private headerService: LandingHeaderService,
-        private i18Service: I18Service) {
+        private i18Service: I18Service,
+        private router: Router
+    ) {
     }
 
     public ngOnInit(): void {
@@ -62,12 +65,15 @@ export class LandingHeaderComponent implements OnInit{
         }
     }
 
-    public onActiveItemChange(event: MenuItem) {
+    public onActiveItemChange(event: MenuItem): void {
         this.activeItem = event;
     }
 
-    public onLanguageChangeHandler(value: Language) {
+    public onLanguageChangeHandler(value: Language): void {
         this.i18Service.changeLanguage(value.code.toLowerCase());
     }
 
+    public handleLogoClick(): void {
+        this.router.navigateByUrl('home');
+    }
 }
