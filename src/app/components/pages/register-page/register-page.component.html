@@ -7,10 +7,11 @@
                 class="register-page__button"
                 (onClick)="handleMediaChange(item?.id)"
             >
-                <svg-icon
+                <ets-icon
                     class="register-page__button-icon"
-                    [name]="item?.name"
-                ></svg-icon>
+                    [icon]="item?.name"
+                    [viewBox]="'0 0 2 1'"
+                ></ets-icon>
             </p-button>
         </div>
         <div class="register-page__section">

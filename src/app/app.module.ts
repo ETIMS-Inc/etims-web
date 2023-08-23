@@ -14,7 +14,6 @@ import {
 } from "angular-auth-oidc-client";
 import {AuthInterceptor} from "./auth/auth.interceptor";
 import {LoginPageModule} from './components/pages/login-page/login-page.module';
-import {I18NextModule} from "angular-i18next";
 import {ProtectedModule} from "./components/protected/protected.module";
 import {UnauthorizedModule} from "./components/unauthorized/unauthorized.module";
 import {I18N_PROVIDERS} from "./localization-config";
@@ -51,6 +50,7 @@ import {etsReducers} from "./store/reducers";
         MatIconModule,
         HttpClientModule,
         LoginPageModule,
+        I18NextModule.forRoot(),
         AuthModule.forRoot({
             config: {
                 authority: "http://192.168.0.104:8081/realms/etims",
@@ -85,13 +85,15 @@ import {etsReducers} from "./store/reducers";
     ],
     exports: [
         RouterModule,
+    ],
+    providers: [
+        I18N_PROVIDERS,
         {
             provide: HTTP_INTERCEPTORS,
             useClass: AuthInterceptor,
             multi: true,
         },
     ],
-    providers: [I18N_PROVIDERS],
     bootstrap: [AppComponent],
 })
 export class AppModule {

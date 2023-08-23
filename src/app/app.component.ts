@@ -5,6 +5,7 @@ import {
 import {
     ChangeDetectorRef,
     Component,
+    OnInit,
 } from "@angular/core";
 import {DomSanitizer} from "@angular/platform-browser";
 import {
@@ -13,6 +14,7 @@ import {
 } from "@ngrx/store";
 import {OidcSecurityService} from "angular-auth-oidc-client";
 import {
+    BehaviorSubject,
     Observable,
     of,
     Subscription,
