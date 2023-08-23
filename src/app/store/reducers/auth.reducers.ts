@@ -1,17 +1,24 @@
 import {Action, createReducer, on} from "@ngrx/store";
 import {AuthState, initialAuthState} from "../models/auth.state";
-import {loadAuthTokenSuccess} from "../actions/auth.actions";
+import * as authActions from '../actions/auth.actions';
 
 const reducer = createReducer(
     initialAuthState,
-    on(
-        loadAuthTokenSuccess, (state) => ({
+    on(authActions.loginSuccess, (state, { profile, isLoggedIn }) => {
+        return {
             ...state,
-            param1: "",
-            param2: "",
-        }),
-    ),
-)
+            profile,
+            isLoggedIn,
+        };
+    }),
+    on(authActions.logout, (state, {}) => {
+        return {
+            ...state,
+            profile: null,
+            isLoggedIn: false,
+        };
+    })
+);
 
 export function authReducer(
     state: AuthState | undefined,

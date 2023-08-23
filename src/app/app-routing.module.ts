@@ -5,14 +5,14 @@ import {
 } from "@angular/router";
 
 const routes: Routes = [
-    {path: "", redirectTo: "/home", pathMatch: "full"},
+    {
+        path: "",
+        redirectTo: "/home",
+        pathMatch: "full"
+    },
     {
         path: "home",
         loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
-    },
-    {
-        path: "account",
-        loadChildren: () => import("./components/pages/account-starter-page/account-starter-page.module").then(m => m.AccountStarterPageModule),
     },
     {
         path: "recover-password",
@@ -27,6 +27,19 @@ const routes: Routes = [
         loadChildren: () => import("./components/pages/course-details-page/course-details-page.module").then(m => m.CourseDetailsPageModule),
     },
     {path: "**", redirectTo: "/404"},
+    {
+        path: "sign-in",
+        loadChildren: () => import("./components/pages/login-page/login-page.module").then(m => m.LoginPageModule),
+
+    },
+    {
+        path: "sign-up",
+        loadChildren: () => import("./components/pages/register-page/register-page.module").then(m => m.RegisterPageModule),
+    },
+    {
+        path: "**",
+        redirectTo: "/404"
+    },
     {
         path: "404",
         loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),

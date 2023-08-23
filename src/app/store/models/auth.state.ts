@@ -1,9 +1,9 @@
 export interface AuthState {
-    param1: string;
-    param2: string;
+    profile: any;
+    isLoggedIn: boolean;
 }
 
 export const initialAuthState: AuthState = {
-    param1: "",
-    param2: "",
+    isLoggedIn: false,
+    profile: null,
 };

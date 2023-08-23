@@ -1,0 +1,182 @@
+@import url("src/assets/styles/colors");
+
+:host {
+    display: block;
+    height: 100vh;
+    background-color: @link-water;
+}
+
+.register-page {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__wrapper-info {
+        width: 60%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        background: rgb(76,133,255);
+        background: radial-gradient(circle, rgba(76,133,255,1) 65%, rgba(72,211,255,1) 100%);
+    }
+
+    &__section {
+        width: 476px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+        margin-bottom: 34px;
+    }
+
+    &__button {
+        margin-right: 16px;
+
+        &-icon {
+            width: 32px;
+            height: 32px;
+
+            svg {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        ::ng-deep .p-button {
+            padding: 10px;
+            background: @white;
+            border-color: @white;
+        }
+    }
+
+    &__greetings {
+        position: absolute;
+        top: 40%;
+        left: 58%;
+    }
+
+    &__welcome {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-text {
+            letter-spacing: 0.05em;
+
+            &._system-name {
+                color: #FFF;
+                font-size: 48px;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            &._uppercase {
+                color: #FFF;
+                font-size: 34px;
+                font-weight: 700;
+                line-height: normal;
+            }
+
+            &._black {
+                color: #2C2929;
+                text-align: center;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.05em;
+            }
+        }
+    }
+
+    &__wrapper-login {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 28%;
+        left: 15%;
+    }
+
+    &__description {
+        margin: 32px 6em 0 6em;
+        color: #D7DAE2;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 28px;
+        letter-spacing: 0.1em;
+    }
+
+    &__sign-in {
+        margin-top: 64px;
+
+        ::ng-deep .p-button {
+            padding: 16px 64px;
+            color: @white;
+        }
+
+        &:hover {
+            ::ng-deep .p-button {
+                color: @gray;
+            }
+        }
+    }
+
+    &__input {
+        ::ng-deep .p-inputtext {
+            width: 476px;
+            border-radius: 9px;
+            line-height: normal;
+        }
+
+        &._email {
+            border-radius: 9px;
+            margin-bottom: 32px;
+            line-height: normal;
+        }
+
+        &._sign-up {
+            ::ng-deep .p-button {
+                margin-top: 32px;
+                width: 476px;
+                border-radius: 9px;
+            }
+        }
+
+        &._forgot-password {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 34px;
+
+            ::ng-deep .p-button.p-button-link {
+                margin-top: 8px;
+                padding: 2px;
+                color: #4285F4;
+                text-align: center;
+                font-size: 16px;
+                font-style: normal;
+                line-height: normal;
+                letter-spacing: 0.05em;
+            }
+
+            ::ng-deep .p-button-label {
+                font-weight: 400;
+            }
+        }
+    }
+
+    &__label {
+        margin-bottom: 10px;
+        color: #2C2929;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.05em;
+    }
+}

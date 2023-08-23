@@ -1,0 +1,66 @@
+<div class="register-page__wrapper">
+    <div class="register-page__wrapper-login">
+        <span class="register-page__welcome-text _black">Sign Up</span>
+        <div class="register-page__buttons">
+            <p-button
+                *ngFor="let item of mediaButtons"
+                class="register-page__button"
+                (onClick)="handleMediaChange(item?.id)"
+            >
+                <ets-icon
+                    class="register-page__button-icon"
+                    [icon]="item?.name"
+                    [viewBox]="'0 0 2 1'"
+                ></ets-icon>
+            </p-button>
+        </div>
+        <div class="register-page__section">
+            <label class="register-page__label">
+                Enter your username or email address
+            </label>
+            <input
+                pInputText
+                class="register-page__input _email"
+                type="text"
+                placeholder="Username or email address"
+            />
+            <label class="register-page__label">
+                Enter your full name
+            </label>
+            <input
+                pInputText
+                class="register-page__input _email"
+                type="text"
+                placeholder="Full name"
+            />
+            <label class="register-page__label _password">
+                Enter your password
+            </label>
+            <p-password
+                class="register-page__input"
+                [toggleMask]="true"
+                placeholder="Password"
+            ></p-password>
+            <p-button
+                class="register-page__input _sign-up"
+                styleClass="p-button-raised"
+                label="Sign up"
+            ></p-button>
+        </div>
+    </div>
+    <div class="register-page__wrapper-info">
+        <div class="register-page__greetings">
+            <div class="register-page__welcome">
+                <span class="register-page__welcome-text _uppercase">Already</span>
+                <span class="register-page__welcome-text _system-name">have an account?</span>
+                <span class="register-page__description">Log in to your account and you can continue building and editing your learning process</span>
+                <p-button
+                    class="register-page__sign-in"
+                    label="Sign In"
+                    styleClass="p-button-rounded p-button-outlined"
+                ></p-button>
+            </div>
+        </div>
+    </div>
+</div>
+

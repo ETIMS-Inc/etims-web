@@ -6,18 +6,22 @@
 @search-width: 240px;
 
 :host {
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    z-index: 1;
 }
 
 ::ng-deep .landing-header {
     .shadow-bottom();
 
     .p-menubar {
-        background-color: @white;
         border: none;
+        border-radius: 0;
         padding-left: @size-sm-md;
         padding-right: @size-sm-md;
+        background-color: @white;
 
         &-start {
             align-items: center;
