@@ -23,6 +23,7 @@ import {
     catchError,
     map,
 } from "rxjs/operators";
+import {AuthService} from "./auth/auth.service";
 import {
     checkAuth,
     login,
@@ -37,18 +38,20 @@ import {selectIsAuthenticated} from "./store/selectors/auth.selectors";
 })
 export class AppComponent implements OnInit {
     public title = "etims-web";
-    public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+    public isLoggedIn$: BehaviorSubject<boolean>;
     public isAuthenticated$: Observable<boolean>;
 
     constructor(
         protected _sanitizer: DomSanitizer,
         private oidcSecurityService: OidcSecurityService,
+        private authService: AuthService,
         private httpClient: HttpClient,
         private cdr: ChangeDetectorRef,
         private store: Store<any>,
     ) { }
 
     public ngOnInit(): void {
+        this.isLoggedIn$ = this.authService.isLoggedIn$;
         // this.store.dispatch(checkAuth());
         // this.isAuthenticated$ = this.store.pipe(select(selectIsAuthenticated));
         this.oidcSecurityService.getAuthorizeUrl().subscribe((res) => {

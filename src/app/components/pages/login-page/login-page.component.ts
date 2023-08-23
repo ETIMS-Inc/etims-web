@@ -4,7 +4,6 @@ import {
 } from "@angular/common/http";
 import {
     AfterViewChecked,
-    AfterViewInit,
     ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
@@ -14,7 +13,9 @@ import {
     DomSanitizer,
     EventManager,
 } from "@angular/platform-browser";
+import {Router} from "@angular/router";
 import {OidcSecurityService} from "angular-auth-oidc-client";
+import {AuthService} from "../../../auth/auth.service";
 import {mediaBtnList, MediaButton, MediaButtonType} from "./login-page.model";
 
 @Component({
@@ -31,6 +32,8 @@ export class LoginPageComponent implements OnInit, AfterViewChecked {
         private httpClient: HttpClient,
         private cdr: ChangeDetectorRef,
         private eventManager: EventManager,
+        private authService: AuthService,
+        private router: Router,
     ) {
     }
 
@@ -110,5 +113,10 @@ export class LoginPageComponent implements OnInit, AfterViewChecked {
             console.log('clicked');
             console.log(evt);
         })
+    }
+
+    public handleSignUp(): void {
+        this.router.navigateByUrl('courses');
+        this.authService.isLoggedIn$.next(true);
     }
 }

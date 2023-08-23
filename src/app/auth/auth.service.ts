@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {AuthenticatedResult} from "angular-auth-oidc-client/lib/auth-state/auth-result";
 import {
+    BehaviorSubject,
     Observable,
     of,
 } from "rxjs";
@@ -14,6 +15,8 @@ import {
 export class AuthService {
     constructor(private oidcSecurityService: OidcSecurityService) {
     }
+
+    public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     public get isLoggedIn(): Observable<AuthenticatedResult> {
         return this.oidcSecurityService.isAuthenticated$;
