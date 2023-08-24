@@ -21,10 +21,12 @@ import {RecoverPasswordPageModule} from "./components/pages/recover-password-pag
 import {I18N_PROVIDERS} from "./localization-config";
 import {etsEffects} from "./store/effects";
 import {etsReducers} from "./store/reducers";
+import { CoreSidebarComponent } from './components/core-sidebar/core-sidebar.component';
 
 @NgModule({
     declarations: [
         AppComponent,
+        CoreSidebarComponent,
     ],
     imports: [
         AppRoutingModule,
