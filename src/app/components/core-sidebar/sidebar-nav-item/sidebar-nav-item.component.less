@@ -1,0 +1,27 @@
+@import "vars";
+@import "utils";
+
+@gap: @size-sm;
+
+.nav-item-base() {
+    .flex-row();
+    align-items: center;
+    cursor: pointer;
+    padding: (@gap / 2) @size-xxs-xs;
+
+    &:hover {
+        background: @blue-hover;
+    }
+
+    &:active {
+        background: @blue-active;
+    }
+}
+
+.nav-item {
+    .nav-item-base();
+
+    &:first-child {
+        margin-top: @gap;
+    }
+}

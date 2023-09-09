@@ -20,7 +20,7 @@ export interface CoreSidebarChip {
 export interface CoreSidebarNavItem {
     name: string;
     icon: EtcIcon;
-    url: string;
+    url?: string;
     chip?: CoreSidebarChip,
     childrenItems?: Omit<CoreSidebarNavItem, "childrenItems" | "icon">[];
 }

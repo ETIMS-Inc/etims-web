@@ -1,0 +1,15 @@
+<div *ngIf="item"
+     class="nav-item"
+     [pTooltip]="mode === sidebarMode.Collapsed ? item.name : null"
+     (click)="itemClicked.emit(item)"
+>
+    <ets-icon [icon]="item.icon"></ets-icon>
+    <div *ngIf="mode === sidebarMode.Full"
+         class="nav-item__name"
+    >
+        {{item.name}}
+    </div>
+    <ets-icon *ngIf="item.childrenItems"
+              [icon]="'angle-right'"
+    ></ets-icon>
+</div>

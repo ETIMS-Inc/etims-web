@@ -4,21 +4,6 @@
 
 @gap: @size-sm;
 
-.nav-item-base() {
-    .flex-row();
-    align-items: center;
-    cursor: pointer;
-    padding: (@gap / 2) @size-xxs-xs;
-
-    &:hover {
-        background: @blue-hover;
-    }
-
-    &:active {
-        background: @blue-active;
-    }
-}
-
 :host {
     background: @white;
     .shadow-right();
@@ -40,20 +25,7 @@
             }
 
             .flex-column(0);
-
-            .nav-item {
-                .nav-item-base();
-
-                &:first-child {
-                    margin-top: @gap;
-                }
-            }
         }
-    }
-
-    .collapse-controller {
-        flex: 0;
-        .nav-item-base();
     }
 }
 

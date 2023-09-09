@@ -5,33 +5,18 @@
         <div *ngFor="let group of navGroups"
              class="nav-group"
         >
-            <div *ngFor="let item of group"
-                 class="nav-item"
-                 [pTooltip]="mode === sidebarMode.Collapsed ? item.name : null"
-                 (click)="itemClicked(item)"
+            <ets-sidebar-nav-item *ngFor="let item of group"
+                                  [item]="item"
+                                  [mode]="mode"
+                                  (itemClicked)="itemClicked($event)"
             >
-                <ets-icon [icon]="item.icon"></ets-icon>
-                <div *ngIf="mode === sidebarMode.Full"
-                     class="nav-item__name"
-                >
-                    {{item.name}}
-                </div>
-            </div>
+            </ets-sidebar-nav-item>
         </div>
     </div>
 
-    <div class="collapse-controller"
-         [pTooltip]="mode === sidebarMode.Collapsed ? 'Expand' : null"
-         (click)="changeDisplayMode()"
+    <ets-sidebar-nav-item [item]="expandControlItem"
+                          [mode]="mode"
+                          (itemClicked)="changeDisplayMode()"
     >
-        <ets-icon *ngIf="mode === sidebarMode.Collapsed"
-                  [icon]="'chevrons-right-arrows'"
-        ></ets-icon>
-        <ng-container *ngIf="mode === sidebarMode.Full">
-            <ets-icon [icon]="'chevrons-left-arrows'"></ets-icon>
-            <div class="collapse-controller__name">
-                {{"Collapse"}} <!-- TODO: translate -->
-            </div>
-        </ng-container>
-    </div>
+    </ets-sidebar-nav-item>
 </div>
