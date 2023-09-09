@@ -1,31 +1,33 @@
-<div class="nav-groups">
-    <div *ngFor="let group of navGroups"
-         class="nav-group"
-    >
-        <div *ngFor="let item of group"
-             class="nav-item"
-             (click)="itemClicked(item)"
+<div class="core-sidebar-container" [style.width.px]="width">
+    <div class="nav-groups">
+        <div *ngFor="let group of navGroups"
+             class="nav-group"
         >
-            <ets-icon [icon]="item.icon"></ets-icon>
-            <div *ngIf="mode === sidebarMode.Full"
-                 class="nav-item__name"
+            <div *ngFor="let item of group"
+                 class="nav-item"
+                 (click)="itemClicked(item)"
             >
-                {{item.name}}
+                <ets-icon [icon]="item.icon"></ets-icon>
+                <div *ngIf="mode === sidebarMode.Full"
+                     class="nav-item__name"
+                >
+                    {{item.name}}
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="collapse-controller"
-     (click)="changeDisplayMode()"
->
-    <ets-icon *ngIf="mode === sidebarMode.Collapsed"
-              [icon]="'chevrons-right-arrows'"
-    ></ets-icon>
-    <ng-container *ngIf="mode === sidebarMode.Full">
-        <ets-icon [icon]="'chevrons-left-arrows'"></ets-icon>
-        <div class="collapse-controller__name">
-            {{"Collapse"}} <!-- TODO: translate -->
-        </div>
-    </ng-container>
+    <div class="collapse-controller"
+         (click)="changeDisplayMode()"
+    >
+        <ets-icon *ngIf="mode === sidebarMode.Collapsed"
+                  [icon]="'chevrons-right-arrows'"
+        ></ets-icon>
+        <ng-container *ngIf="mode === sidebarMode.Full">
+            <ets-icon [icon]="'chevrons-left-arrows'"></ets-icon>
+            <div class="collapse-controller__name">
+                {{"Collapse"}} <!-- TODO: translate -->
+            </div>
+        </ng-container>
+    </div>
 </div>

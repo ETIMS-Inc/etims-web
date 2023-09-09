@@ -21,34 +21,39 @@
 
 :host {
     background: @white;
-    padding: @size-sm @size-xxs;
-    .flex-column(@gap);
     .shadow-right();
     --ets-icon-size: 25px;
 }
 
-.nav-groups {
+.core-sidebar-container {
     .flex-column(@gap);
-    flex: 1;
+    height: 100%;
+    padding: @size-sm @size-xxs;
 
-    .nav-group {
-        &:not(:first-child) {
-            .before-divider();
-        }
+    .nav-groups {
+        .flex-column(@gap);
+        flex: 1;
 
-        .flex-column(0);
+        .nav-group {
+            &:not(:first-child) {
+                .before-divider();
+            }
 
-        .nav-item {
-            .nav-item-base();
+            .flex-column(0);
 
-            &:first-child {
-                margin-top: @gap;
+            .nav-item {
+                .nav-item-base();
+
+                &:first-child {
+                    margin-top: @gap;
+                }
             }
         }
     }
+
+    .collapse-controller {
+        flex: 0;
+        .nav-item-base();
+    }
 }
 
-.collapse-controller {
-    flex: 0;
-    .nav-item-base();
-}

@@ -3,8 +3,8 @@ import {
     NgIf,
 } from "@angular/common";
 import {
+    ChangeDetectionStrategy,
     Component,
-    HostBinding,
     Input,
 } from "@angular/core";
 import {coreSidebarNavGroups} from "../../mocks/sidebar";
@@ -25,13 +25,13 @@ import {
         IconComponent,
         NgIf,
     ],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoreSidebarComponent {
     @Input() public mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
     @Input() public navGroups: CoreSidebarNavGroup[] = coreSidebarNavGroups;
 
-    @HostBinding("style.width") private width: string = undefined;
-
+    public width: number = undefined;
     public sidebarMode = CoreSidebarMode;
 
     public itemClicked(item: CoreSidebarNavItem) {
@@ -41,7 +41,7 @@ export class CoreSidebarComponent {
     public changeDisplayMode() {
         if (this.mode === CoreSidebarMode.Collapsed) {
             this.mode = CoreSidebarMode.Full;
-            this.width = "180px";
+            this.width = 180;
         } else {
             this.mode = CoreSidebarMode.Collapsed;
             this.width = undefined;
