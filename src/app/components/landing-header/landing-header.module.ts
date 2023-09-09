@@ -10,6 +10,7 @@ import {OverlayPanelModule} from "primeng/overlaypanel";
 import {ScrollPanelModule} from "primeng/scrollpanel";
 import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
+import {IconComponent} from "../lib/icon/icon.component";
 import {LibModule} from "../lib/lib.module";
 import {LandingHeaderComponent} from "./landing-header.component";
 import {TabMenuModule} from "primeng/tabmenu";
@@ -37,6 +38,7 @@ import {I18NextModule} from "angular-i18next";
         TabMenuModule,
         LibModule,
         I18NextModule,
+        IconComponent,
     ],
 })
 export class LandingHeaderModule {

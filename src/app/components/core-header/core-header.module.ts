@@ -8,6 +8,7 @@ import {ButtonModule} from "primeng/button";
 import {MenuModule} from "primeng/menu";
 import {MenubarModule} from "primeng/menubar";
 import {OverlayPanelModule} from "primeng/overlaypanel";
+import {IconComponent} from "../lib/icon/icon.component";
 import {CoreHeaderComponent} from "./core-header.component";
 import {InputTextModule} from "primeng/inputtext";
 import {AlertPopupModule} from "./alert-popup/alert-popup.module";
@@ -33,6 +34,7 @@ import {LibModule} from "../lib/lib.module";
         AlertPopupModule,
         I18NextModule,
         LibModule,
+        IconComponent,
     ],
 })
 export class CoreHeaderModule {

@@ -55,6 +55,8 @@ export const etsIconList = [...etsSimpleIconList, ...etsColoredIconList, ...etsS
                 )));
     }
 
+    updateIconsList();
+
     const getIcons = (iconsPath: string, mode: IconMode = IconMode.Default): NodeJS.ReadWriteStream => {
         switch (mode) {
             case IconMode.Default:
@@ -74,7 +76,7 @@ export const etsIconList = [...etsSimpleIconList, ...etsColoredIconList, ...etsS
                     .pipe(cheerio({
                         run: function($: any) {
                             $("[stroke]").removeAttr("stroke");
-                            $("[stroke-width]").removeAttr("stroke");
+                            $("[stroke-width]").removeAttr("stroke-width");
                         },
                         parserOptions: {xmlMode: true},
                     }))
@@ -85,8 +87,6 @@ export const etsIconList = [...etsSimpleIconList, ...etsColoredIconList, ...etsS
                 return gulp.src(iconsPath);
         }
     };
-
-    updateIconsList();
 
     const plugins = [
         "cleanupAttrs",
