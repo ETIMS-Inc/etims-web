@@ -22,5 +22,5 @@ export interface CoreSidebarNavItem {
     icon: EtcIcon;
     url: string;
     chip?: CoreSidebarChip,
-    childrenItems?: Omit<CoreSidebarNavItem, "childrenItems">[];
+    childrenItems?: Omit<CoreSidebarNavItem, "childrenItems" | "icon">[];
 }
