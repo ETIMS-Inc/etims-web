@@ -20,4 +20,7 @@ export class IconComponent {
     @Input() public icon: EtcIconType;
     @Input() public viewBox: string = "0 0 1 1";
     @Input() public mode: EtcIconMode = EtcIconMode.FILL;
+
+    // stroke-width="1.5"
+
 }
