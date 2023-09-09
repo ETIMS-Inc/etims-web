@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import {etsIconList} from "../../lib/icon/icons.list";
+import {EtsIconMode} from "../../lib/icon/icon.model";
+import {
+    etsColoredIconList,
+    etsSimpleIconList,
+    etsStrokeIconList,
+} from "../../lib/icon/icons.list";
 
 @Component({
   selector: 'ets-icons-page',
@@ -7,5 +12,8 @@ import {etsIconList} from "../../lib/icon/icons.list";
   styleUrls: ['./icons-page.component.less']
 })
 export class IconsPageComponent {
-    public icons = etsIconList;
+    public defaultIcons = etsSimpleIconList;
+    public coloredIcons = etsColoredIconList;
+    public strokeIcons = etsStrokeIconList;
+    public iconMode = EtsIconMode;
 }
