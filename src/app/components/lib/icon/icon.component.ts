@@ -4,7 +4,10 @@ import {
     HostBinding,
     Input,
 } from "@angular/core";
-import {EtcIconType} from "./icon.model";
+import {
+    EtcIconMode,
+    EtcIconType,
+} from "./icon.model";
 
 @Component({
     selector: "ets-icon",
@@ -16,4 +19,5 @@ export class IconComponent {
     @HostBinding("class") public hostClass = "ets-icon";
     @Input() public icon: EtcIconType;
     @Input() public viewBox: string = "0 0 1 1";
+    @Input() public mode: EtcIconMode = EtcIconMode.FILL;
 }
