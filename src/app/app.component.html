@@ -6,6 +6,9 @@
 <ets-icon-lazy-holder></ets-icon-lazy-holder>
 
 <div class="route-content">
+    <ets-core-sidebar *ngIf="isLoggedIn$ | async"
+                      [navGroups]="sidebarGroups"
+    ></ets-core-sidebar>
     <router-outlet></router-outlet>
 </div>
 

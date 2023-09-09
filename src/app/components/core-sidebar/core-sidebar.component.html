@@ -1,1 +1,5 @@
-<p>core-sidebar works!</p>
+<div class="nav-group" *ngFor="let group of navGroups">
+    <div class="nav-item" *ngFor="let item of group">
+        <ets-icon [icon]="item.icon"></ets-icon>
+    </div>
+</div>

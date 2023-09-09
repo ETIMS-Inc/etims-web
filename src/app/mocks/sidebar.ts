@@ -1,12 +1,11 @@
 import {CoreSidebarNavGroup} from "../components/core-sidebar/core-sidebar.model";
 
-
 // TODO: use translations
 export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
     [
         {
             name: "Favorites",
-            icon: "heart",
+            icon: "star",
             url: "/main",
         },
         {
@@ -18,22 +17,22 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
     [
         {
             name: "Dashboard",
-            icon: "menu-square",
+            icon: "grid",
             url: "/main",
         },
         {
             name: "Analytics",
-            icon: "analytics",
+            icon: "chart",
             url: "/main",
         },
         {
-            name: "Reports",
-            icon: "analytics",
+            name: "Grades",
+            icon: "chart-vertical",
             url: "/main",
         },
         {
             name: "Icons",
-            icon: "eye-open",
+            icon: "file",
             url: "/icons",
         },
     ],

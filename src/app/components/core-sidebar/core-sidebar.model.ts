@@ -1,4 +1,4 @@
-import {EtcIconType} from "../lib/icon/icon.model";
+import {EtcIcon} from "../lib/icon/icon.model";
 
 export enum CoreSidebarMode {
     Full,
@@ -19,7 +19,7 @@ export interface CoreSidebarChip {
 
 export interface CoreSidebarNavItem {
     name: string;
-    icon: EtcIconType;
+    icon: EtcIcon;
     url: string;
     chip?: CoreSidebarChip,
     childrenItems?: Omit<CoreSidebarNavItem, "childrenItems">[];

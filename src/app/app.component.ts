@@ -4,6 +4,7 @@ import {
 import {
     BehaviorSubject,
 } from "rxjs";
+import {coreSidebarNavGroups} from "./mocks/sidebar";
 
 @Component({
     selector: "app-root",
@@ -13,4 +14,5 @@ import {
 export class AppComponent {
     public title = "etims-web";
     public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+    public sidebarGroups = coreSidebarNavGroups;
 }
