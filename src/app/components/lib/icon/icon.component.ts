@@ -6,9 +6,14 @@ import {
     Input,
 } from "@angular/core";
 import {
+    EtcIcon,
     EtsIconMode,
-    EtcIconType,
 } from "./icon.model";
+import {
+    etsColoredIconList,
+    etsSimpleIconList,
+    etsStrokeIconList,
+} from "./icons.list";
 
 @Component({
     selector: "ets-icon",
@@ -22,8 +27,8 @@ import {
 })
 export class IconComponent {
     @HostBinding("class") public hostClass = "ets-icon";
-    @Input() public icon: EtcIconType;
     @Input() public viewBox: string = "0 0 1 1";
+    public etsIcon: EtcIcon;
     private iconMode: EtsIconMode = EtsIconMode.FILL;
     private defaultIconColor = "#30334D";
     private defaultStrokeWidth = "1.5";
@@ -33,6 +38,18 @@ export class IconComponent {
     @HostBinding("style.stroke-width") private strokeWidth: string = undefined;
 
     @Input()
+    set icon(value: EtcIcon) {
+        this.etsIcon = value;
+
+        if (etsSimpleIconList.includes(value as any)) {
+            this.mode = EtsIconMode.FILL;
+        } else if (etsColoredIconList.includes(value as any)) {
+            this.mode = EtsIconMode.COLORFUL;
+        } else if (etsStrokeIconList.includes(value as any)) {
+            this.mode = EtsIconMode.STROKE;
+        }
+    }
+
     set mode(value: EtsIconMode) {
         this.iconMode = value;
 

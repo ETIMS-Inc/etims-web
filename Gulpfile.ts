@@ -77,6 +77,7 @@ export const etsIconList = [...etsSimpleIconList, ...etsColoredIconList, ...etsS
                         run: function($: any) {
                             $("[stroke]").removeAttr("stroke");
                             $("[stroke-width]").removeAttr("stroke-width");
+                            $("[fill]").removeAttr("fill");
                         },
                         parserOptions: {xmlMode: true},
                     }))

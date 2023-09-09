@@ -1,26 +1,10 @@
 <h1>That's developer's page</h1>
 
 <div class="icons-list">
-    <div *ngFor="let icon of defaultIcons"
+    <div *ngFor="let icon of etsIconList"
          class="icon-item"
     >
         <ets-icon [icon]="icon"></ets-icon>
-        <div class="name">{{icon}}</div>
-    </div>
-    <div *ngFor="let icon of coloredIcons"
-         class="icon-item"
-    >
-        <ets-icon [icon]="icon"
-                  [mode]="iconMode.COLORFUL"
-        ></ets-icon>
-        <div class="name">{{icon}}</div>
-    </div>
-    <div *ngFor="let icon of strokeIcons"
-         class="icon-item"
-    >
-        <ets-icon [icon]="icon"
-                  [mode]="iconMode.STROKE"
-        ></ets-icon>
         <div class="name">{{icon}}</div>
     </div>
 </div>
