@@ -36,4 +36,28 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             url: "/icons",
         },
     ],
+    [
+        {
+            name: "Temp1",
+            icon: "eye-off",
+            url: "/main",
+        },
+        {
+            name: "Temp2",
+            icon: "eye",
+            url: "/main",
+        },
+    ],
+    [
+        {
+            name: "Temp3",
+            icon: "eye-off",
+            url: "/main",
+        },
+        {
+            name: "Temp4",
+            icon: "eye",
+            url: "/main",
+        },
+    ],
 ];

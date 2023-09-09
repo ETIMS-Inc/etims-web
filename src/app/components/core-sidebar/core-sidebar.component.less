@@ -1,15 +1,39 @@
 @import "colors";
 @import "utils";
+@import "vars";
+
+@gap: @size-sm;
 
 :host {
-    width: 50px;
     background: @white;
+    padding: @size-sm @size-xxs;
+    .flex-column(@gap);
+    .shadow-right();
 }
 
 .nav-group {
-    .flex-column();
+    &:not(:first-child) {
+        .before-divider();
+    }
+
+    .flex-column(0);
+    --ets-icon-size: 25px;
 
     .nav-item {
-        .flex-column();
+        cursor: pointer;
+        .flex-row();
+        padding: (@gap / 2) @size-xxs-xs;
+
+        &:first-child {
+            padding-top: 1.5 * @gap;
+        }
+
+        &:hover {
+            background: @blue-hover;
+        }
+
+        &:active {
+            background: @blue-active;
+        }
     }
 }

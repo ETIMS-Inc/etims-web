@@ -1,5 +1,15 @@
-<div class="nav-group" *ngFor="let group of navGroups">
-    <div class="nav-item" *ngFor="let item of group">
+<div *ngFor="let group of navGroups"
+     class="nav-group"
+>
+    <div *ngFor="let item of group"
+         class="nav-item"
+         (click)="itemClicked(item)"
+    >
         <ets-icon [icon]="item.icon"></ets-icon>
+        <div *ngIf="mode === sidebarMode.Full"
+             class="nav-item__name"
+        >
+            {{item.name}}
+        </div>
     </div>
 </div>
