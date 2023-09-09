@@ -7,9 +7,20 @@ export enum CoreSidebarMode {
 
 export type CoreSidebarNavGroup = CoreSidebarNavItem[];
 
+export enum CoreSidebarChipType {
+    INFO,
+    WARNING,
+}
+
+export interface CoreSidebarChip {
+    counter: number,
+    type: CoreSidebarChipType,
+}
+
 export interface CoreSidebarNavItem {
     name: string;
     icon: EtcIconType;
     url: string;
-    childrenItems?: CoreSidebarNavItem[];
+    chip?: CoreSidebarChip,
+    childrenItems?: Omit<CoreSidebarNavItem, "childrenItems">[];
 }
