@@ -7,6 +7,8 @@ import {
     Component,
     Input,
 } from "@angular/core";
+import {Router} from "@angular/router";
+import {TooltipModule} from "primeng/tooltip";
 import {coreSidebarNavGroups} from "../../mocks/sidebar";
 import {IconComponent} from "../lib/icon/icon.component";
 import {
@@ -24,6 +26,7 @@ import {
         NgForOf,
         IconComponent,
         NgIf,
+        TooltipModule,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -34,8 +37,11 @@ export class CoreSidebarComponent {
     public width: number = undefined;
     public sidebarMode = CoreSidebarMode;
 
-    public itemClicked(item: CoreSidebarNavItem) {
+    constructor(private router: Router) {
+    }
 
+    public itemClicked(item: CoreSidebarNavItem) {
+        this.router.navigateByUrl(item.url);
     }
 
     public changeDisplayMode() {
