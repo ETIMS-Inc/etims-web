@@ -4,6 +4,7 @@ import {
 } from "@angular/common";
 import {
     Component,
+    HostBinding,
     Input,
 } from "@angular/core";
 import {coreSidebarNavGroups} from "../../mocks/sidebar";
@@ -29,9 +30,21 @@ export class CoreSidebarComponent {
     @Input() public mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
     @Input() public navGroups: CoreSidebarNavGroup[] = coreSidebarNavGroups;
 
+    @HostBinding("style.width") private width: string = undefined;
+
     public sidebarMode = CoreSidebarMode;
 
     public itemClicked(item: CoreSidebarNavItem) {
 
+    }
+
+    public changeDisplayMode() {
+        if (this.mode === CoreSidebarMode.Collapsed) {
+            this.mode = CoreSidebarMode.Full;
+            this.width = "180px";
+        } else {
+            this.mode = CoreSidebarMode.Collapsed;
+            this.width = undefined;
+        }
     }
 }
