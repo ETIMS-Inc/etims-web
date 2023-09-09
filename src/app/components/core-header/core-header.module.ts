@@ -12,7 +12,6 @@ import {IconComponent} from "../lib/icon/icon.component";
 import {CoreHeaderComponent} from "./core-header.component";
 import {InputTextModule} from "primeng/inputtext";
 import {AlertPopupModule} from "./alert-popup/alert-popup.module";
-import {LibModule} from "../lib/lib.module";
 
 @NgModule({
     declarations: [
@@ -33,7 +32,6 @@ import {LibModule} from "../lib/lib.module";
         MenuModule,
         AlertPopupModule,
         I18NextModule,
-        LibModule,
         IconComponent,
     ],
 })

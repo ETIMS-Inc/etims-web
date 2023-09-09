@@ -1,3 +1,4 @@
+import {NgStyle} from "@angular/common";
 import {
     ChangeDetectionStrategy,
     Component,
@@ -13,7 +14,11 @@ import {generateColor} from "./chip.utils";
     selector: "ets-course-tag",
     templateUrl: "./chip.component.html",
     styleUrls: ["./chip.component.less"],
+    standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgStyle,
+    ],
 })
 export class ChipComponent {
     @Output() public clicked = new EventEmitter();
