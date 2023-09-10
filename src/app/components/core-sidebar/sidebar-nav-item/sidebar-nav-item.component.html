@@ -8,7 +8,7 @@
              let-navItem="navItem"
 >
     <div class="nav-item"
-         [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed)}"
+         [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed) || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)}"
          [pTooltip]="_mode === sidebarMode.Collapsed ? navItem.name : null"
          (click)="navItemClicked(navItem)"
     >
