@@ -60,11 +60,11 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             url: "/main",
             childrenItems: [
                 {
-                    name: "Temp3",
+                    name: "Temp4.1",
                     url: "/main",
                 },
                 {
-                    name: "Temp4",
+                    name: "Temp4.2",
                     url: "/main",
                 },
             ],

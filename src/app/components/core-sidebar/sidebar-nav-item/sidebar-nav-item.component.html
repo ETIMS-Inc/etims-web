@@ -1,15 +1,34 @@
-<div *ngIf="item"
-     class="nav-item"
-     [pTooltip]="mode === sidebarMode.Collapsed ? item.name : null"
-     (click)="itemClicked.emit(item)"
+<ng-container *ngIf="item"
+              [ngTemplateOutletContext]="{navItem: item}"
+              [ngTemplateOutlet]="label"
 >
-    <ets-icon [icon]="item.icon"></ets-icon>
-    <div *ngIf="mode === sidebarMode.Full"
-         class="nav-item__name"
+</ng-container>
+
+<ng-template #label
+             let-navItem="navItem"
+             let-navItemStyleClass="navItemStyleClass"
+>
+    <div class="nav-item {{navItemStyleClass}}"
+         [pTooltip]="mode === sidebarMode.Collapsed ? navItem.name : null"
+         (click)="navItemClicked(navItem)"
     >
-        {{item.name}}
+        <ets-icon [icon]="navItem.icon || 'dot'"></ets-icon>
+        <div *ngIf="mode === sidebarMode.Full"
+             class="nav-item__name"
+        >
+            {{navItem.name}}
+        </div>
+        <ets-icon *ngIf="navItem.childrenItems && mode === sidebarMode.Full"
+                  [icon]="displayNestedItems ? 'angle-down' : 'angle-right'"
+        ></ets-icon>
     </div>
-    <ets-icon *ngIf="item.childrenItems"
-              [icon]="'angle-right'"
-    ></ets-icon>
-</div>
+
+    <ng-container *ngIf="displayNestedItems">
+        <ng-container *ngFor="let nestedItem of navItem.childrenItems">
+            <ng-container [ngTemplateOutletContext]="{navItem: nestedItem, navItemStyleClass: 'nested-item'}"
+                          [ngTemplateOutlet]="label"
+            >
+            </ng-container>
+        </ng-container>
+    </ng-container>
+</ng-template>
