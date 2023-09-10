@@ -18,6 +18,11 @@
     }
 }
 
+:host {
+    display: flex;
+    flex-direction: column;
+}
+
 .nav-item {
     .nav-item-base();
 
@@ -28,10 +33,10 @@
     &__name {
         flex: 1;
     }
+}
 
-    &.nested-item {
-        margin-left: @size-md;
-        --ets-icon-size: @size-xxs-sm;
-        --ets-icon-stroke-width: 4px;
-    }
+.nested-item {
+    margin-left: @size-md;
+    --ets-icon-size: @size-xxs-sm;
+    --ets-icon-stroke-width: 4px;
 }

@@ -10,6 +10,7 @@ import {
     EventEmitter,
     Input,
     Output,
+    ViewEncapsulation,
 } from "@angular/core";
 import {
     NavigationEnd,
