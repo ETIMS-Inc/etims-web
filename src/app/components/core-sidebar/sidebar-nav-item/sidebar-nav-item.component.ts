@@ -62,10 +62,7 @@ export class SidebarNavItemComponent {
     @Input()
     set mode(value: CoreSidebarMode) {
         this._mode = value;
-
-        if (this.nestedItemSelected) {
-            this.displayNestedItems = true;
-        }
+        this.displayNestedItems = this.nestedItemSelected;
     }
 
     public toggleDisplayNestedItems() {
