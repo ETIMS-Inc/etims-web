@@ -8,7 +8,7 @@
     .flex-row();
     align-items: center;
     cursor: pointer;
-    padding: (@gap / 2) @size-xxs-xs;
+    padding: (@gap / 2) @size-sm;
 
     &:hover {
         background: @blue-hover;
@@ -37,6 +37,16 @@
 
     &.selected {
         background: @blue-active;
+
+        &::before {
+            background: @blue-sky;
+            border-radius: @size-xxs;
+            content: "";
+            height: @size-md;
+            left: @size-xs;
+            position: absolute;
+            width: @size-xs;
+        }
     }
 }
 
