@@ -12,7 +12,8 @@
                 "@schematics/angular:component": {
                     "style": "less",
                     "changeDetection": "OnPush",
-                    "standalone": true
+                    "standalone": true,
+                    "viewEncapsulation": "None"
                 }
             },
             "root": "",
