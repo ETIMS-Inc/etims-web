@@ -43,15 +43,24 @@
             border-radius: @size-xxs;
             content: "";
             height: @size-md;
-            left: @size-xs;
-            position: absolute;
+            margin-right: -@size-xs-sm;
+            position: relative;
             width: @size-xs;
+            left: -5px;
         }
     }
 }
 
 .nested-item {
-    margin-left: @size-md;
     --ets-icon-size: @size-xxs-sm;
     --ets-icon-stroke-width: 4px;
+
+    .nav-item {
+        padding-left: @size-xs-md;
+
+        &.selected::before {
+            margin-right: -@size-xs-sm;
+            left: -@size-sm;
+        }
+    }
 }

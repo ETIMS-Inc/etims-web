@@ -16,19 +16,19 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
     ],
     [
         {
-            name: "Dashboard",
+            name: "Home",
+            icon: "home",
+            url: "/home",
+        },
+        {
+            name: "Account",
+            icon: "user-round",
+            url: "/account",
+        },
+        {
+            name: "Courses",
             icon: "grid",
-            url: "/main",
-        },
-        {
-            name: "Analytics",
-            icon: "chart",
-            url: "/main",
-        },
-        {
-            name: "Grades",
-            icon: "chart-vertical",
-            url: "/main",
+            url: "/courses",
         },
         {
             name: "Icons",
@@ -40,31 +40,31 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
         {
             name: "Temp1",
             icon: "eye-off",
-            url: "/main",
+            url: "/Temp1",
         },
         {
             name: "Temp2",
             icon: "eye",
-            url: "/main",
+            url: "/Temp2",
         },
     ],
     [
         {
-            name: "Temp3",
+            name: "404",
             icon: "eye-off",
-            url: "/main",
+            url: "/404",
         },
         {
-            name: "Temp4",
+            name: "Settings",
             icon: "eye",
-            url: "/main",
+            url: "/settings",
             childrenItems: [
                 {
-                    name: "Temp4.1",
-                    url: "/main",
+                    name: "Recover password",
+                    url: "/recover-password",
                 },
                 {
-                    name: "Temp4.2",
+                    name: "Temp",
                     url: "/main",
                 },
             ],
