@@ -23,7 +23,7 @@
         ></ets-icon>
     </div>
 
-    <ng-container *ngIf="displayNestedItems">
+    <ng-container *ngIf="displayNestedItems && mode === sidebarMode.Full">
         <ng-container *ngFor="let nestedItem of navItem.childrenItems">
             <ets-sidebar-nav-item class="nested-item"
                                   [currentUrl]="currentUrl"
