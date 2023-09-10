@@ -1,23 +1,17 @@
 import {
+    NgClass,
     NgForOf,
     NgIf,
     NgTemplateOutlet,
 } from "@angular/common";
 import {
-    AfterViewInit,
     ChangeDetectionStrategy,
     Component,
     EventEmitter,
     Input,
     Output,
-    ViewEncapsulation,
 } from "@angular/core";
-import {
-    NavigationEnd,
-    Router,
-} from "@angular/router";
 import {TooltipModule} from "primeng/tooltip";
-import {filter} from "rxjs";
 import {IconComponent} from "../../lib/icon/icon.component";
 import {
     CoreSidebarMode,
@@ -36,26 +30,16 @@ import {
         TooltipModule,
         NgTemplateOutlet,
         NgForOf,
+        NgClass,
     ],
 })
-export class SidebarNavItemComponent implements AfterViewInit{
+export class SidebarNavItemComponent {
     @Input() public item: CoreSidebarNavItem;
     @Input() public mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
+    @Input() public currentUrl: string;
     @Output() public itemClicked: EventEmitter<CoreSidebarNavItem> = new EventEmitter();
     public sidebarMode = CoreSidebarMode;
     public displayNestedItems = false;
-
-    constructor(public router: Router) {
-        router.events.pipe(filter(event => event instanceof NavigationEnd))
-            .subscribe(event =>
-            {
-                console.log(">>> EVENT: ", event);
-            });
-    }
-
-    public ngAfterViewInit(): void {
-        console.log(">>> ", this.router.url);
-    }
 
     public toggleDisplayNestedItems() {
         this.displayNestedItems = !this.displayNestedItems;

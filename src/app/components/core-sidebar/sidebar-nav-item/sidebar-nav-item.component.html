@@ -8,6 +8,7 @@
              let-navItem="navItem"
 >
     <div class="nav-item"
+         [ngClass]="{'selected': currentUrl && currentUrl === item.url}"
          [pTooltip]="mode === sidebarMode.Collapsed ? navItem.name : null"
          (click)="navItemClicked(navItem)"
     >
@@ -25,6 +26,7 @@
     <ng-container *ngIf="displayNestedItems">
         <ng-container *ngFor="let nestedItem of navItem.childrenItems">
             <ets-sidebar-nav-item class="nested-item"
+                                  [currentUrl]="currentUrl"
                                   [item]="nestedItem"
                                   [mode]="mode"
                                   (itemClicked)="itemClicked.emit($event)"

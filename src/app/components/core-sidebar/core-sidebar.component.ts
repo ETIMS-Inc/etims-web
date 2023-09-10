@@ -1,4 +1,5 @@
 import {
+    AsyncPipe,
     NgForOf,
     NgIf,
 } from "@angular/common";
@@ -7,7 +8,15 @@ import {
     Component,
     Input,
 } from "@angular/core";
-import {Router} from "@angular/router";
+import {
+    NavigationEnd,
+    Router,
+} from "@angular/router";
+import {
+    filter,
+    map,
+    Observable,
+} from "rxjs";
 import {coreSidebarNavGroups} from "../../mocks/sidebar";
 import {IconComponent} from "../lib/icon/icon.component";
 import {
@@ -38,6 +47,7 @@ const expandControl: Record<string, CoreSidebarNavItem> = {
         IconComponent,
         NgIf,
         SidebarNavItemComponent,
+        AsyncPipe,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -46,11 +56,14 @@ export class CoreSidebarComponent {
     @Input() public navGroups: CoreSidebarNavGroup[] = coreSidebarNavGroups;
 
     public width: number = undefined;
-    public sidebarMode = CoreSidebarMode;
-
+    public currentUrl: Observable<string>;
     public expandControlItem: CoreSidebarNavItem = expandControl["expand"];
 
     constructor(private router: Router) {
+        this.currentUrl = router.events.pipe(
+            filter(event => event instanceof NavigationEnd),
+            map(event => (event as NavigationEnd).urlAfterRedirects)
+        );
     }
 
     public itemClicked(item: CoreSidebarNavItem) {

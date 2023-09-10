@@ -1,5 +1,6 @@
 @import "vars";
 @import "utils";
+@import "colors";
 
 @gap: @size-sm;
 
@@ -32,6 +33,10 @@
 
     &__name {
         flex: 1;
+    }
+
+    &.selected {
+        background: @blue-active;
     }
 }
 
