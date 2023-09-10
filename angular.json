@@ -11,7 +11,8 @@
                 },
                 "@schematics/angular:component": {
                     "style": "less",
-                    "changeDetection": "OnPush"
+                    "changeDetection": "OnPush",
+                    "standalone": true
                 }
             },
             "root": "",
