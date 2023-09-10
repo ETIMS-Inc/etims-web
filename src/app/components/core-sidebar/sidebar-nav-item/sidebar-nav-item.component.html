@@ -1,5 +1,5 @@
-<ng-container *ngIf="item"
-              [ngTemplateOutletContext]="{navItem: item}"
+<ng-container *ngIf="_item"
+              [ngTemplateOutletContext]="{navItem: _item}"
               [ngTemplateOutlet]="label"
 >
 </ng-container>
@@ -8,27 +8,27 @@
              let-navItem="navItem"
 >
     <div class="nav-item"
-         [ngClass]="{'selected': currentUrl && currentUrl === item.url}"
-         [pTooltip]="mode === sidebarMode.Collapsed ? navItem.name : null"
+         [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed)}"
+         [pTooltip]="_mode === sidebarMode.Collapsed ? navItem.name : null"
          (click)="navItemClicked(navItem)"
     >
         <ets-icon [icon]="navItem.icon || 'dot'"></ets-icon>
-        <div *ngIf="mode === sidebarMode.Full"
+        <div *ngIf="_mode === sidebarMode.Full"
              class="nav-item__name"
         >
             {{navItem.name}}
         </div>
-        <ets-icon *ngIf="navItem.childrenItems && mode === sidebarMode.Full"
+        <ets-icon *ngIf="navItem.childrenItems && _mode === sidebarMode.Full"
                   [icon]="displayNestedItems ? 'angle-down' : 'angle-right'"
         ></ets-icon>
     </div>
 
-    <ng-container *ngIf="displayNestedItems && mode === sidebarMode.Full">
+    <ng-container *ngIf="displayNestedItems && _mode === sidebarMode.Full">
         <ng-container *ngFor="let nestedItem of navItem.childrenItems">
             <ets-sidebar-nav-item class="nested-item"
-                                  [currentUrl]="currentUrl"
+                                  [currentUrl]="_currentUrl"
                                   [item]="nestedItem"
-                                  [mode]="mode"
+                                  [mode]="_mode"
                                   (itemClicked)="itemClicked.emit($event)"
             ></ets-sidebar-nav-item>
         </ng-container>
