@@ -26,7 +26,7 @@ import {
 } from "./core-sidebar.model";
 import {SidebarNavItemComponent} from "./sidebar-nav-item/sidebar-nav-item.component";
 
-const expandControl: Record<string, CoreSidebarNavItem> = {
+const expandControl: Record<"expand" | "collapse", CoreSidebarNavItem> = {
     expand: {
         name: "Expand",
         icon: "chevrons-right-arrows",
@@ -73,11 +73,11 @@ export class CoreSidebarComponent {
     public changeDisplayMode() {
         if (this.mode === CoreSidebarMode.Collapsed) {
             this.mode = CoreSidebarMode.Full;
-            this.expandControlItem = expandControl["collapse"];
+            this.expandControlItem = expandControl.collapse;
             this.width = 180;
         } else {
             this.mode = CoreSidebarMode.Collapsed;
-            this.expandControlItem = expandControl["expand"];
+            this.expandControlItem = expandControl.expand;
             this.width = undefined;
         }
     }
