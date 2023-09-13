@@ -11,6 +11,7 @@ import {
     Input,
     Output,
 } from "@angular/core";
+import {I18NextModule} from "angular-i18next";
 import {TooltipModule} from "primeng/tooltip";
 import {IconComponent} from "../../lib/icon/icon.component";
 import {
@@ -25,12 +26,13 @@ import {
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
-        NgIf,
+        I18NextModule,
         IconComponent,
-        TooltipModule,
-        NgTemplateOutlet,
-        NgForOf,
         NgClass,
+        NgForOf,
+        NgIf,
+        NgTemplateOutlet,
+        TooltipModule,
     ],
 })
 export class SidebarNavItemComponent {

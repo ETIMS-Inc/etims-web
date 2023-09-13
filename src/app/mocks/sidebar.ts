@@ -4,34 +4,34 @@ import {CoreSidebarNavGroup} from "../components/core-sidebar/core-sidebar.model
 export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
     [
         {
-            name: "Favorites",
+            name: "sidebar.tab.favorites",
             icon: "star",
             url: "/main",
         },
         {
-            name: "Recents",
+            name: "sidebar.tab.recents",
             icon: "time",
             url: "/main",
         },
     ],
     [
         {
-            name: "Home",
+            name: "sidebar.tab.home",
             icon: "home",
             url: "/home",
         },
         {
-            name: "Account",
+            name: "sidebar.tab.account",
             icon: "user-round",
             url: "/account",
         },
         {
-            name: "Courses",
+            name: "sidebar.tab.courses",
             icon: "grid",
             url: "/courses",
         },
         {
-            name: "Icons",
+            name: "sidebar.tab.icons",
             icon: "file",
             url: "/icons",
         },
@@ -55,7 +55,7 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             url: "/404",
         },
         {
-            name: "Settings",
+            name: "sidebar.tab.settings",
             icon: "eye",
             url: "/settings",
             childrenItems: [

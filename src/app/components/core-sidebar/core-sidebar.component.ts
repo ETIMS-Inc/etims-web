@@ -43,11 +43,11 @@ const expandControl: Record<string, CoreSidebarNavItem> = {
     styleUrls: ["./core-sidebar.component.less"],
     standalone: true,
     imports: [
-        NgForOf,
+        AsyncPipe,
         IconComponent,
+        NgForOf,
         NgIf,
         SidebarNavItemComponent,
-        AsyncPipe,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -62,7 +62,7 @@ export class CoreSidebarComponent {
     constructor(private router: Router) {
         this.currentUrl = router.events.pipe(
             filter(event => event instanceof NavigationEnd),
-            map(event => (event as NavigationEnd).urlAfterRedirects)
+            map(event => (event as NavigationEnd).urlAfterRedirects),
         );
     }
 

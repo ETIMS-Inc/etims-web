@@ -16,7 +16,7 @@
         <div *ngIf="_mode === sidebarMode.Full"
              class="nav-item__name"
         >
-            {{navItem.name}}
+            {{navItem.name | i18next}}
         </div>
         <ets-icon *ngIf="navItem.childrenItems && _mode === sidebarMode.Full"
                   [icon]="displayNestedItems ? 'angle-down' : 'angle-right'"
