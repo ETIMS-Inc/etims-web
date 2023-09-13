@@ -13,7 +13,7 @@ export enum CoreSidebarChipType {
 }
 
 export interface CoreSidebarChip {
-    counter: number,
+    num: number,
     type: CoreSidebarChipType,
 }
 

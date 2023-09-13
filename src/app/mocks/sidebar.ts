@@ -1,4 +1,7 @@
-import {CoreSidebarNavGroup} from "../components/core-sidebar/core-sidebar.model";
+import {
+    CoreSidebarChipType,
+    CoreSidebarNavGroup,
+} from "../components/core-sidebar/core-sidebar.model";
 
 // TODO: use translations
 export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
@@ -41,11 +44,19 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             name: "Temp1",
             icon: "eye-off",
             url: "/Temp1",
+            chip: {
+                num: 5,
+                type: CoreSidebarChipType.INFO,
+            }
         },
         {
             name: "Temp2",
             icon: "eye",
             url: "/Temp2",
+            chip: {
+                num: 2,
+                type: CoreSidebarChipType.WARNING,
+            }
         },
     ],
     [
@@ -58,10 +69,18 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             name: "sidebar.tab.settings",
             icon: "eye",
             url: "/settings",
+            chip: {
+                num: 2,
+                type: CoreSidebarChipType.WARNING,
+            },
             childrenItems: [
                 {
                     name: "Recover password",
                     url: "/recover-password",
+                    chip: {
+                        num: 2,
+                        type: CoreSidebarChipType.WARNING,
+                    }
                 },
                 {
                     name: "Temp",

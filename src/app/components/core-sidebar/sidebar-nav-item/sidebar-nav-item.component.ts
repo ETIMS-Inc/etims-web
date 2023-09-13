@@ -13,8 +13,11 @@ import {
 } from "@angular/core";
 import {I18NextModule} from "angular-i18next";
 import {TooltipModule} from "primeng/tooltip";
+import {EtsAsPipe} from "../../../pipes/as.pipe";
+import {ChipComponent} from "../../lib/chip/chip.component";
 import {IconComponent} from "../../lib/icon/icon.component";
 import {
+    CoreSidebarChipType,
     CoreSidebarMode,
     CoreSidebarNavItem,
 } from "../core-sidebar.model";
@@ -33,6 +36,8 @@ import {
         NgIf,
         NgTemplateOutlet,
         TooltipModule,
+        ChipComponent,
+        EtsAsPipe,
     ],
 })
 export class SidebarNavItemComponent {
@@ -44,6 +49,12 @@ export class SidebarNavItemComponent {
     public displayNestedItems = false;
     public nestedUrls: string[] = [];
     public nestedItemSelected: boolean;
+    public coreSidebarNavItem: CoreSidebarNavItem;
+
+    public chipColors: Record<CoreSidebarChipType, string> = {
+        [CoreSidebarChipType.WARNING]: "red",
+        [CoreSidebarChipType.INFO]: "blue",
+    }
 
     @Input()
     set item(value: CoreSidebarNavItem) {

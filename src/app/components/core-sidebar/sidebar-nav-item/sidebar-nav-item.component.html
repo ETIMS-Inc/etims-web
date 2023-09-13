@@ -7,30 +7,35 @@
 <ng-template #label
              let-navItem="navItem"
 >
-    <div class="nav-item"
-         [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed) || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)}"
-         [pTooltip]="_mode === sidebarMode.Collapsed ? navItem.name : null"
-         (click)="navItemClicked(navItem)"
-    >
-        <ets-icon [icon]="navItem.icon || 'dot'"></ets-icon>
-        <div *ngIf="_mode === sidebarMode.Full"
-             class="nav-item__name"
+    <ng-container *ngIf="(navItem | as: coreSidebarNavItem) as item">
+        <div class="nav-item"
+             [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed) || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)}"
+             [pTooltip]="_mode === sidebarMode.Collapsed ? item.name : null"
+             (click)="navItemClicked(item)"
         >
-            {{navItem.name | i18next}}
+            <ets-icon [icon]="item.icon || 'dot'"></ets-icon>
+            <div *ngIf="_mode === sidebarMode.Full"
+                 class="nav-item__name"
+            >
+                {{item.name | i18next}}
+            </div>
+            <ets-chip *ngIf="item.chip as chip"
+                      [chip]="{label: chip.num, color: chipColors[chip.type]}"
+            ></ets-chip>
+            <ets-icon *ngIf="item.childrenItems && _mode === sidebarMode.Full"
+                      [icon]="displayNestedItems ? 'angle-down' : 'angle-right'"
+            ></ets-icon>
         </div>
-        <ets-icon *ngIf="navItem.childrenItems && _mode === sidebarMode.Full"
-                  [icon]="displayNestedItems ? 'angle-down' : 'angle-right'"
-        ></ets-icon>
-    </div>
 
-    <ng-container *ngIf="displayNestedItems && _mode === sidebarMode.Full">
-        <ng-container *ngFor="let nestedItem of navItem.childrenItems">
-            <ets-sidebar-nav-item class="nested-item"
-                                  [currentUrl]="_currentUrl"
-                                  [item]="nestedItem"
-                                  [mode]="_mode"
-                                  (itemClicked)="itemClicked.emit($event)"
-            ></ets-sidebar-nav-item>
+        <ng-container *ngIf="displayNestedItems && _mode === sidebarMode.Full">
+            <ng-container *ngFor="let nestedItem of item.childrenItems">
+                <ets-sidebar-nav-item class="nested-item"
+                                      [currentUrl]="_currentUrl"
+                                      [item]="nestedItem | as: coreSidebarNavItem"
+                                      [mode]="_mode"
+                                      (itemClicked)="itemClicked.emit($event)"
+                ></ets-sidebar-nav-item>
+            </ng-container>
         </ng-container>
     </ng-container>
 </ng-template>
