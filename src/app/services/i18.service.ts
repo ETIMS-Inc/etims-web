@@ -2,10 +2,7 @@ import {
     Inject,
     Injectable,
 } from "@angular/core";
-import {
-    UntilDestroy,
-    untilDestroyed,
-} from "@ngneat/until-destroy";
+import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {
     I18NEXT_SERVICE,
     ITranslationService,
@@ -13,7 +10,6 @@ import {
 import {filter} from "rxjs";
 import {defaultLanguage} from "../components/landing-header/landing-header.model";
 
-@UntilDestroy()
 @Injectable({
     providedIn: "root",
 })
@@ -25,7 +21,7 @@ export class I18Service {
         this.i18NextService.events.initialized
             .pipe(
                 filter(Boolean),
-                untilDestroyed(this),
+                takeUntilDestroyed(),
             ).subscribe(() => this.languageCode = this.i18NextService.language);
     }
 
@@ -41,7 +37,7 @@ export class I18Service {
     public translateObjectProperty = <T extends object, K extends keyof T>(object: T, propertyKey: K): T =>
         ({
             ...object,
-            [propertyKey]: this.i18NextService.t(object[propertyKey])
+            [propertyKey]: this.i18NextService.t(object[propertyKey]),
         });
 
     public translateObjectsProperty = <T extends object, K extends keyof T>(objects: T[], propertyKey: K): T[] =>
