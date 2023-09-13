@@ -10,8 +10,8 @@ import {
     I18NEXT_SERVICE,
     ITranslationService,
 } from "angular-i18next";
-import {defaultLanguage} from "../components/landing-header/landing-header.model";
 import {filter} from "rxjs";
+import {defaultLanguage} from "../components/landing-header/landing-header.model";
 
 @UntilDestroy()
 @Injectable({
@@ -37,4 +37,16 @@ export class I18Service {
             });
         }
     }
+
+    public translateObjectProperty = <T extends object, K extends keyof T>(object: T, propertyKey: K): T =>
+        ({
+            ...object,
+            [propertyKey]: this.i18NextService.t(object[propertyKey])
+        });
+
+    public translateObjectsProperty = <T extends object, K extends keyof T>(objects: T[], propertyKey: K): T[] =>
+        objects.map(obj => ({
+            ...obj,
+            [propertyKey]: this.i18NextService.t(obj[propertyKey]),
+        }));
 }
