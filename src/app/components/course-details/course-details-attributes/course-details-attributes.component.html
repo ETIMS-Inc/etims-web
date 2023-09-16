@@ -1,6 +1,40 @@
-<p-card class="course-details-attributes" header="Title">
-    <p class="m-0">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-        quas!
-    </p>
+<p-card class="course-details-attributes">
+    <ng-container *ngTemplateOutlet="lecturesTemp"></ng-container>
+    <ets-course-details-catalog
+    ></ets-course-details-catalog>
+    <ets-course-details-catalog
+    ></ets-course-details-catalog>
+    <ng-container *ngTemplateOutlet="tagsTemp"></ng-container>
+    <ets-course-details-catalog
+    ></ets-course-details-catalog>
+    <ets-course-details-catalog
+    ></ets-course-details-catalog>
 </p-card>
+
+<ng-template #lecturesTemp>
+    <div class="course-details-attributes__course-by-caption">
+        A course by
+    </div>
+    <div
+        *ngFor="let item of courseAuthors"
+        class="course-details-attributes__course-by-wrapper"
+    >
+        <p-avatar
+            [image]="item?.avatar"
+            shape="circle"
+            size="large"
+        ></p-avatar>
+        <div class="course-details-attributes__course-by-user">
+            <span class="course-details-attributes__course-by-initials">
+                {{ item?.fullName }}
+            </span>
+            <span class="course-details-attributes__course-by-role">
+                {{ item?.role }}
+            </span>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #tagsTemp>
+
+</ng-template>

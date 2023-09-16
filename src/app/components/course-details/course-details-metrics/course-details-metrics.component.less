@@ -18,6 +18,28 @@
         flex-direction: column;
     }
 
+    &__control {
+        margin-bottom: 20px;
+
+        &._add-cart {
+            ::ng-deep {
+                .p-button-label {
+                    flex: 0.5;
+                }
+
+                .p-button {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    &__guarantee {
+        margin-bottom: 12px;
+        text-align: center;
+        color: #777e90;
+    }
+
     &__purchase {
         padding: 24px 32px;
         background-color: #e5e9f5;
@@ -30,9 +52,19 @@
 
         &-discount, &-section, &-caption {
             display: flex;
+            align-items: baseline;
         }
 
         &-discount {
+            align-items: center;
+
+            &-icon {
+                margin-right: 4px;
+            }
+
+            &-sale {
+                font-weight: 700;
+            }
             --ets-icon-color: red;
         }
 
@@ -43,10 +75,37 @@
 
         &._old {
             text-decoration: line-through;
+            color: #777e90;
         }
 
         &._new {
+            margin-right: 8px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+    }
 
+    &__overview {
+        display: flex;
+        flex-direction: column;
+        margin-left: 32px;
+
+        &-item {
+            display: flex;
+            flex-direction: row;
+            padding: 8px 0;
+
+            &-icon {
+                margin-right: 12px;
+            }
+
+            &._first {
+                margin-top: 12px;
+            }
+
+            &._last {
+                margin-bottom: 16px;
+            }
         }
     }
 }

@@ -2,6 +2,8 @@ import {
     ChangeDetectionStrategy,
     Component,
 } from "@angular/core";
+import {courseAuthors} from "../../../mocks/course-authors";
+import {CourseAuthor} from "./course-details-attributes.model";
 
 @Component({
     selector: "ets-course-details-attributes",
@@ -11,4 +13,5 @@ import {
 })
 export class CourseDetailsAttributesComponent {
 
+    public courseAuthors: CourseAuthor[] = courseAuthors;
 }

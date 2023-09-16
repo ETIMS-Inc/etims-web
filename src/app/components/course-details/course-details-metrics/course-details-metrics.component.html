@@ -10,12 +10,17 @@
                 </span>
             </div>
             <div class="course-details-metrics__price-discount">
-                <ets-icon icon="percentage"></ets-icon>
-                <span>75% off</span>
+                <ets-icon
+                    class="course-details-metrics__price-discount-icon"
+                    icon="percentage"
+                ></ets-icon>
+                <span class="course-details-metrics__price-discount-sale">
+                    75% off
+                </span>
             </div>
         </div>
         <p-button
-            class="course-details-metrics__control"
+            class="course-details-metrics__control _add-cart"
             label="Add to cart"
             icon="pi pi-shopping-cart"
         ></p-button>
@@ -24,14 +29,30 @@
             label="Buy Now"
             styleClass="p-button-outlined"
         ></p-button>
-        <span>
+        <span class="course-details-metrics__guarantee">
             30-Day Money-Back Guarantee
         </span>
     </div>
     <div class="course-details-metrics__overview">
-        <div>
-            <ets-icon icon="percentage"></ets-icon>
-            <span>75% off</span>
-        </div>
+        <ng-container *ngFor="let item of overviewItems;
+            let first = first;
+            let last = last"
+        >
+            <div
+                class="course-details-metrics__overview-item"
+                [ngClass]="{
+                    '_first': first,
+                    '_last': last,
+                }"
+            >
+                <ets-icon
+                    class="course-details-metrics__overview-item-icon"
+                    [icon]="item?.icon"
+                ></ets-icon>
+                <span class="course-details-metrics__overview-item-sale">
+                    {{ item?.caption }}
+                </span>
+            </div>
+        </ng-container>
     </div>
 </p-card>

@@ -2,6 +2,10 @@ import {
     ChangeDetectionStrategy,
     Component,
 } from "@angular/core";
+import {
+    CourseDetails,
+    courseDetailsItems,
+} from "./course-details-metrics.model";
 
 @Component({
     selector: "ets-course-details-metrics",
@@ -11,4 +15,5 @@ import {
 })
 export class CourseDetailsMetricsComponent {
 
+    public overviewItems: CourseDetails[] = courseDetailsItems;
 }
