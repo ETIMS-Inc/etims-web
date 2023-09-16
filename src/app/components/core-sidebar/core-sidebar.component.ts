@@ -37,6 +37,8 @@ const expandControl: Record<"expand" | "collapse", CoreSidebarNavItem> = {
     },
 };
 
+const expandedSidebarWidth = 200;
+
 @Component({
     selector: "ets-core-sidebar",
     templateUrl: "./core-sidebar.component.html",
@@ -74,7 +76,7 @@ export class CoreSidebarComponent {
         if (this.mode === CoreSidebarMode.Collapsed) {
             this.mode = CoreSidebarMode.Full;
             this.expandControlItem = expandControl.collapse;
-            this.width = 180;
+            this.width = expandedSidebarWidth;
         } else {
             this.mode = CoreSidebarMode.Collapsed;
             this.expandControlItem = expandControl.expand;

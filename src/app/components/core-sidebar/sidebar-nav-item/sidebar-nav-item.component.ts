@@ -13,8 +13,10 @@ import {
 } from "@angular/core";
 import {I18NextModule} from "angular-i18next";
 import {TooltipModule} from "primeng/tooltip";
+import {Color} from "../../../models/colors";
 import {EtsAsPipe} from "../../../pipes/as.pipe";
 import {ChipComponent} from "../../lib/chip/chip.component";
+import {DotComponent} from "../../lib/dot/dot.component";
 import {IconComponent} from "../../lib/icon/icon.component";
 import {
     CoreSidebarChipType,
@@ -38,6 +40,7 @@ import {
         TooltipModule,
         ChipComponent,
         EtsAsPipe,
+        DotComponent,
     ],
 })
 export class SidebarNavItemComponent {
@@ -52,8 +55,8 @@ export class SidebarNavItemComponent {
     public coreSidebarNavItem: CoreSidebarNavItem;
 
     public chipColors: Record<CoreSidebarChipType, string> = {
-        [CoreSidebarChipType.WARNING]: "red",
-        [CoreSidebarChipType.INFO]: "blue",
+        [CoreSidebarChipType.WARNING]: Color.Warning,
+        [CoreSidebarChipType.INFO]: Color.Info,
     }
 
     @Input()

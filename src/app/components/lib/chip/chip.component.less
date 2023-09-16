@@ -1,27 +1,29 @@
 @import "vars";
+@import "colors";
 
-.tag {
+.chip {
     &-container {
         width: min-content;
     }
 
     &-label {
-        padding: @size-xxs @size-xxs-sm;
+        color: var(--ets-chip-color, @main-text-color);
         font-weight: 500;
+        padding: @size-xxs @size-xxs-sm;
         position: relative;
-        z-index: 0;
+        z-index: 1;
 
         &::after {
             background-color: var(--ets-chip-background, #004c99);
             border-radius: @size-xs;
             content: '';
-            filter: opacity(0.4);
+            filter: opacity(var(--ets-chip-background-opacity, 0.4)); // define --ets-chip-background-z-index = -1 if used opacity 1
             height: 100%;
             left: 0;
             position: absolute;
             top: 0;
             width: 100%;
-            z-index: -1;
+            z-index: var(--ets-chip-background-z-index, 0);
         }
     }
 }

@@ -19,9 +19,12 @@
             >
                 {{item.name | i18next}}
             </div>
-            <ets-chip *ngIf="item.chip as chip"
+            <ets-chip *ngIf="_mode === sidebarMode.Full && item.chip as chip"
                       [chip]="{label: chip.num, color: chipColors[chip.type]}"
             ></ets-chip>
+            <ets-dot *ngIf="_mode === sidebarMode.Collapsed && item.chip as chip"
+                     [color]="chipColors[chip.type]"
+            ></ets-dot>
             <ets-icon *ngIf="item.childrenItems && _mode === sidebarMode.Full"
                       [icon]="displayNestedItems ? 'angle-down' : 'angle-right'"
             ></ets-icon>
