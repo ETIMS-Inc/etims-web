@@ -41,11 +41,11 @@ export class IconComponent {
     set icon(value: EtcIcon) {
         this.etsIcon = value;
 
-        if (etsSimpleIconList.includes(value as any)) {
+        if (etsSimpleIconList.includes(value as typeof etsSimpleIconList[number])) {
             this.mode = EtsIconMode.FILL;
-        } else if (etsColoredIconList.includes(value as any)) {
+        } else if (etsColoredIconList.includes(value as typeof etsColoredIconList[number])) {
             this.mode = EtsIconMode.COLORFUL;
-        } else if (etsStrokeIconList.includes(value as any)) {
+        } else if (etsStrokeIconList.includes(value as typeof etsStrokeIconList[number])) {
             this.mode = EtsIconMode.STROKE;
         }
     }

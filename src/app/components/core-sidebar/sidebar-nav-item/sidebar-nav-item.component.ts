@@ -81,11 +81,11 @@ export class SidebarNavItemComponent {
         this.displayNestedItems = this.nestedItemSelected;
     }
 
-    public toggleDisplayNestedItems() {
+    public toggleDisplayNestedItems(): void {
         this.displayNestedItems = !this.displayNestedItems;
     }
 
-    public navItemClicked(navItem: CoreSidebarNavItem) {
+    public navItemClicked(navItem: CoreSidebarNavItem): void {
         if (this._mode === CoreSidebarMode.Collapsed) {
             this.itemClicked.emit(navItem);
         } else {

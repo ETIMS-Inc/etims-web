@@ -68,11 +68,11 @@ export class CoreSidebarComponent {
         );
     }
 
-    public itemClicked(item: CoreSidebarNavItem) {
+    public itemClicked(item: CoreSidebarNavItem): void {
         this.router.navigateByUrl(item.url);
     }
 
-    public changeDisplayMode() {
+    public changeDisplayMode(): void {
         if (this.mode === CoreSidebarMode.Collapsed) {
             this.mode = CoreSidebarMode.Full;
             this.expandControlItem = expandControl.collapse;
