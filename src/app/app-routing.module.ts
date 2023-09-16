@@ -22,6 +22,10 @@ const routes: Routes = [
         path: "courses",
         loadChildren: () => import("./components/pages/courses-list-page/courses-list-page.module").then(m => m.CoursesListPageModule),
     },
+    {
+        path: "icons",
+        loadChildren: () => import("./components/pages/icons-page/icons-page.module").then(m => m.IconsPageModule),
+    },
     {path: "**", redirectTo: "/404"},
     {
         path: "404",

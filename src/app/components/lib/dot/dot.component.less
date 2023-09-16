@@ -1,0 +1,12 @@
+@import "vars";
+@import "colors";
+
+.dot {
+    @dot-size: var(--ets-dot-size, 5px);
+    background-color: var(--ets-dot-color, #004c99);
+    border-radius: @size-xs;
+    filter: opacity(var(--ets-dot-opacity, 0.4));
+    height: @dot-size;
+    width: @dot-size;
+    z-index: 0;
+}

@@ -1,0 +1,31 @@
+@import "colors";
+@import "utils";
+@import "vars";
+
+@gap: @size-sm;
+
+:host {
+    background: @white;
+    .shadow-right();
+    --ets-icon-size: 25px;
+}
+
+.core-sidebar-container {
+    .flex-column(@gap);
+    height: 100%;
+    padding: @size-sm @size-xxs;
+
+    .nav-groups {
+        .flex-column(@gap);
+        flex: 1;
+
+        .nav-group {
+            &:not(:first-child) {
+                .before-divider();
+            }
+
+            .flex-column(0);
+        }
+    }
+}
+

@@ -1,0 +1,23 @@
+<div class="core-sidebar-container"
+     [style.width.px]="width"
+>
+    <div class="nav-groups">
+        <div *ngFor="let group of navGroups"
+             class="nav-group"
+        >
+            <ets-sidebar-nav-item *ngFor="let item of group"
+                                  [item]="item"
+                                  [mode]="mode"
+                                  [currentUrl]="currentUrl && (currentUrl | async)"
+                                  (itemClicked)="itemClicked($event)"
+            >
+            </ets-sidebar-nav-item>
+        </div>
+    </div>
+
+    <ets-sidebar-nav-item [item]="expandControlItem"
+                          [mode]="mode"
+                          (itemClicked)="changeDisplayMode()"
+    >
+    </ets-sidebar-nav-item>
+</div>

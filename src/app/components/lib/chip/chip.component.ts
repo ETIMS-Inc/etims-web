@@ -1,3 +1,4 @@
+import {NgStyle} from "@angular/common";
 import {
     ChangeDetectionStrategy,
     Component,
@@ -10,22 +11,26 @@ import {Chip} from "./chip.model";
 import {generateColor} from "./chip.utils";
 
 @Component({
-    selector: "ets-course-tag",
+    selector: "ets-chip",
     templateUrl: "./chip.component.html",
     styleUrls: ["./chip.component.less"],
+    standalone: true,
     changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [
+        NgStyle,
+    ],
 })
 export class ChipComponent {
     @Output() public clicked = new EventEmitter();
-    public chip: Chip;
+    public chipUse: Chip;
 
     @Input()
-    set value(value: Chip) {
-        this.chip = {
+    set chip(value: Chip) {
+        this.chipUse = {
             ...value,
             color: tinycolor(value.color).isValid()
                 ? tinycolor(value.color).toHexString()
-                : generateColor(value.name),
+                : generateColor(value.label.toString()),
         };
     }
 }
