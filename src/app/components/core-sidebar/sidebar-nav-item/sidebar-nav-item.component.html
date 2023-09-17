@@ -10,7 +10,7 @@
     <ng-container *ngIf="(navItem | as: coreSidebarNavItem) as item">
         <div class="nav-item"
              [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed) || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)}"
-             [pTooltip]="_mode === sidebarMode.Collapsed ? item.name : null"
+             [pTooltip]="_mode === sidebarMode.Collapsed ? (item.name | i18next) : null"
              (click)="navItemClicked(item)"
         >
             <ets-icon [icon]="item.icon || 'dot'"></ets-icon>
