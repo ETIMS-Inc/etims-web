@@ -4,7 +4,7 @@ import {
     RouterModule,
     Routes,
 } from "@angular/router";
-import {IconComponent} from "../../lib/icon/icon.component";
+import {IconComponent} from "../../../../../lib/icon/icon.component";
 import {RegisterPageComponent} from "./register-page.component";
 import {ButtonModule} from "primeng/button";
 import {PasswordModule} from "primeng/password";

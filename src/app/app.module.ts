@@ -26,9 +26,7 @@ import {CoreHeaderModule} from "./components/core-header/core-header.module";
 import {CoreSidebarComponent} from "./components/core-sidebar/core-sidebar.component";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";
 import {IconLazyHolderModule} from "./components/lib/icon/icon-lazy-holder/icon-lazy-holder.module";
-import {LoginPageModule} from "./components/pages/login-page/login-page.module";
 import {RecoverPasswordPageModule} from "./components/pages/recover-password-page/recover-password-page.module";
-import {RegisterPageModule} from "./components/pages/register-page/register-page.module";
 import {ProtectedModule} from "./components/protected/protected.module";
 import {UnauthorizedModule} from "./components/unauthorized/unauthorized.module";
 import {I18N_PROVIDERS} from "./localization-config";
@@ -48,7 +46,6 @@ import {etsReducers} from "./store/reducers";
         MatButtonModule,
         MatIconModule,
         HttpClientModule,
-        LoginPageModule,
         I18NextModule.forRoot(),
         AuthModule.forRoot({
             config: {
@@ -75,7 +72,6 @@ import {etsReducers} from "./store/reducers";
             logOnly: false,
         }),
         RecoverPasswordPageModule,
-        RegisterPageModule,
         LandingHeaderModule,
         CoreHeaderModule,
         IconLazyHolderModule,

@@ -1,10 +1,11 @@
 @import "colors";
 @import "vars";
+@import "design";
 
 :host {
     align-items: center;
     background: rgb(76 133 255);
-    background: radial-gradient(circle, rgb(76 133 255 / 1) 65%, rgb(72 211 255 / 1) 100%);
+    background: @auth-page-info-panel-gradient;
     display: flex;
     justify-content: center;
 }

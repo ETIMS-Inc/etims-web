@@ -15,7 +15,7 @@ import {
 } from "@angular/platform-browser";
 import {Router} from "@angular/router";
 import {OidcSecurityService} from "angular-auth-oidc-client";
-import {AuthService} from "../../../auth/auth.service";
+import {AuthService} from "../../../../../../auth/auth.service";
 import {mediaBtnList, MediaButton, MediaButtonType} from "./login-page.model";
 
 @Component({
