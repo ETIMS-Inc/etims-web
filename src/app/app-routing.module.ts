@@ -3,6 +3,7 @@ import {
     RouterModule,
     Routes,
 } from "@angular/router";
+import {AuthMode} from "./components/pages/auth-page/auth-page.model";
 
 const routes: Routes = [
     {path: "", redirectTo: "/home", pathMatch: "full"},
@@ -22,19 +23,23 @@ const routes: Routes = [
         path: "icons",
         loadChildren: () => import("./components/pages/icons-page/icons-page.module").then(m => m.IconsPageModule),
     },
-    {path: "**", redirectTo: "/404"},
     {
         path: "sign-in",
-        loadChildren: () => import("./components/pages/login-page/login-page.module").then(m => m.LoginPageModule),
-
+        loadComponent: () => import("./components/pages/auth-page/auth-page.component").then(m => m.AuthPageComponent),
+        data: {
+            mode: AuthMode.SIGN_IN,
+        },
     },
     {
         path: "sign-up",
-        loadChildren: () => import("./components/pages/register-page/register-page.module").then(m => m.RegisterPageModule),
+        loadComponent: () => import("./components/pages/auth-page/auth-page.component").then(m => m.AuthPageComponent),
+        data: {
+            mode: AuthMode.SIGN_UP,
+        },
     },
     {
         path: "**",
-        redirectTo: "/404"
+        redirectTo: "/404",
     },
     {
         path: "404",
