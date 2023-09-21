@@ -8,9 +8,13 @@ import {
 } from "@angular/core";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
 import {ActivatedRoute} from "@angular/router";
-import {AuthMode} from "./auth-page.model";
+import {
+    AuthMode,
+    InfoPanelContent,
+} from "./auth-page.model";
 import {AuthPanelComponent} from "./auth-panel/auth-panel.component";
 import {InfoPanelComponent} from "./info-panel/info-panel.component";
+import {InfoPanelModel} from "./info-panel/info-panel.model";
 
 @Component({
     selector: "ets-auth-page",
@@ -27,6 +31,8 @@ import {InfoPanelComponent} from "./info-panel/info-panel.component";
 export class AuthPageComponent implements OnInit {
 
     public mode: AuthMode;
+    public model: InfoPanelModel;
+
     @HostBinding("style.flex-direction") private flexDirection = "row";
 
     constructor(private activatedRoute: ActivatedRoute,
@@ -38,6 +44,7 @@ export class AuthPageComponent implements OnInit {
             .pipe(takeUntilDestroyed(this.destroy$))
             .subscribe(data => {
                 this.mode = data["mode"];
+                this.model = InfoPanelContent[this.mode];
             });
     }
 }
