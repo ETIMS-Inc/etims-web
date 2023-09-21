@@ -30,6 +30,7 @@ import {
     logout,
 } from "./store/actions/auth.actions";
 import {selectIsAuthenticated} from "./store/selectors/auth.selectors";
+import {coreSidebarNavGroups} from "./mocks/sidebar";
 
 @Component({
     selector: "app-root",
@@ -38,8 +39,10 @@ import {selectIsAuthenticated} from "./store/selectors/auth.selectors";
 })
 export class AppComponent implements OnInit {
     public title = "etims-web";
-    public isLoggedIn$: BehaviorSubject<boolean>;
+    // public isLoggedIn$: BehaviorSubject<boolean>;
     public isAuthenticated$: Observable<boolean>;
+    public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+    public sidebarGroups = coreSidebarNavGroups;
 
     constructor(
         protected _sanitizer: DomSanitizer,

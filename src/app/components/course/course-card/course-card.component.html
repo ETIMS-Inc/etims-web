@@ -61,10 +61,10 @@
 
 <ng-template #tags>
     <div class="course-tags">
-        <ets-course-tag *ngFor="let tag of card.tags"
+        <ets-chip *ngFor="let tag of card.tags"
                         class="course-tag"
-                        [value]="tag"
-        ></ets-course-tag>
+                        [chip]="tag"
+        ></ets-chip>
     </div>
 </ng-template>
 

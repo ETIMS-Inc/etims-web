@@ -5,11 +5,7 @@ import {
 } from "@angular/router";
 
 const routes: Routes = [
-    {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full"
-    },
+    {path: "", redirectTo: "/home", pathMatch: "full"},
     {
         path: "home",
         loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
@@ -22,6 +18,11 @@ const routes: Routes = [
         path: "courses",
         loadChildren: () => import("./components/pages/courses-list-page/courses-list-page.module").then(m => m.CoursesListPageModule),
     },
+    {
+        path: "icons",
+        loadChildren: () => import("./components/pages/icons-page/icons-page.module").then(m => m.IconsPageModule),
+    },
+    {path: "**", redirectTo: "/404"},
     {
         path: "sign-in",
         loadChildren: () => import("./components/pages/login-page/login-page.module").then(m => m.LoginPageModule),

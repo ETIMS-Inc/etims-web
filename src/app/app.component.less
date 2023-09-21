@@ -1,3 +1,5 @@
+@import "design";
+
 :host {
     display: flex;
     flex-direction: column;
@@ -8,8 +10,15 @@ ets-core-header {
     flex: 0;
 }
 
-.route-content {
+.page-content {
+    display: flex;
     flex: 1;
+    overflow: hidden;
+}
+
+.route-content {
+    background: @page-gradient;
     background: rgb(246 246 255);
-    background: linear-gradient(0deg, rgb(246 246 255 / 0.5) 0%, rgb(227 237 251 / 0.5) 35%, rgb(212 244 250 / 0.2) 100%);
+    flex: 1;
+    overflow: auto;
 }

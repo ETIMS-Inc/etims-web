@@ -16,6 +16,14 @@
     -webkit-box-shadow: @shadow;
 }
 
+.shadow-right() {
+    @shadow: 0 0 8px 0 @default-dark-blue-shadow;
+    @none-shadow: 0 0 0 transparent;
+    box-shadow: @none-shadow, /* top */ @none-shadow, /* bottom */ @none-shadow, /* left */ @shadow; /* right */
+    -moz-box-shadow: @shadow;
+    -webkit-box-shadow: @shadow;
+}
+
 .account-card-shadow() {
     box-shadow: rgb(0 0 0 / 0.16) 0 10px 36px 0, rgb(0 0 0 / 0.06) 0 0 0 1px;
 }
@@ -59,4 +67,13 @@
     display: flex;
     flex-direction: row;
     gap: @gap;
+}
+
+.before-divider(@height: 1px) {
+    &::before {
+        align-items: stretch;
+        background: linear-gradient(90deg, rgb(0 0 0 / 0) 0%, @second-text-color 50%, rgb(0 0 0 / 0) 100%);
+        content: "";
+        height: @height;
+    }
 }
