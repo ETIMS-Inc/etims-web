@@ -8,16 +8,16 @@ export enum AuthMode {
 
 export const InfoPanelContent: Record<AuthMode, InfoPanelModel> = {
     [AuthMode.SIGN_IN]: {
-        title: "Welcome to",
-        secondTitle: "ETIMS CLOUD",
-        description: "The system is intended to control learning process. Register right now",
-        buttonLabel: "Sign Up",
+        title: "auth.page.info.panel.sign.in.title",
+        secondTitle: "auth.page.info.panel.sign.in.second.title",
+        description: "auth.page.info.panel.sign.in.description",
+        buttonLabel: "auth.page.info.panel.sign.in.button.label",
     },
     [AuthMode.SIGN_UP]: {
-        title: "Already",
-        secondTitle: "have an account?",
-        description: "Log in to your account and you can continue building and editing your learning process",
-        buttonLabel: "Sign In",
+        title: "auth.page.info.panel.sign.up.title",
+        secondTitle: "auth.page.info.panel.sign.up.second.title",
+        description: "auth.page.info.panel.sign.up.description",
+        buttonLabel: "auth.page.info.panel.sign.up.button.label",
     },
 };
 

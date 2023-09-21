@@ -1,17 +1,23 @@
 <div *ngIf="model"
      class="info-panel-content"
 >
-    <div class="title">{{model.title | i18next}}</div>
+    <div class="title">
+        {{model.title | i18next}}
+    </div>
     <div *ngIf="model.secondTitle as secondTitle"
          class="second-title"
-    >{{secondTitle | i18next}}</div>
+    >
+        {{secondTitle | i18next}}
+    </div>
     <div *ngIf="model.description as description"
          class="description"
-    >{{description | i18next}}</div>
+    >
+        {{description | i18next}}
+    </div>
     <p-button *ngIf="model.buttonLabel as buttonLabel"
               class="action-button"
               styleClass="p-button-rounded p-button-outlined"
-              [label]="buttonLabel"
+              [label]="buttonLabel | i18next"
               (onClick)="buttonClick.emit()"
     ></p-button>
 </div>

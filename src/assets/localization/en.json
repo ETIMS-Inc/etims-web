@@ -1,5 +1,13 @@
 {
     "translation": {
+        "auth.page.info.panel.sign.in.button.label": "Sign Up",
+        "auth.page.info.panel.sign.in.description": "The system is intended to control learning process. Register right now",
+        "auth.page.info.panel.sign.in.second.title": "ETIMS CLOUD",
+        "auth.page.info.panel.sign.in.title": "Welcome to",
+        "auth.page.info.panel.sign.up.button.label": "Sign In",
+        "auth.page.info.panel.sign.up.description": "Log in to your account and you can continue building and editing your learning process",
+        "auth.page.info.panel.sign.up.second.title": "have an account?",
+        "auth.page.info.panel.sign.up.title": "Already",
         "button.log.in": "Log In",
         "button.recover": "Recover",
         "button.sign.in": "Sign In",
