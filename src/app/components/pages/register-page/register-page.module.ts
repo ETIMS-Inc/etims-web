@@ -4,7 +4,7 @@ import {
     RouterModule,
     Routes,
 } from "@angular/router";
-import {LibModule} from "../../lib/lib.module";
+import {IconComponent} from "../../lib/icon/icon.component";
 import {RegisterPageComponent} from "./register-page.component";
 import {ButtonModule} from "primeng/button";
 import {PasswordModule} from "primeng/password";
@@ -27,7 +27,7 @@ const routes: Routes = [
         PasswordModule,
         InputTextModule,
         RouterModule.forChild(routes),
-        LibModule,
+        IconComponent,
     ],
 })
 export class RegisterPageModule {

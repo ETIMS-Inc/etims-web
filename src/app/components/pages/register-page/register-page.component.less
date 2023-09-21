@@ -1,4 +1,4 @@
-@import url("src/assets/styles/colors");
+@import "colors";
 
 :host {
     display: block;
@@ -17,8 +17,8 @@
         height: 100vh;
         display: flex;
         justify-content: center;
-        background: rgb(76,133,255);
-        background: radial-gradient(circle, rgba(76,133,255,1) 65%, rgba(72,211,255,1) 100%);
+        background: rgb(76 133 255);
+        background: radial-gradient(circle, rgb(76 133 255 / 1) 65%, rgb(72 211 255 / 1) 100%);
     }
 
     &__section {
@@ -69,21 +69,21 @@
             letter-spacing: 0.05em;
 
             &._system-name {
-                color: #FFF;
+                color: #fff;
                 font-size: 48px;
                 font-weight: 700;
                 line-height: normal;
             }
 
             &._uppercase {
-                color: #FFF;
+                color: #fff;
                 font-size: 34px;
                 font-weight: 700;
                 line-height: normal;
             }
 
             &._black {
-                color: #2C2929;
+                color: #2c2929;
                 text-align: center;
                 font-size: 32px;
                 font-style: normal;
@@ -103,8 +103,8 @@
     }
 
     &__description {
-        margin: 32px 6em 0 6em;
-        color: #D7DAE2;
+        margin: 32px 6em 0;
+        color: #d7dae2;
         text-align: center;
         font-size: 18px;
         font-weight: 400;
@@ -156,7 +156,7 @@
             ::ng-deep .p-button.p-button-link {
                 margin-top: 8px;
                 padding: 2px;
-                color: #4285F4;
+                color: #4285f4;
                 text-align: center;
                 font-size: 16px;
                 font-style: normal;
@@ -172,7 +172,7 @@
 
     &__label {
         margin-bottom: 10px;
-        color: #2C2929;
+        color: #2c2929;
         font-size: 14px;
         font-style: normal;
         font-weight: 500;
