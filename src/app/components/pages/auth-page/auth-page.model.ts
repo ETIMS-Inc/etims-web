@@ -1,8 +1,9 @@
+import {RoutePath} from "../../../models/app-routing.model";
 import {InfoPanelModel} from "./info-panel/info-panel.model";
 
 export enum AuthMode {
-    SIGN_IN = "sign_in",
-    SIGN_UP = "sign_up",
+    SIGN_IN = RoutePath.SignIn,
+    SIGN_UP = RoutePath.SignUp,
 }
 
 export const InfoPanelContent: Record<AuthMode, InfoPanelModel> = {
@@ -18,4 +19,9 @@ export const InfoPanelContent: Record<AuthMode, InfoPanelModel> = {
         description: "Log in to your account and you can continue building and editing your learning process",
         buttonLabel: "Sign In",
     },
+};
+
+export const AuthPageFlexDirection: Record<AuthMode, string> = {
+    [AuthMode.SIGN_IN]: "row",
+    [AuthMode.SIGN_UP]: "row-reverse",
 };

@@ -7,9 +7,14 @@ import {
     OnInit,
 } from "@angular/core";
 import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
-import {ActivatedRoute} from "@angular/router";
+import {
+    ActivatedRoute,
+    Router,
+} from "@angular/router";
+import {RoutePath} from "../../../models/app-routing.model";
 import {
     AuthMode,
+    AuthPageFlexDirection,
     InfoPanelContent,
 } from "./auth-page.model";
 import {AuthPanelComponent} from "./auth-panel/auth-panel.component";
@@ -29,13 +34,13 @@ import {InfoPanelModel} from "./info-panel/info-panel.model";
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AuthPageComponent implements OnInit {
-
     public mode: AuthMode;
     public model: InfoPanelModel;
 
     @HostBinding("style.flex-direction") private flexDirection = "row";
 
     constructor(private activatedRoute: ActivatedRoute,
+                private router: Router,
                 private destroy$: DestroyRef) {
     }
 
@@ -45,6 +50,15 @@ export class AuthPageComponent implements OnInit {
             .subscribe(data => {
                 this.mode = data["mode"];
                 this.model = InfoPanelContent[this.mode];
+                this.flexDirection = AuthPageFlexDirection[this.mode];
             });
+    }
+
+    public changeMode() {
+        this.router.navigate([
+            this.mode === AuthMode.SIGN_IN
+                ? RoutePath.SignUp
+                : RoutePath.SignIn
+        ]);
     }
 }

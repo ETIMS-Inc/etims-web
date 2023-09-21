@@ -29,5 +29,5 @@ export class InfoPanelComponent {
         description: "The system is intended to control learning process. Register right now",
         buttonLabel: "Sign Up",
     };
-    @Output() public click = new EventEmitter<void>();
+    @Output() public buttonClick = new EventEmitter<void>();
 }

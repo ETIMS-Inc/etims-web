@@ -15,11 +15,11 @@
     flex-direction: column;
     gap: @size-xs-sm;
     letter-spacing: 0.05em;
+    text-align: center;
 
     .title, .second-title {
         color: @white;
         font-weight: @font-weight-strong-bold;
-        line-height: normal;
     }
 
     .title {
@@ -34,9 +34,10 @@
         color: @blue-alice;
         font-size: @size-xxs-md;
         font-weight: @font-weight-light-bold;
+        padding-top: @size-md;
     }
 
-    .action-button::ng-deep  {
+    .action-button::ng-deep {
         padding-top: @size-xxl;
 
         .p-button {
