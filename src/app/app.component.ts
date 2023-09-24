@@ -13,6 +13,6 @@ import {coreSidebarNavGroups} from "./mocks/sidebar";
 })
 export class AppComponent {
     public title = "etims-web";
-    public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
+    public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(false);
     public sidebarGroups = coreSidebarNavGroups;
 }

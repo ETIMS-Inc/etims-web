@@ -1,40 +1,321 @@
-<div class="home-page">
-    <div class="home-page__welcoming">
-        <div class="home-page__welcoming-caption">
-            {{"home.page.caption" | i18next}}
-        </div>
-        <div class="home-page__welcoming-description">
-            {{"home.page.description" | i18next}}
-        </div>
-        <div class="home-page__welcoming-controls">
-            <p-button
-                class="home-page__welcoming-controls-item"
-                [label]="'home.page.get.started' | i18next"
-                (onClick)="handleStartedChange()"
-            ></p-button>
-            <p-button
-                class="home-page__welcoming-controls-item"
-                [label]="'home.page.request.demo' | i18next"
-                (onClick)="handleDemoChange()"
-            ></p-button>
-        </div>
-    </div>
-    <div class="home-page__preview">
-        <p-galleria
-            class="home-page__preview-galleria"
-            [showIndicators]="true"
-            [showThumbnails]="false"
-            [value]="images"
-        >
-            <ng-template
-                let-item
-                pTemplate="item"
-            >
-                <img
-                    class="home-page__preview-img"
-                    [src]="item.itemImageSrc"
-                />
-            </ng-template>
-        </p-galleria>
-    </div>
+<div class="home-page__wrapper">
+    <ng-container *ngTemplateOutlet="startingTemp"></ng-container>
+    <ng-container *ngTemplateOutlet="solutionsTemp"></ng-container>
+    <ng-container *ngTemplateOutlet="plansTemp"></ng-container>
+    <ng-container *ngTemplateOutlet="questionsTemp"></ng-container>
+    <ng-container *ngTemplateOutlet="feedbackTemp"></ng-container>
+    <ng-container *ngTemplateOutlet="footerTemp"></ng-container>
 </div>
+
+<ng-template #startingTemp>
+    <div class="home-page__starting">
+        <div class="home-page__welcoming">
+            <div class="home-page__welcoming-caption">
+                {{"home.page.caption" | i18next}}
+            </div>
+            <div class="home-page__welcoming-description">
+                {{"home.page.description" | i18next}}
+            </div>
+            <div class="home-page__welcoming-controls">
+                <p-button
+                    (onClick)="handleStartedChange()"
+                    [label]="'home.page.get.started' | i18next"
+                    class="home-page__welcoming-controls-item"
+                ></p-button>
+                <p-button
+                    (onClick)="handleDemoChange()"
+                    [label]="'home.page.request.demo' | i18next"
+                    class="home-page__welcoming-controls-item"
+                ></p-button>
+            </div>
+        </div>
+        <div class="home-page__preview">
+            <p-galleria
+                [showIndicators]="true"
+                [showThumbnails]="false"
+                [value]="images"
+                class="home-page__preview-galleria"
+            >
+                <ng-template
+                    let-item
+                    pTemplate="item"
+                >
+                    <img
+                        [src]="item.itemImageSrc"
+                        class="home-page__preview-img"
+                    />
+                </ng-template>
+            </p-galleria>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #solutionsTemp>
+    <div class="home-page__solutions">
+        <div class="home-page__solutions-info">
+            <div class="home-page__solutions-info-caption">
+                What we can do ?
+            </div>
+            <div class="home-page__solutions-info-description">
+                The system is intended to control learning process.
+                Register right now and get free access to perform eLearning process with ETIMS LMS.
+                You will get access to create projects and to be participants
+                of them, assign tasks to your students or coworkers and lots of other stuff.
+            </div>
+        </div>
+        <div class="home-page__solutions-items">
+            <p-card *ngFor="let item of solutions"
+                    class="home-page__solutions-item"
+            >
+                <div class="home-page__solutions-item-preview">
+                    <ets-icon
+                        [icon]="item?.icon"
+                        class="home-page__solutions-item-icon"
+                    ></ets-icon>
+                </div>
+
+                <div class="home-page__solutions-item-caption">
+                    {{ item?.caption }}
+                </div>
+                <div class="home-page__solutions-item-description">
+                    {{ item?.description }}
+                </div>
+            </p-card>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #plansTemp>
+    <div class="home-page__plans">
+        <div class="home-page__plans-caption">
+            Plans and pricing
+        </div>
+        <div class="home-page__plans-list">
+            <p-card
+                *ngFor="let item of plans"
+                class="home-page__plans-card"
+            >
+                <ets-icon
+                    class="home-page__plans-card-icon"
+                    [icon]="item?.icon"
+                ></ets-icon>
+                <p-tag
+                    class="home-page__plans-card-tag"
+                    [value]="item?.tag"
+                ></p-tag>
+                <div class="home-page__plans-card-features">
+                    <div class="home-page__plans-card-features-caption">
+                        Features
+                    </div>
+                    <div *ngFor="let feature of item.features"
+                         class="home-page__plans-card-features-item"
+                    >
+                        <ets-dot
+                            class="home-page__plans-card-features-item-dot"
+                            color="black"
+                        ></ets-dot>
+                        {{ feature }}
+                    </div>
+                </div>
+                <div class="home-page__plans-card-pricing">
+                    <div class="home-page__plans-card-pricing-caption">
+                        Pricing
+                    </div>
+                    <div class="home-page__plans-card-pricing-description">
+                        {{ item?.pricing }}
+                    </div>
+                </div>
+                <div class="home-page__plans-card-users">
+                    <div class="home-page__plans-card-users-caption">
+                        Users
+                    </div>
+                    <div class="home-page__plans-card-users-description">
+                        {{ item?.users }}
+                    </div>
+                </div>
+                <div class="home-page__plans-card-submit">
+                    <p-button
+                        class="home-page__plans-card-submit-button"
+                        label="Choose Plan"
+                    ></p-button>
+                </div>
+            </p-card>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #questionsTemp>
+    <div class="home-page__questions">
+        <div class="home-page__questions-caption">
+            FAQ
+        </div>
+        <div class="home-page__questions-column">
+            <div class="home-page__questions-column-first">
+                <p-panel
+                    *ngFor="let item of faqs['first']"
+                    class="home-page__questions-column-panel"
+                    [header]="item?.question"
+                    [toggleable]="true"
+                    [collapsed]="true"
+                >
+                    {{ item?.details }}
+                </p-panel>
+            </div>
+            <div class="home-page__questions-column-second">
+                <p-panel
+                    *ngFor="let item of faqs['second']"
+                    class="home-page__questions-column-panel"
+                    [header]="item?.question"
+                    [toggleable]="true"
+                    [collapsed]="true"
+                >
+                    {{ item?.details }}
+                </p-panel>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #feedbackTemp>
+    <div class="home-page__feedback">
+        <div class="home-page__feedback-caption">
+            Contact
+        </div>
+        <div class="home-page__feedback-wrapper">
+            <div class="home-page__feedback-form">
+                <div class="home-page__feedback-form-caption">
+                    <ets-icon
+                        class="home-page__feedback-form-caption-icon"
+                        icon="molecule"
+                    ></ets-icon>
+                    <span class="home-page__feedback-form-caption-text">
+                        Keep in touch
+                    </span>
+                </div>
+                <div class="home-page__feedback-inputs">
+                    <div class="home-page__feedback-inputs-wrapper">
+                        <input
+                            pInputText
+                            class="home-page__feedback-inputs-wrapper-item"
+                            type="text"
+                            placeholder="Enter Your First Name"
+                        />
+                        <input
+                            pInputText
+                            class="home-page__feedback-inputs-wrapper-item"
+                            type="text"
+                            placeholder="Enter Your Last Name"
+                        />
+                        <input
+                            pInputText
+                            class="home-page__feedback-inputs-wrapper-item"
+                            type="text"
+                            placeholder="Enter Your Email"
+                        />
+                        <p-inputMask
+                            class="home-page__feedback-inputs-wrapper-item _mask"
+                            mask="(999) 999-9999"
+                            placeholder="(999) 999-9999"
+                        ></p-inputMask>
+                    </div>
+                    <input
+                        pInputText
+                        class="home-page__feedback-inputs-company"
+                        placeholder="Enter Your Business Name"
+                        type="text"
+                    />
+                </div>
+                <p-button
+                    class="home-page__feedback-form-submit"
+                >
+                    <ets-icon
+                        class="home-page__feedback-form-submit-icon"
+                        icon="envelope"
+                    ></ets-icon>
+                    <span class="home-page__feedback-form-submit-text">
+                        Submit Form
+                    </span>
+                </p-button>
+                <div class="home-page__feedback-form-contact">
+                    <div class="home-page__feedback-form-contact-header">
+                        <ets-icon
+                            class="home-page__feedback-form-contact-header-icon"
+                            icon="line"
+                        ></ets-icon>
+                        <span class="home-page__feedback-form-contact-header-text">
+                            Contact US
+                        </span>
+                    </div>
+                    <div
+                        *ngFor="let item of contactDetails"
+                        class="home-page__feedback-form-contact-details"
+                    >
+                        <span class="home-page__feedback-form-contact-details-caption">
+                            {{ item?.caption }}:
+                        </span>
+                        <span class="home-page__feedback-form-contact-details-description">
+                            {{ item?.details }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <img class="home-page__feedback-icon" src="assets/images/img.png">
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #footerTemp>
+    <div class="home-page__footer">
+        <ets-icon
+            class="home-page__footer-icon"
+            icon="logo"
+        ></ets-icon>
+        <div class="home-page__footer-wrapper">
+            <div class="home-page__footer-media">
+                <div class="home-page__footer-content-media-caption">
+                    LMS you need
+                </div>
+                <div class="home-page__footer-content-media-items">
+
+                </div>
+            </div>
+            <div class="home-page__footer-tabs">
+                <div class="home-page__footer-tab">
+                    <div class="home-page__footer-content-tab-caption">
+                        Contacts
+                    </div>
+                    <div class="home-page__footer-content-tab-items">
+
+                    </div>
+                </div>
+                <div class="home-page__footer-tab">
+                    <div class="home-page__footer-content-tab-caption">
+                        Info
+                    </div>
+                    <div class="home-page__footer-content-tab-items">
+
+                    </div>
+                </div>
+                <div class="home-page__footer-tab">
+                    <div class="home-page__footer-content-tab-caption">
+                        Join Newsletter
+                    </div>
+                    <div class="home-page__footer-content-tab-items">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="home-page__footer-copyright">
+            <div class="home-page__footer-copyright-caption">
+                Copyright 2022 Etims Inc. All rights reserved
+            </div>
+            <div class="home-page__footer-copyright-back-top">
+                <p-button
+                    class="home-page__plans-card-submit-button"
+                    label="Back to top"
+                ></p-button>
+            </div>
+        </div>
+    </div>
+</ng-template>
