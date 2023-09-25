@@ -5,16 +5,17 @@ import {
     Input,
 } from "@angular/core";
 import {AuthMode} from "../auth-page.model";
-import {KeycloakSignInComponent} from "./temp/keycloak-sign-in/keycloak-sign-in.component";
-import {KeycloakSignUpComponent} from "./temp/keycloak-sign-up/keycloak-sign-up.component";
+import {SignInComponent} from "./keycloak-forms/sign-in/sign-in.component";
+import {SignUpComponent} from "./keycloak-forms/sign-up/sign-up.component";
 
 @Component({
     selector: "ets-auth-panel",
     standalone: true,
     imports: [
         CommonModule,
-        KeycloakSignInComponent,
-        KeycloakSignUpComponent,
+        SignUpComponent,
+        SignInComponent,
+        SignUpComponent,
     ],
     templateUrl: "./auth-panel.component.html",
     styleUrls: ["./auth-panel.component.less"],
