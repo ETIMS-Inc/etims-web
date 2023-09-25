@@ -37,5 +37,8 @@
         "compilerOptions": {
             "module": "commonjs"
         }
-    }
+    },
+    "exclude": [
+        "src/app/components/pages/auth-page/auth-panel/keycloak-forms/*"
+    ]
 }
