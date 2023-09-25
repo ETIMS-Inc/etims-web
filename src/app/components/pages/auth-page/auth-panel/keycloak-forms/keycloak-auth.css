@@ -1,0 +1,71 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.auth-container .header {
+  padding: 16px 32px;
+  font-size: 2rem;
+  color: #30334d;
+  font-weight: 700;
+}
+.auth-container .form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.auth-container .form .label {
+  padding-top: 8px;
+  color: #30334d;
+  font-weight: 550;
+  font-size: 1rem;
+}
+.auth-container .form .input {
+  box-shadow: 0 0 1px 0 rgba(5, 0, 48, 0.5) !important;
+  -moz-box-shadow: 0 0 1px 0 rgba(5, 0, 48, 0.5) !important;
+  -webkit-box-shadow: 0 0 1px 0 rgba(5, 0, 48, 0.5) !important;
+  appearance: none;
+  background: #fff;
+  border-radius: 6px;
+  border: none;
+  box-sizing: border-box;
+  color: #30334d;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 0.75rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  width: 80%;
+}
+.auth-container .form .input:focus {
+  box-shadow: 0 0 4px 0 rgba(5, 101, 213, 0.45) !important;
+  -moz-box-shadow: 0 0 4px 0 rgba(5, 101, 213, 0.45) !important;
+  -webkit-box-shadow: 0 0 4px 0 rgba(5, 101, 213, 0.45) !important;
+  outline: none;
+}
+.auth-container .form .submit-button {
+  background: #3b82f6;
+  border-radius: 12px;
+  border: 1px solid #3b82f6;
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 2rem;
+  padding: 0.75rem 1.25rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  width: 160px;
+}
+.auth-container .form .submit-button:hover {
+  background: #2563eb;
+}
+.auth-container .form .submit-button:active {
+  background: #1d4ed8;
+}
+.auth-container .form .forget-password-label {
+  text-align: right;
+  color: #3b82f6;
+  align-self: end;
+  padding-right: 0.75rem;
+  font-size: 0.8rem;
+}
