@@ -437,11 +437,10 @@
                 &-details {
                     margin-left: 36px;
                     margin-bottom: 12px;
-                    font-style: italic;
 
                     &-caption {
-                        color: #7274A0;
                         margin-right: 6px;
+                        color: #7274A0;
                     }
 
                     &-description {
@@ -487,12 +486,28 @@
     &__footer {
         margin-top: 5%;
 
+        &-icon {
+            --ets-icon-color: @blue-light;
+            --ets-icon-size-ratio: 2;
+            --ets-icon-size: 50px;
+        }
+
         &-wrapper {
             display: flex;
         }
 
         &-media {
+            width: 30%;
 
+            &-caption {
+                margin-top: 64px;
+                font-size: 24px;
+                text-align: center;
+            }
+
+            &-items {
+
+            }
         }
 
         &-tabs {
@@ -501,13 +516,30 @@
             justify-content: space-around;
         }
 
+        &-tab {
+            &-caption {
+                margin-bottom: 24px;
+                color: #23262F;
+                font-weight: 500;
+                font-size: 18px;
+            }
+
+            &-items {
+                &-item {
+                    cursor: pointer;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+
         &-copyright {
             display: flex;
+            align-items: center;
             justify-content: space-between;
 
             &-caption {
                 color: #777E90;
-                font-size: 12px;
+                font-size: 14px;
             }
         }
     }
