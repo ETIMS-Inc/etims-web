@@ -9,7 +9,7 @@ import {
     standalone: true,
     imports: [CommonModule],
     templateUrl: "./sign-up.component.html",
-    styleUrls: ["../keycloak-auth.less"],
+    styleUrls: ["../temp/keycloak-auth.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignUpComponent {

@@ -5,8 +5,8 @@ import {
     Input,
 } from "@angular/core";
 import {AuthMode} from "../auth-page.model";
-import {SignInComponent} from "./keycloak-forms/sign-in/sign-in.component";
-import {SignUpComponent} from "./keycloak-forms/sign-up/sign-up.component";
+import {SignInComponent} from "./sign-in/sign-in.component";
+import {SignUpComponent} from "./sign-up/sign-up.component";
 
 @Component({
     selector: "ets-auth-panel",
