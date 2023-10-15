@@ -26,6 +26,10 @@ const routes: Routes = [
         path: "icons",
         loadChildren: () => import("./components/pages/icons-page/icons-page.module").then(m => m.IconsPageModule),
     },
+    {
+        path: "settings",
+        loadChildren: () => import("./components/pages/settings/settings.module").then(m => m.SettingsModule),
+    },
     {path: "**", redirectTo: "/404"},
     {
         path: "404",
