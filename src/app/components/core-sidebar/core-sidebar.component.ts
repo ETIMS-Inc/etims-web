@@ -55,7 +55,8 @@ const expandedSidebarWidth = 200;
 })
 export class CoreSidebarComponent {
     @Input() public mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
-    @Input() public navGroups: CoreSidebarNavGroup[] = coreSidebarNavGroups;
+    @Input() public navGroups: CoreSidebarNavGroup[];
+    @Input() public navBottomGroups: CoreSidebarNavGroup[];
 
     public width: number = undefined;
     public currentUrl: Observable<string>;

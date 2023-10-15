@@ -4,6 +4,14 @@ import {
     Routes,
 } from "@angular/router";
 
+const notFoundRoutes: Routes = [
+    {path: "**", redirectTo: "/404"},
+    {
+        path: "404",
+        loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),
+    },
+];
+
 const routes: Routes = [
     {path: "", redirectTo: "/home", pathMatch: "full"},
     {
@@ -30,12 +38,8 @@ const routes: Routes = [
         path: "settings",
         loadChildren: () => import("./components/pages/settings/settings.module").then(m => m.SettingsModule),
     },
-    {path: "**", redirectTo: "/404"},
-    {
-        path: "404",
-        loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),
-    },
-];
+// @ts-ignore
+].concat(notFoundRoutes) as Routes;
 
 @NgModule({
     declarations: [],

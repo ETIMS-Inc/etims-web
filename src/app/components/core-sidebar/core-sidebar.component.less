@@ -15,9 +15,22 @@
     height: 100%;
     padding: @size-sm @size-xxs;
 
-    .nav-groups {
+    .nav-groups { // TODO: add scroll
         .flex-column(@gap);
         flex: 1;
+
+        .nav-group {
+            &:not(:first-child) {
+                .before-divider();
+            }
+
+            .flex-column(0);
+        }
+    }
+
+    .nav-bottom-groups {
+        .flex-column(@gap);
+        flex: 0;
 
         .nav-group {
             &:not(:first-child) {

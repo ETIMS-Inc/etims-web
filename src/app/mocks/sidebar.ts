@@ -3,7 +3,6 @@ import {
     CoreSidebarNavGroup,
 } from "../components/core-sidebar/core-sidebar.model";
 
-// TODO: use translations
 export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
     [
         {
@@ -68,7 +67,7 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
         {
             name: "sidebar.tab.settings",
             icon: "eye",
-            url: "/settings",
+            url: "/page",
             chip: {
                 num: 2,
                 type: CoreSidebarChipType.WARNING,
@@ -87,6 +86,16 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
                     url: "/main",
                 },
             ],
+        },
+    ],
+];
+
+export const coreSidebarNavBottomGroups: CoreSidebarNavGroup[] = [
+    [
+        {
+            name: "sidebar.tab.settings",
+            icon: "settings",
+            url: "/settings",
         },
     ],
 ];
