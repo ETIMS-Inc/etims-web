@@ -17,16 +17,15 @@ import {
     map,
     Observable,
 } from "rxjs";
-import {coreSidebarNavGroups} from "../../mocks/sidebar";
 import {IconComponent} from "../lib/icon/icon.component";
 import {
     CoreSidebarMode,
     CoreSidebarNavGroup,
-    CoreSidebarNavItem,
 } from "./core-sidebar.model";
-import {SidebarNavItemComponent} from "./sidebar-nav-item/sidebar-nav-item.component";
+import {NavItemComponent} from "../lib/nav-item/nav-item.component";
+import {NavItem} from "../lib/nav-item/nav-item.model";
 
-const expandControl: Record<"expand" | "collapse", CoreSidebarNavItem> = {
+const expandControl: Record<"expand" | "collapse", NavItem> = {
     expand: {
         name: "Expand",
         icon: "chevrons-right-arrows",
@@ -49,7 +48,7 @@ const expandedSidebarWidth = 200;
         IconComponent,
         NgForOf,
         NgIf,
-        SidebarNavItemComponent,
+        NavItemComponent,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -60,7 +59,7 @@ export class CoreSidebarComponent {
 
     public width: number = undefined;
     public currentUrl: Observable<string>;
-    public expandControlItem: CoreSidebarNavItem = expandControl["expand"];
+    public expandControlItem: NavItem = expandControl["expand"];
 
     constructor(private router: Router) {
         this.currentUrl = router.events.pipe(
@@ -69,7 +68,7 @@ export class CoreSidebarComponent {
         );
     }
 
-    public itemClicked(item: CoreSidebarNavItem): void {
+    public itemClicked(item: NavItem): void {
         this.router.navigateByUrl(item.url);
     }
 

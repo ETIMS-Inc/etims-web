@@ -15,19 +15,21 @@ import {I18NextModule} from "angular-i18next";
 import {TooltipModule} from "primeng/tooltip";
 import {Color} from "../../../models/colors";
 import {EtsAsPipe} from "../../../pipes/as.pipe";
-import {ChipComponent} from "../../lib/chip/chip.component";
-import {DotComponent} from "../../lib/dot/dot.component";
-import {IconComponent} from "../../lib/icon/icon.component";
+import {ChipComponent} from "../chip/chip.component";
+import {DotComponent} from "../dot/dot.component";
+import {IconComponent} from "../icon/icon.component";
 import {
-    CoreSidebarChipType,
     CoreSidebarMode,
-    CoreSidebarNavItem,
-} from "../core-sidebar.model";
+} from "../../core-sidebar/core-sidebar.model";
+import {
+    NavItemChipType,
+    NavItem,
+} from "./nav-item.model";
 
 @Component({
     selector: "ets-sidebar-nav-item",
-    templateUrl: "./sidebar-nav-item.component.html",
-    styleUrls: ["./sidebar-nav-item.component.less"],
+    templateUrl: "./nav-item.component.html",
+    styleUrls: ["./nav-item.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
@@ -43,24 +45,24 @@ import {
         DotComponent,
     ],
 })
-export class SidebarNavItemComponent {
-    @Output() public itemClicked: EventEmitter<CoreSidebarNavItem> = new EventEmitter();
-    public _item: CoreSidebarNavItem;
+export class NavItemComponent {
+    @Output() public itemClicked: EventEmitter<NavItem> = new EventEmitter();
+    public _item: NavItem;
     public _currentUrl: string;
     public _mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
     public sidebarMode = CoreSidebarMode;
     public displayNestedItems = false;
     public nestedUrls: string[] = [];
     public nestedItemSelected: boolean;
-    public coreSidebarNavItem: CoreSidebarNavItem;
+    public coreSidebarNavItem: NavItem;
 
-    public chipColors: Record<CoreSidebarChipType, string> = {
-        [CoreSidebarChipType.WARNING]: Color.Warning,
-        [CoreSidebarChipType.INFO]: Color.Info,
+    public chipColors: Record<NavItemChipType, string> = {
+        [NavItemChipType.WARNING]: Color.Warning,
+        [NavItemChipType.INFO]: Color.Info,
     }
 
     @Input()
-    set item(value: CoreSidebarNavItem) {
+    set item(value: NavItem) {
         this._item = value;
 
         if (value.childrenItems) {
@@ -85,7 +87,7 @@ export class SidebarNavItemComponent {
         this.displayNestedItems = !this.displayNestedItems;
     }
 
-    public navItemClicked(navItem: CoreSidebarNavItem): void {
+    public navItemClicked(navItem: NavItem): void {
         if (this._mode === CoreSidebarMode.Collapsed) {
             this.itemClicked.emit(navItem);
         } else {
