@@ -16,9 +16,10 @@ export enum FormFieldType {
 interface DefaultFormFieldModel {
     controlName: string,
     type: FormFieldType,
+    label?: string,
     defaultValue?: unknown,
     required?: boolean,
-    labelPosition?: "top" | "left",
+    labelPosition?: "top" | "left", // TODO: add right pos to template
     disabled?: boolean,
     hidden?: boolean,
     validators?: ValidatorFn | ValidatorFn[],
