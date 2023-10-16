@@ -3,6 +3,7 @@ import {NgModule} from "@angular/core";
 import {I18NextModule} from "angular-i18next";
 import {ButtonModule} from "primeng/button";
 import {DividerModule} from "primeng/divider";
+import {CardComponent} from "../../lib/card/card.component";
 import {ChipComponent} from "../../lib/chip/chip.component";
 import {ProgressBarComponent} from "../../lib/progress-bar/progress-bar.component";
 import {CourseCardComponent} from "./course-card.component";
@@ -18,6 +19,7 @@ import {CourseCardComponent} from "./course-card.component";
         DividerModule,
         ChipComponent,
         ProgressBarComponent,
+        CardComponent,
     ],
     exports: [
         CourseCardComponent,
