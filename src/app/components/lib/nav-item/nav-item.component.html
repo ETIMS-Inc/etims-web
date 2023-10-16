@@ -9,7 +9,12 @@
 >
     <ng-container *ngIf="(navItem | as: coreSidebarNavItem) as item">
         <div class="nav-item"
-             [ngClass]="{'selected': (_currentUrl && _currentUrl === _item.url) || (nestedItemSelected && _mode === sidebarMode.Collapsed) || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)}"
+             [ngClass]="{
+                'selected':
+                    (_currentUrl && _currentUrl === _item.url)
+                    || (nestedItemSelected && _mode === sidebarMode.Collapsed)
+                    || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)
+                }"
              [pTooltip]="_mode === sidebarMode.Collapsed ? (item.name | i18next) : null"
              (click)="navItemClicked(item)"
         >
@@ -33,10 +38,10 @@
         <ng-container *ngIf="displayNestedItems && _mode === sidebarMode.Full">
             <ng-container *ngFor="let nestedItem of item.childrenItems">
                 <ets-nav-item class="nested-item"
-                                      [currentUrl]="_currentUrl"
-                                      [item]="nestedItem | as: coreSidebarNavItem"
-                                      [mode]="_mode"
-                                      (itemClicked)="itemClicked.emit($event)"
+                              [currentUrl]="_currentUrl"
+                              [item]="nestedItem | as: coreSidebarNavItem"
+                              [mode]="_mode"
+                              (itemClicked)="itemClicked.emit($event)"
                 ></ets-nav-item>
             </ng-container>
         </ng-container>

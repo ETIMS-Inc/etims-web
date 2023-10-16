@@ -4,6 +4,7 @@ import {
     Component,
     Input,
 } from "@angular/core";
+import {CardComponent} from "../card/card.component";
 import {NavItemComponent} from "../nav-item/nav-item.component";
 import {
     NavItem,
@@ -16,6 +17,7 @@ import {
     imports: [
         CommonModule,
         NavItemComponent,
+        CardComponent,
     ],
     templateUrl: "./nav-menu.component.html",
     styleUrls: ["./nav-menu.component.less"],

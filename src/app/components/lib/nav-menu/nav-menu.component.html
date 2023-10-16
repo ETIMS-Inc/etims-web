@@ -1,5 +1,7 @@
-<ng-container *ngFor="let item of items">
-    <ets-nav-item [item]="item"
-                  [mode]="navItemDisplayMode.Full"
-    ></ets-nav-item>
-</ng-container>
+<ets-card *ngIf="items">
+    <ng-container *ngFor="let item of items">
+        <ets-nav-item [item]="item"
+                      [mode]="navItemDisplayMode.Full"
+        ></ets-nav-item>
+    </ng-container>
+</ets-card>
