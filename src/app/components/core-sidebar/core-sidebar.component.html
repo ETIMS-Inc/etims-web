@@ -5,13 +5,13 @@
         <div *ngFor="let group of navGroups"
              class="nav-group"
         >
-            <ets-sidebar-nav-item *ngFor="let item of group"
+            <ets-nav-item *ngFor="let item of group"
                                   [item]="item"
                                   [mode]="mode"
                                   [currentUrl]="currentUrl && (currentUrl | async)"
                                   (itemClicked)="itemClicked($event)"
             >
-            </ets-sidebar-nav-item>
+            </ets-nav-item>
         </div>
     </div>
 
@@ -19,18 +19,18 @@
         <div *ngFor="let group of navBottomGroups"
              class="nav-group"
         >
-            <ets-sidebar-nav-item *ngFor="let item of group"
+            <ets-nav-item *ngFor="let item of group"
                                   [item]="item"
                                   [mode]="mode"
                                   [currentUrl]="currentUrl && (currentUrl | async)"
                                   (itemClicked)="itemClicked($event)"
             >
-            </ets-sidebar-nav-item>
+            </ets-nav-item>
         </div>
-        <ets-sidebar-nav-item [item]="expandControlItem"
+        <ets-nav-item [item]="expandControlItem"
                               [mode]="mode"
                               (itemClicked)="changeDisplayMode()"
         >
-        </ets-sidebar-nav-item>
+        </ets-nav-item>
     </div>
 </div>

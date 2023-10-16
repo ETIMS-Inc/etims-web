@@ -18,12 +18,12 @@ import {
     Observable,
 } from "rxjs";
 import {IconComponent} from "../lib/icon/icon.component";
-import {
-    CoreSidebarMode,
-    CoreSidebarNavGroup,
-} from "./core-sidebar.model";
 import {NavItemComponent} from "../lib/nav-item/nav-item.component";
-import {NavItem} from "../lib/nav-item/nav-item.model";
+import {
+    NavItem,
+    NavItemDisplayMode,
+} from "../lib/nav-item/nav-item.model";
+import {CoreSidebarNavGroup} from "./core-sidebar.model";
 
 const expandControl: Record<"expand" | "collapse", NavItem> = {
     expand: {
@@ -53,7 +53,7 @@ const expandedSidebarWidth = 200;
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoreSidebarComponent {
-    @Input() public mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
+    @Input() public mode: NavItemDisplayMode = NavItemDisplayMode.Collapsed;
     @Input() public navGroups: CoreSidebarNavGroup[];
     @Input() public navBottomGroups: CoreSidebarNavGroup[];
 
@@ -73,12 +73,12 @@ export class CoreSidebarComponent {
     }
 
     public changeDisplayMode(): void {
-        if (this.mode === CoreSidebarMode.Collapsed) {
-            this.mode = CoreSidebarMode.Full;
+        if (this.mode === NavItemDisplayMode.Collapsed) {
+            this.mode = NavItemDisplayMode.Full;
             this.expandControlItem = expandControl.collapse;
             this.width = expandedSidebarWidth;
         } else {
-            this.mode = CoreSidebarMode.Collapsed;
+            this.mode = NavItemDisplayMode.Collapsed;
             this.expandControlItem = expandControl.expand;
             this.width = undefined;
         }

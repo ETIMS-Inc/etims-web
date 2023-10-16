@@ -17,3 +17,8 @@ export interface NavItemChip {
     num: number,
     type: NavItemChipType,
 }
+
+export enum NavItemDisplayMode {
+    Full,
+    Collapsed,
+}

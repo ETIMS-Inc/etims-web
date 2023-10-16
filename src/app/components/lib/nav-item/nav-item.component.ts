@@ -19,15 +19,13 @@ import {ChipComponent} from "../chip/chip.component";
 import {DotComponent} from "../dot/dot.component";
 import {IconComponent} from "../icon/icon.component";
 import {
-    CoreSidebarMode,
-} from "../../core-sidebar/core-sidebar.model";
-import {
     NavItemChipType,
     NavItem,
+    NavItemDisplayMode,
 } from "./nav-item.model";
 
 @Component({
-    selector: "ets-sidebar-nav-item",
+    selector: "ets-nav-item",
     templateUrl: "./nav-item.component.html",
     styleUrls: ["./nav-item.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -49,8 +47,8 @@ export class NavItemComponent {
     @Output() public itemClicked: EventEmitter<NavItem> = new EventEmitter();
     public _item: NavItem;
     public _currentUrl: string;
-    public _mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
-    public sidebarMode = CoreSidebarMode;
+    public _mode: NavItemDisplayMode = NavItemDisplayMode.Collapsed;
+    public sidebarMode = NavItemDisplayMode;
     public displayNestedItems = false;
     public nestedUrls: string[] = [];
     public nestedItemSelected: boolean;
@@ -62,7 +60,7 @@ export class NavItemComponent {
     }
 
     @Input()
-    set item(value: NavItem) {
+    public set item(value: NavItem) {
         this._item = value;
 
         if (value.childrenItems) {
@@ -71,14 +69,14 @@ export class NavItemComponent {
     }
 
     @Input()
-    set currentUrl(value: string) {
+    public set currentUrl(value: string) {
         this._currentUrl = value;
 
         this.nestedItemSelected = this.nestedUrls.includes(value);
     }
 
     @Input()
-    set mode(value: CoreSidebarMode) {
+    public set mode(value: NavItemDisplayMode) {
         this._mode = value;
         this.displayNestedItems = this.nestedItemSelected;
     }
@@ -88,7 +86,7 @@ export class NavItemComponent {
     }
 
     public navItemClicked(navItem: NavItem): void {
-        if (this._mode === CoreSidebarMode.Collapsed) {
+        if (this._mode === NavItemDisplayMode.Collapsed) {
             this.itemClicked.emit(navItem);
         } else {
             navItem.childrenItems ? this.toggleDisplayNestedItems() : this.itemClicked.emit(navItem);

@@ -32,12 +32,12 @@
 
         <ng-container *ngIf="displayNestedItems && _mode === sidebarMode.Full">
             <ng-container *ngFor="let nestedItem of item.childrenItems">
-                <ets-sidebar-nav-item class="nested-item"
+                <ets-nav-item class="nested-item"
                                       [currentUrl]="_currentUrl"
                                       [item]="nestedItem | as: coreSidebarNavItem"
                                       [mode]="_mode"
                                       (itemClicked)="itemClicked.emit($event)"
-                ></ets-sidebar-nav-item>
+                ></ets-nav-item>
             </ng-container>
         </ng-container>
     </ng-container>
