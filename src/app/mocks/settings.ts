@@ -4,26 +4,26 @@ export const settingsNavMenuItems: NavItem[] = [
     {
         name: "settings.menu.tab.profile",
         icon: "user-square",
-        url: "/home",
+        url: "/settings/profile", // TODO: rework with relative path?
     },
     {
         name: "settings.menu.tab.privacy",
         icon: "lock-on",
-        url: "/account",
+        url: "/settings/privacy",
     },
     {
         name: "settings.menu.tab.security",
         icon: "shield",
-        url: "/courses",
+        url: "/settings/security",
     },
     {
         name: "settings.menu.tab.notifications",
         icon: "bell",
-        url: "/icons",
+        url: "/settings/notifications",
     },
     {
         name: "settings.menu.tab.integrations",
         icon: "refresh",
-        url: "/icons",
+        url: "/settings/integrations",
     },
 ];

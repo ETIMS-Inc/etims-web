@@ -4,6 +4,16 @@ import {
     Component,
     Input,
 } from "@angular/core";
+import {
+    NavigationEnd,
+    Router,
+} from "@angular/router";
+import {
+    filter,
+    map,
+    Observable,
+    startWith,
+} from "rxjs";
 import {CardComponent} from "../card/card.component";
 import {NavItemComponent} from "../nav-item/nav-item.component";
 import {
@@ -25,8 +35,21 @@ import {
 })
 export class NavMenuComponent {
     @Input() public items: NavItem[];
-
-
+    public currentUrl: Observable<string>;
     public navItemDisplayMode = NavItemDisplayMode;
 
+    constructor(private router: Router) {
+        this.currentUrl = router.events.pipe(
+            filter(event => event instanceof NavigationEnd),
+            map(event => (event as NavigationEnd).urlAfterRedirects),
+            startWith(router.url),
+        );
+
+        this.currentUrl.subscribe(val => console.log(">>> NAV: ", val));
+        // cdr.detectChanges();
+    }
+
+    public itemClicked(item: NavItem): void {
+        this.router.navigateByUrl(item.url);
+    }
 }

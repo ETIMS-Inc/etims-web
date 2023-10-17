@@ -16,6 +16,7 @@ import {
     filter,
     map,
     Observable,
+    startWith,
 } from "rxjs";
 import {IconComponent} from "../lib/icon/icon.component";
 import {NavItemComponent} from "../lib/nav-item/nav-item.component";
@@ -65,6 +66,7 @@ export class CoreSidebarComponent {
         this.currentUrl = router.events.pipe(
             filter(event => event instanceof NavigationEnd),
             map(event => (event as NavigationEnd).urlAfterRedirects),
+            startWith(router.url),
         );
     }
 

@@ -6,6 +6,7 @@ import {
 } from "@angular/common";
 import {
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     EventEmitter,
     Input,
@@ -71,7 +72,6 @@ export class NavItemComponent {
     @Input()
     public set currentUrl(value: string) {
         this._currentUrl = value;
-
         this.nestedItemSelected = this.nestedUrls.includes(value);
     }
 
