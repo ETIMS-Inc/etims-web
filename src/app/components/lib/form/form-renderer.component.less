@@ -1,0 +1,23 @@
+@import "vars";
+
+.form-renderer {
+    &__form {
+        padding: @size-md;
+        display: grid;
+        grid-template-columns: ~'repeat(auto-fill, minmax(max(250px, calc((100% - 40px) / 3)), 1fr))';
+        gap: @size-md;
+    }
+
+    &__control {
+        display: flex;
+        flex-direction: column;
+        gap: @size-xs;
+
+        &__text-area {
+            max-width: 100%;
+            min-width: 100%;
+            min-height: @input-field-height;
+            max-height: 200px;
+        }
+    }
+}

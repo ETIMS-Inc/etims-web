@@ -11,6 +11,7 @@ import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {PasswordModule} from "primeng/password";
+import {LabelComponent} from "../label/label.component";
 import {FormFieldType} from "./form-field/form-field.model";
 import {FormRendererModel} from "./form-renderer.model";
 
@@ -26,6 +27,7 @@ import {FormRendererModel} from "./form-renderer.model";
         InputNumberModule,
         CheckboxModule,
         I18NextModule,
+        LabelComponent,
     ],
     templateUrl: "./form-renderer.component.html",
     styleUrls: ["./form-renderer.component.less"],
