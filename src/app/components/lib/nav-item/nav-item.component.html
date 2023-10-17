@@ -8,10 +8,12 @@
              let-navItem="navItem"
 >
     <ng-container *ngIf="(navItem | as: coreSidebarNavItem) as item">
+        <!-- TODO: take attention on second cond, will think about some cases -->
         <div class="nav-item"
              [ngClass]="{
                 'selected':
                     (_currentUrl && _currentUrl === _item.url)
+                    || (_currentUrl && _currentUrl.startsWith(_item.url))
                     || (nestedItemSelected && _mode === sidebarMode.Collapsed)
                     || (nestedItemSelected && _mode === sidebarMode.Full && !displayNestedItems)
                 }"

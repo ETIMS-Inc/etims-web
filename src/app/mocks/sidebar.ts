@@ -67,7 +67,7 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
         {
             name: "sidebar.tab.settings",
             icon: "eye",
-            url: "/page",
+            url: "/eye",
             chip: {
                 num: 2,
                 type: NavItemChipType.WARNING,
@@ -82,8 +82,8 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
                     }
                 },
                 {
-                    name: "Temp",
-                    url: "/main",
+                    name: "Settings",
+                    url: "/settings",
                 },
             ],
         },
