@@ -1,6 +1,14 @@
 <div class="settings-page">
-    <ets-card class="settings-page_content">
+    <ets-card class="settings-page__content">
+        <div class="settings-page__content__header">
+            <div class="settings-page__content__header_avatar">
+                <ets-icon [icon]="'user-round'"></ets-icon>
+            </div>
+            <div class="settings-page__content__header_title">Profile</div>
+        </div>
+        <ets-form class="settings-page__content__form" [formRendererModel]="profileForm"></ets-form>
+        <p-button label="Submit" [disabled]="profileForm.form.invalid"></p-button>
     </ets-card>
-    <ets-nav-menu class="settings-page_menu" [items]="navMenuItems"></ets-nav-menu>
+    <ets-nav-menu class="settings-page__menu" [items]="navMenuItems"></ets-nav-menu>
 </div>
 
