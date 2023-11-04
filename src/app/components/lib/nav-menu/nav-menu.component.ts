@@ -44,25 +44,31 @@ export class NavMenuComponent implements OnInit {
     public navItemDisplayMode = NavItemDisplayMode;
 
     constructor(private router: Router) {
+        let emitted = false;
         this.currentUrl = router.events.pipe(
             takeUntilDestroyed(),
             filter(event => event instanceof NavigationEnd),
             map(event => (event as NavigationEnd).urlAfterRedirects),
             startWith(router.url),
             map(url => {
-                if (this.items.map(item => item.url).includes(url)) {
-                    return url;
+                let processedUrl = this.items[0]?.url;
+                const existItem = this.items.find(item => item.url === url);
+
+                if (existItem) {
+                    processedUrl = url;
+                    !emitted && this.navChanged.emit(existItem);
                 } else {
-                    const firstItemUrl = this.items[0]?.url;
-                    this.router.navigateByUrl(firstItemUrl);
-                    return firstItemUrl;
+                    this.router.navigateByUrl(processedUrl);
+                    this.navChanged.emit(this.items[0]);
                 }
+                emitted = true;
+                return processedUrl;
             }),
         );
     }
 
     public ngOnInit(): void {
-        this.navChanged.emit(this.items[0]);
+        // this.navChanged.emit(this.items[0]);
     }
 
     public itemClicked(item: NavItem): void {

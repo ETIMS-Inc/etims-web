@@ -6,6 +6,7 @@ import {
 } from "@angular/core";
 import {ReactiveFormsModule} from "@angular/forms";
 import {I18NextModule} from "angular-i18next";
+import {ButtonModule} from "primeng/button";
 import {CheckboxModule} from "primeng/checkbox";
 import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";

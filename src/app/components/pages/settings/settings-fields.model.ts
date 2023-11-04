@@ -57,7 +57,6 @@ export const privacyFields: FormFieldModel[] = [
                 value: "visible",
             },
         ],
-        validators: [Validators.required],
     },
     {
         controlName: "friendsListVisibility",
@@ -74,7 +73,6 @@ export const privacyFields: FormFieldModel[] = [
                 value: "visible",
             },
         ],
-        validators: [Validators.required],
     },
     {
         controlName: "whoCanWriteMe",
@@ -113,5 +111,14 @@ export const privacyFields: FormFieldModel[] = [
             },
         ],
         label: "Who can invite me", // TODO: translate
+    },
+];
+
+export const securityFields: FormFieldModel[] = [
+    {
+        controlName: "changeEmail",
+        type: FormFieldType.EMAIL,
+        label: "Email", // TODO: translate
+        required: false,
     },
 ];
