@@ -6,9 +6,16 @@
             </div>
             <div class="settings-page__content__header_title">Profile</div>
         </div>
-        <ets-form class="settings-page__content__form" [formRendererModel]="profileForm"></ets-form>
-        <p-button label="Submit" [disabled]="profileForm.form.invalid"></p-button>
+        <ets-form class="settings-page__content__form"
+                  [formRendererModel]="profileForm"
+        ></ets-form>
+        <p-button label="Submit"
+                  [disabled]="profileForm.form.invalid"
+        ></p-button>
     </ets-card>
-    <ets-nav-menu class="settings-page__menu" [items]="navMenuItems"></ets-nav-menu>
+    <ets-nav-menu class="settings-page__menu"
+                  [items]="navMenuItems"
+                  (navChanged)="navChanged($event)"
+    ></ets-nav-menu>
 </div>
 
