@@ -3,7 +3,7 @@
 .form-renderer {
     &__form {
         display: grid;
-        grid-template-columns: ~'repeat(auto-fill, minmax(max(250px, calc((100% - 40px) / 3)), 1fr))';
+        grid-template-columns: ~'repeat(auto-fill, minmax(250px, 1fr))';
         gap: @size-md;
     }
 
@@ -17,6 +17,12 @@
             min-width: 100%;
             min-height: @input-field-height;
             max-height: 200px;
+        }
+
+        &__dropdown {
+            ::ng-deep.p-dropdown {
+                width: 100%;
+            }
         }
     }
 }

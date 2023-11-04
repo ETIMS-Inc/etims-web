@@ -79,7 +79,8 @@
                                [value]="field.label"
                     ></ets-label>
 
-                    <p-dropdown optionLabel="label"
+                    <p-dropdown class="form-renderer__control__dropdown"
+                                optionLabel="label"
                                 [formControlName]="field.controlName"
                                 [options]="$any(field).options"
                     ></p-dropdown>
