@@ -49,6 +49,15 @@ export class NavMenuComponent implements OnInit {
             filter(event => event instanceof NavigationEnd),
             map(event => (event as NavigationEnd).urlAfterRedirects),
             startWith(router.url),
+            map(url => {
+                if (this.items.map(item => item.url).includes(url)) {
+                    return url;
+                } else {
+                    const firstItemUrl = this.items[0]?.url;
+                    this.router.navigateByUrl(firstItemUrl);
+                    return firstItemUrl;
+                }
+            }),
         );
     }
 
