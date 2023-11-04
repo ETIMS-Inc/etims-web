@@ -1,11 +1,15 @@
-<form class="form-renderer__form" [formGroup]="formRendererModel.form">
+<form class="form-renderer__form"
+      [formGroup]="formRendererModel.form"
+>
     <ng-container *ngFor="let field of formRendererModel.fields">
         <div class="form-renderer__control">
             <ng-container *ngIf="!field.hidden"
                           [ngSwitch]="field.type"
             >
                 <ng-container *ngSwitchCase="formFieldType.STRING">
-                    <ets-label [value]="field.label" [required]="field.required"></ets-label>
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
                     <input pInputText
                            type="text"
                            [disabled]="field.disabled"
@@ -14,9 +18,11 @@
                 </ng-container>
 
                 <ng-container *ngSwitchCase="formFieldType.TEXT_AREA">
-                    <ets-label [value]="field.label" [required]="field.required"></ets-label>
-                    <textarea cols="30"
-                              class="form-renderer__control__text-area"
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+                    <textarea class="form-renderer__control__text-area"
+                              cols="30"
                               pInputTextarea
                               rows="5"
                               [disabled]="field.disabled"
@@ -26,17 +32,21 @@
                 </ng-container>
 
                 <ng-container *ngSwitchCase="formFieldType.PASSWORD">
-                    <ets-label [value]="field.label" [required]="field.required"></ets-label>
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
                     <p-password [disabled]="field.disabled"
                                 [feedback]="false"
                                 [formControlName]="field.controlName"
-                                [toggleMask]="true"
                                 [required]="field.required"
+                                [toggleMask]="true"
                     ></p-password>
                 </ng-container>
 
                 <ng-container *ngSwitchCase="formFieldType.NUMBER">
-                    <ets-label [value]="field.label" [required]="field.required"></ets-label>
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
                     <p-inputNumber [disabled]="field.disabled"
                                    [formControlName]="field.controlName"
                                    [inputId]="'num-'+field.controlName"
@@ -54,12 +64,25 @@
                 </ng-container>
 
                 <ng-container *ngSwitchCase="formFieldType.EMAIL">
-                    <ets-label [value]="field.label" [required]="field.required"></ets-label>
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
                     <input pInputText
                            type="email"
                            [disabled]="field.disabled"
                            [formControlName]="field.controlName"
                     />
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.DROPDOWN">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+
+                    <p-dropdown optionLabel="label"
+                                [formControlName]="field.controlName"
+                                [options]="$any(field).options"
+                    ></p-dropdown>
                 </ng-container>
             </ng-container>
         </div>

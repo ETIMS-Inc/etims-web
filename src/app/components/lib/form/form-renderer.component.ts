@@ -7,6 +7,7 @@ import {
 import {ReactiveFormsModule} from "@angular/forms";
 import {I18NextModule} from "angular-i18next";
 import {CheckboxModule} from "primeng/checkbox";
+import {DropdownModule} from "primeng/dropdown";
 import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
 import {InputTextareaModule} from "primeng/inputtextarea";
@@ -28,6 +29,7 @@ import {FormRendererModel} from "./form-renderer.model";
         CheckboxModule,
         I18NextModule,
         LabelComponent,
+        DropdownModule,
     ],
     templateUrl: "./form-renderer.component.html",
     styleUrls: ["./form-renderer.component.less"],
