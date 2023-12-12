@@ -7,7 +7,10 @@ import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {PasswordModule} from "primeng/password";
 import {IconComponent} from "../../../../lib/icon/icon.component";
-import {MediaButton, mediaBtnList} from "../media-button.model";
+import {
+    mediaBtnList,
+    MediaButton,
+} from "../media-button.model";
 
 @Component({
     selector: "ets-sign-up",
@@ -20,7 +23,7 @@ import {MediaButton, mediaBtnList} from "../media-button.model";
         InputTextModule,
     ],
     templateUrl: "./sign-up.component.html",
-    styleUrls: ["../keycloak-auth.less", "register-page.component.less"],
+    styleUrls: ["../auth-panel-item.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignUpComponent {

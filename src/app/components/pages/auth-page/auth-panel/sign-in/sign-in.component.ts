@@ -22,10 +22,7 @@ import {
         PasswordModule,
     ],
     templateUrl: "./sign-in.component.html",
-    styleUrls: [
-        "../keycloak-auth.less",
-        "login-page.component.less",
-    ],
+    styleUrls: ["../auth-panel-item.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SignInComponent implements OnInit {

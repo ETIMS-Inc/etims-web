@@ -8,44 +8,37 @@
 <!--&gt;-->
 <!--</iframe>-->
 
-<div class="login-page__wrapper-login auth-container">
-    <span class="login-page__welcome-text _black header">Sign In</span>
-    <!--        <iframe-->
-    <!--            *ngIf="result"-->
-    <!--            id="inlineFrameExample"-->
-    <!--            title="Inline Frame Example"-->
-    <!--            width="500"-->
-    <!--            height="400"-->
-    <!--            [src]="result"-->
-    <!--        >-->
-    <!--        </iframe>-->
-    <div class="login-page__section form">
-        <label class="login-page__label">
-            Enter your username or email address
-        </label>
-        <input
-            pInputText
-            class="login-page__input _email"
-            type="text"
-            placeholder="Username or email address"
-        />
-        <label class="login-page__label _password">
-            Enter your password
-        </label>
-        <p-password
-            class="login-page__input"
-            [feedback]="false"
-            placeholder="Password"
-        ></p-password>
-        <p-button
-            class="login-page__input _forgot-password"
-            label="Forgot Password"
-            styleClass="p-button-link"
+<div class="auth-container">
+    <span class="header">Sign In</span>
+    <div class="form">
+        <div class="field-container">
+            <label class="label">
+                Enter your username or email address
+            </label>
+            <input class="input"
+                   pInputText
+                   placeholder="Username or email address"
+                   type="text"
+            />
+        </div>
+        <div class="field-container">
+            <label class="label">
+                Enter your password
+            </label>
+            <p-password class="input"
+                        placeholder="Password"
+                        [feedback]="false"
+                        [toggleMask]="true"
+            ></p-password>
+        </div>
+
+        <p-button class="forget-password-label"
+                  label="Forgot Password"
+                  styleClass="p-button-link"
         ></p-button>
-        <p-button
-            class="login-page__input _sign-in"
-            styleClass="p-button-raised"
-            label="Sign in"
+        <p-button class="submit-button"
+                  label="Sign in"
+                  styleClass="p-button-raised"
         ></p-button>
     </div>
 </div>

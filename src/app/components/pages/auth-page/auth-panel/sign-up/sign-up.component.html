@@ -1,36 +1,39 @@
-<div class="register-page__wrapper-login">
-    <span class="register-page__welcome-text _black">Sign Up</span>
-    <div class="register-page__section">
-        <label class="register-page__label">
-            Enter your username or email address
-        </label>
-        <input
-            pInputText
-            class="register-page__input _email"
-            type="text"
-            placeholder="Username or email address"
-        />
-        <label class="register-page__label">
-            Enter your full name
-        </label>
-        <input
-            pInputText
-            class="register-page__input _email"
-            type="text"
-            placeholder="Full name"
-        />
-        <label class="register-page__label _password">
-            Enter your password
-        </label>
-        <p-password
-            class="register-page__input"
-            [toggleMask]="true"
-            placeholder="Password"
-        ></p-password>
-        <p-button
-            class="register-page__input _sign-up"
-            styleClass="p-button-raised"
-            label="Sign up"
+<div class="auth-container">
+    <span class="header">Sign Up</span>
+    <div class="form">
+        <div class="field-container">
+            <label class="label">
+                Enter your username or email address
+            </label>
+            <input class="input"
+                   pInputText
+                   placeholder="Username or email address"
+                   type="text"
+            />
+        </div>
+        <div class="field-container">
+            <label class="label">
+                Enter your full name
+            </label>
+            <input class="input"
+                   pInputText
+                   placeholder="Full name"
+                   type="text"
+            />
+        </div>
+        <div class="field-container">
+            <label class="label">
+                Enter your password
+            </label>
+            <p-password class="input"
+                        placeholder="Password"
+                        [toggleMask]="true"
+            ></p-password>
+        </div>
+
+        <p-button class="submit-button"
+                  label="Sign up"
+                  styleClass="p-button-raised"
         ></p-button>
     </div>
 </div>
