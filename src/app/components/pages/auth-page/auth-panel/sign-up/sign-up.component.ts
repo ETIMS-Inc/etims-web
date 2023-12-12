@@ -28,6 +28,4 @@ import {
 })
 export class SignUpComponent {
     public mediaButtons: MediaButton[] = mediaBtnList;
-
-    protected readonly mediaBtnList = mediaBtnList;
 }
