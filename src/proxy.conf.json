@@ -1,8 +1,0 @@
-{
-    "/realms/etims/protocol/openid-connect/*": {
-        "target": "http://192.168.0.104:8081",
-        "secure": false,
-        "changeOrigin": true,
-        "logLevel": "debug"
-    }
-}

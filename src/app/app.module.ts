@@ -7,10 +7,6 @@ import {MatSlideToggleModule} from "@angular/material/slide-toggle";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule} from "@angular/router";
-import {
-    AuthModule,
-    LogLevel,
-} from "angular-auth-oidc-client";
 import {I18NextModule} from "angular-i18next";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
@@ -35,20 +31,6 @@ import {I18N_PROVIDERS} from "./localization-config";
         MatIconModule,
         HttpClientModule,
         I18NextModule.forRoot(),
-        AuthModule.forRoot({
-            config: {
-                authority: "http://192.168.0.104:8081/realms/etims",
-                redirectUrl: window.location.origin,
-                postLogoutRedirectUri: window.location.origin,
-                clientId: "web-ui",
-                scope: "openid",
-                responseType: "code",
-                silentRenew: true,
-                useRefreshToken: true,
-                logLevel: LogLevel.Debug,
-                ngswBypass: false,
-            },
-        }),
         RecoverPasswordPageModule,
         LandingHeaderModule,
         CoreHeaderModule,
