@@ -1,28 +1,38 @@
 import {CommonModule} from "@angular/common";
 import {
-    HttpClient,
-    HttpHeaders,
-} from "@angular/common/http";
-import {
     ChangeDetectionStrategy,
-    ChangeDetectorRef,
     Component,
     OnInit,
 } from "@angular/core";
-import {DomSanitizer} from "@angular/platform-browser";
-import {OidcSecurityService} from "angular-auth-oidc-client";
+import {ButtonModule} from "primeng/button";
+import {InputTextModule} from "primeng/inputtext";
+import {PasswordModule} from "primeng/password";
+import {
+    mediaBtnList,
+    MediaButton,
+} from "../media-button.model";
 
 @Component({
     selector: "ets-sign-in",
     standalone: true,
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        ButtonModule,
+        InputTextModule,
+        PasswordModule,
+    ],
     templateUrl: "./sign-in.component.html",
-    styleUrls: ["../temp/keycloak-auth.less"],
+    styleUrls: [
+        "../keycloak-auth.less",
+        "login-page.component.less",
+    ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SignInComponent implements OnInit{
+export class SignInComponent implements OnInit {
 
     public result: any;
+    public mediaButtons: MediaButton[] = mediaBtnList;
+    protected readonly mediaBtnList = mediaBtnList;
 
     constructor(
         // private oidcSecurityService: OidcSecurityService,

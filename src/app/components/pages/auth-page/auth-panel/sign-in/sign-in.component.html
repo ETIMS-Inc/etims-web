@@ -1,9 +1,51 @@
-<iframe
-    id="inlineFrameExample"
-    title="Inline Frame Example"
-    width="500"
-    height="400"
-    src="http://localhost:8081/realms/etims/protocol/openid-connect/auth"
-    style="border-style: none;"
->
-</iframe>
+<!--<iframe-->
+<!--    id="inlineFrameExample"-->
+<!--    title="Inline Frame Example"-->
+<!--    width="500"-->
+<!--    height="400"-->
+<!--    src="http://localhost:8081/realms/etims/protocol/openid-connect/auth"-->
+<!--    style="border-style: none;"-->
+<!--&gt;-->
+<!--</iframe>-->
+
+<div class="login-page__wrapper-login auth-container">
+    <span class="login-page__welcome-text _black header">Sign In</span>
+    <!--        <iframe-->
+    <!--            *ngIf="result"-->
+    <!--            id="inlineFrameExample"-->
+    <!--            title="Inline Frame Example"-->
+    <!--            width="500"-->
+    <!--            height="400"-->
+    <!--            [src]="result"-->
+    <!--        >-->
+    <!--        </iframe>-->
+    <div class="login-page__section form">
+        <label class="login-page__label">
+            Enter your username or email address
+        </label>
+        <input
+            pInputText
+            class="login-page__input _email"
+            type="text"
+            placeholder="Username or email address"
+        />
+        <label class="login-page__label _password">
+            Enter your password
+        </label>
+        <p-password
+            class="login-page__input"
+            [feedback]="false"
+            placeholder="Password"
+        ></p-password>
+        <p-button
+            class="login-page__input _forgot-password"
+            label="Forgot Password"
+            styleClass="p-button-link"
+        ></p-button>
+        <p-button
+            class="login-page__input _sign-in"
+            styleClass="p-button-raised"
+            label="Sign in"
+        ></p-button>
+    </div>
+</div>

@@ -1,9 +1,8 @@
-@import "assets/styles/colors";
+@import "colors";
 
 :host {
     display: block;
-    height: 100vh;
-    background-color: @link-water;
+    height: 100%;
 }
 
 .register-page {
@@ -145,27 +144,6 @@
                 margin-top: 32px;
                 width: 476px;
                 border-radius: 9px;
-            }
-        }
-
-        &._forgot-password {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 34px;
-
-            ::ng-deep .p-button.p-button-link {
-                margin-top: 8px;
-                padding: 2px;
-                color: #4285f4;
-                text-align: center;
-                font-size: 16px;
-                font-style: normal;
-                line-height: normal;
-                letter-spacing: 0.05em;
-            }
-
-            ::ng-deep .p-button-label {
-                font-weight: 400;
             }
         }
     }
