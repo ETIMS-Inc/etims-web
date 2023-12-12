@@ -3,6 +3,7 @@
         <ng-template pTemplate="start">
             <ets-icon [icon]="'logo'"
                       [viewBox]="'0 0 2 1'"
+                      (click)="handleLogoClick()"
             ></ets-icon>
             <p-tabMenu [activeItem]="activeItem"
                        [model]="primaryNavTabs"

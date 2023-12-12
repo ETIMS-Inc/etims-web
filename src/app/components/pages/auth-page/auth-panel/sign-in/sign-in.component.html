@@ -1,0 +1,45 @@
+<!--<iframe-->
+<!--    id="inlineFrameExample"-->
+<!--    title="Inline Frame Example"-->
+<!--    width="500"-->
+<!--    height="400"-->
+<!--    src="http://localhost:8081/realms/etims/protocol/openid-connect/auth"-->
+<!--    style="border-style: none;"-->
+<!--&gt;-->
+<!--</iframe>-->
+
+<div class="auth-container">
+    <span class="header">Sign In</span>
+    <div class="form">
+        <div class="field-container">
+            <label class="label">
+                Enter your username or email address
+            </label>
+            <input class="input"
+                   pInputText
+                   placeholder="Username or email address"
+                   type="text"
+            />
+        </div>
+        <div class="field-container">
+            <label class="label">
+                Enter your password
+            </label>
+            <p-password class="input"
+                        placeholder="Password"
+                        [feedback]="false"
+                        [toggleMask]="true"
+            ></p-password>
+        </div>
+
+        <p-button class="forget-password-label"
+                  label="Forgot Password"
+                  styleClass="p-button-link"
+                  (onClick)="recoverPassword()"
+        ></p-button>
+        <p-button class="submit-button"
+                  label="Sign in"
+                  styleClass="p-button-raised"
+        ></p-button>
+    </div>
+</div>

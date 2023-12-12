@@ -1,0 +1,75 @@
+@import "colors";
+@import "vars";
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    max-width: min(calc(100% - 10px), 450px);
+    width: 30vw;
+
+    .form {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: @size-md;
+        width: 100%;
+    }
+
+    .header {
+        color: @main-text-color;
+        font-size: 32px;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        padding: @size-md @size-lg;
+        text-align: center;
+    }
+
+    .field-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: @size-xxs-xs;
+        width: 100%;
+
+        .label {
+            align-self: start;
+            color: @main-text-color;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: @font-weight-bold;
+            letter-spacing: 0.05em;
+            line-height: normal;
+        }
+
+        .input {
+            line-height: normal;
+            width: 100%;
+
+            ::ng-deep.p-password, ::ng-deep.p-inputtext {
+                width: 100%;
+            }
+        }
+    }
+
+    .submit-button {
+        width: 100%;
+
+        ::ng-deep .p-button {
+            width: 100%;
+            border-radius: @size-xs-sm;
+        }
+    }
+
+    .forget-password-label {
+        align-self: end;
+
+        ::ng-deep .p-button {
+            height: 25px;
+            padding: 0;
+        }
+
+        ::ng-deep .p-button-label {
+            font-weight: 500;
+        }
+    }
+}

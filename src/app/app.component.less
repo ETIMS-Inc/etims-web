@@ -21,4 +21,8 @@ ets-core-header {
     background: rgb(246 246 255);
     flex: 1;
     overflow: auto;
+
+    &::ng-deep > *:not(router-outlet) {
+        height: 100%;
+    }
 }
