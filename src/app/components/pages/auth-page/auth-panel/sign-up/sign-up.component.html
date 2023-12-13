@@ -1,0 +1,39 @@
+<div class="auth-container">
+    <span class="header">Sign Up</span>
+    <div class="form">
+        <div class="field-container">
+            <label class="label">
+                Enter your username or email address
+            </label>
+            <input class="input"
+                   pInputText
+                   placeholder="Username or email address"
+                   type="text"
+            />
+        </div>
+        <div class="field-container">
+            <label class="label">
+                Enter your full name
+            </label>
+            <input class="input"
+                   pInputText
+                   placeholder="Full name"
+                   type="text"
+            />
+        </div>
+        <div class="field-container">
+            <label class="label">
+                Enter your password
+            </label>
+            <p-password class="input"
+                        placeholder="Password"
+                        [toggleMask]="true"
+            ></p-password>
+        </div>
+
+        <p-button class="submit-button"
+                  label="Sign up"
+                  styleClass="p-button-raised"
+        ></p-button>
+    </div>
+</div>

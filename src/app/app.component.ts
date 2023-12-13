@@ -1,9 +1,5 @@
-import {
-    Component,
-} from "@angular/core";
-import {
-    BehaviorSubject,
-} from "rxjs";
+import {Component} from "@angular/core";
+import {BehaviorSubject} from "rxjs";
 import {
     coreSidebarNavBottomGroups,
     coreSidebarNavGroups,

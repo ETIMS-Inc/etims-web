@@ -6,7 +6,6 @@
 @search-width: 240px;
 
 :host {
-    position: sticky;
     width: 100%;
 }
 
@@ -14,10 +13,11 @@
     .shadow-bottom();
 
     .p-menubar {
-        background-color: @white;
         border: none;
+        border-radius: 0;
         padding-left: @size-sm-md;
         padding-right: @size-sm-md;
+        background-color: @white;
 
         &-start {
             align-items: center;

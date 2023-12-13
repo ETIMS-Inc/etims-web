@@ -1,6 +1,5 @@
-<ng-container *ngIf="(isLoggedIn$ | async);
-    then coreHeader;
-    else landingHeader"
+<ng-container *ngIf="(isLoggedIn$ | async) else landingHeader"
+              [ngTemplateOutlet]="coreHeader"
 ></ng-container>
 
 <ets-icon-lazy-holder></ets-icon-lazy-holder>

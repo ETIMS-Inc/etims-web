@@ -1,0 +1,59 @@
+@import "colors";
+@import "vars";
+@import "design";
+
+:host {
+    align-items: center;
+    background: rgb(76 133 255);
+    background: @auth-page-info-panel-gradient;
+    display: flex;
+    justify-content: center;
+}
+
+.info-panel-content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: @size-xs-sm;
+    letter-spacing: 0.05em;
+    text-align: center;
+
+    .title, .second-title {
+        color: @white;
+        font-weight: @font-weight-strong-bold;
+    }
+
+    .title {
+        font-size: @size-xl;
+    }
+
+    .second-title {
+        font-size: @main-title-font-size;
+    }
+
+    .description {
+        color: @blue-alice;
+        font-size: @size-xxs-md;
+        font-weight: @font-weight-light-bold;
+        padding-top: @size-md;
+    }
+
+    .action-button::ng-deep {
+        padding-top: @size-xxl;
+
+        .p-button {
+            color: @white;
+            padding: @size-md @size-xxl;
+
+            &:hover {
+                color: @blue-midnight;
+                background: @white;
+            }
+
+            &:active {
+                color: @blue-navy;
+                background: @blue-active;
+            }
+        }
+    }
+}

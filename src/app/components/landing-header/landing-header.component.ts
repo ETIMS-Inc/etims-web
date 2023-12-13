@@ -4,8 +4,10 @@ import {
     OnInit,
     ViewChild,
 } from "@angular/core";
+import {Router} from "@angular/router";
 import {MenuItem} from "primeng/api";
 import {OverlayPanel} from "primeng/overlaypanel";
+import {RoutePath} from "../../models/app-routing.model";
 import {I18Service} from "../../services/i18.service";
 import {
     ActionType,
@@ -23,7 +25,7 @@ import {LandingHeaderService} from "./landing-header.service";
     styleUrls: ["./landing-header.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LandingHeaderComponent implements OnInit{
+export class LandingHeaderComponent implements OnInit {
     @ViewChild("overlayPanel", {static: true})
     public overlayPanel: OverlayPanel;
     public languages: Language[] = languageList;
@@ -34,13 +36,15 @@ export class LandingHeaderComponent implements OnInit{
 
     constructor(
         private headerService: LandingHeaderService,
-        private i18Service: I18Service) {
+        private i18Service: I18Service,
+        private router: Router,
+    ) {
     }
 
     public ngOnInit(): void {
         this.selectedLanguage = this.languages.find(language =>
             language.code.toLowerCase() === this.i18Service.languageCode.toLowerCase(),
-        )
+        );
     }
 
     public handleButtonChange(type: ActionType): void {
@@ -62,12 +66,15 @@ export class LandingHeaderComponent implements OnInit{
         }
     }
 
-    public onActiveItemChange(event: MenuItem) {
+    public onActiveItemChange(event: MenuItem): void {
         this.activeItem = event;
     }
 
-    public onLanguageChangeHandler(value: Language) {
+    public onLanguageChangeHandler(value: Language): void {
         this.i18Service.changeLanguage(value.code.toLowerCase());
     }
 
+    public handleLogoClick(): void {
+        this.router.navigateByUrl(RoutePath.Home);
+    }
 }

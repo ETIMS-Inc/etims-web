@@ -3,6 +3,8 @@ import {
     RouterModule,
     Routes,
 } from "@angular/router";
+import {RoutePath} from "./models/app-routing.model";
+import {AuthMode} from "./components/pages/auth-page/auth-page.model";
 
 const notFoundRoutes: Routes = [
     {path: "**", redirectTo: "/404"},
@@ -13,9 +15,9 @@ const notFoundRoutes: Routes = [
 ];
 
 const routes: Routes = [
-    {path: "", redirectTo: "/home", pathMatch: "full"},
+    {path: RoutePath.InitPage, redirectTo: `/${RoutePath.Home}`, pathMatch: "full"},
     {
-        path: "home",
+        path: RoutePath.Home,
         loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
     },
     {
@@ -23,16 +25,30 @@ const routes: Routes = [
         loadChildren: () => import("./components/pages/account-starter-page/account-starter-page.module").then(m => m.AccountStarterPageModule),
     },
     {
-        path: "recover-password",
+        path: RoutePath.RecoverPassword,
         loadChildren: () => import("./components/pages/recover-password-page/recover-password-page.module").then(m => m.RecoverPasswordPageModule),
     },
     {
-        path: "courses",
+        path: RoutePath.Courses,
         loadChildren: () => import("./components/pages/courses-list-page/courses-list-page.module").then(m => m.CoursesListPageModule),
     },
     {
-        path: "icons",
+        path: RoutePath.Icons,
         loadChildren: () => import("./components/pages/icons-page/icons-page.module").then(m => m.IconsPageModule),
+    },
+    {
+        path: RoutePath.SignIn,
+        loadComponent: () => import("./components/pages/auth-page/auth-page.component").then(m => m.AuthPageComponent),
+        data: {
+            mode: AuthMode.SIGN_IN,
+        },
+    },
+    {
+        path: RoutePath.SignUp,
+        loadComponent: () => import("./components/pages/auth-page/auth-page.component").then(m => m.AuthPageComponent),
+        data: {
+            mode: AuthMode.SIGN_UP,
+        },
     },
     {
         path: "settings",
