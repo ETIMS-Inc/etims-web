@@ -6,5 +6,6 @@ export enum RoutePath {
     Icons = "icons",
     SignIn = "sign-in",
     SignUp = "sign-up",
+    Settings = "settings",
     NotFound = "404",
 }
