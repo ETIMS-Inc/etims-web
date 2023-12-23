@@ -1,5 +1,13 @@
 {
     "translation": {
+        "auth.page.info.panel.sign.in.button.label": "Sign Up",
+        "auth.page.info.panel.sign.in.description": "The system is intended to control learning process. Register right now",
+        "auth.page.info.panel.sign.in.second.title": "ETIMS CLOUD",
+        "auth.page.info.panel.sign.in.title": "Welcome to",
+        "auth.page.info.panel.sign.up.button.label": "Sign In",
+        "auth.page.info.panel.sign.up.description": "Log in to your account and you can continue building and editing your learning process",
+        "auth.page.info.panel.sign.up.second.title": "have an account?",
+        "auth.page.info.panel.sign.up.title": "Already",
         "button.log.in": "Log In",
         "button.recover": "Recover",
         "button.sign.in": "Sign In",
@@ -8,6 +16,10 @@
         "header.popup.no.changes": "No Changes Yet",
         "header.popup.see.all": "See all",
         "header.search": "Search",
+        "home.page.caption": "Educative Ticketing Management System",
+        "home.page.description": "The system is intended to control learning process. Register right now and get free access to perform eLearning process with ETIMS LMS. You will get access to create projects and to be participants of them, assign tasks to your students or coworkers and lots of other stuff.",
+        "home.page.get.started": "Get started",
+        "home.page.request.demo": "Request a demo",
         "input.username.email": "Username or email address",
         "label.button.create.course": "Create a course",
         "label.button.join.course": "Join a course",
@@ -17,13 +29,16 @@
         "label.recovery.password": "Recovery Password",
         "label.username.email": "Enter your username or email address",
         "label.you.have.not.added.courses.to.category": "You have not added courses to this category yet",
+        "sidebar.tab.account": "Account",
+        "sidebar.tab.courses": "Courses",
+        "sidebar.tab.favorites": "Favorites",
+        "sidebar.tab.home": "Home",
+        "sidebar.tab.icons": "Icons",
+        "sidebar.tab.recents": "Recents",
+        "sidebar.tab.settings": "Settings",
         "text.send.password": "Enter your <strong> username </strong> or <strong> email password </strong> and we'll send you an email with your username and a link to reset your password.",
         "text.success.recover": "We have sent you an email to your <strong>{{ email }}</strong> email account with the instructions to recover your password.",
         "title.empty.here": "It's empty here",
-        "title.page.courses": "Courses",
-        "home.page.caption": "Educative Ticketing Management System",
-        "home.page.description": "The system is intended to control learning process. Register right now and get free access to perform eLearning process with ETIMS LMS. You will get access to create projects and to be participants of them, assign tasks to your students or coworkers and lots of other stuff.",
-        "home.page.get.started": "Get started",
-        "home.page.request.demo": "Request a demo"
+        "title.page.courses": "Courses"
     }
 }

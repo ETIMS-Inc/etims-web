@@ -10,7 +10,9 @@
                     "strict": true
                 },
                 "@schematics/angular:component": {
-                    "style": "less"
+                    "style": "less",
+                    "changeDetection": "OnPush",
+                    "standalone": true
                 }
             },
             "root": "",
@@ -46,13 +48,13 @@
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
+                                    "maximumWarning": "4mb",
+                                    "maximumError": "5mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
+                                    "maximumWarning": "4mb",
+                                    "maximumError": "5mb"
                                 }
                             ],
                             "fileReplacements": [

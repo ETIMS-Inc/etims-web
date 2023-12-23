@@ -1,12 +1,16 @@
-<ng-container *ngIf="(isLoggedIn$ | async);
-    then coreHeader;
-    else landingHeader"
+<ng-container *ngIf="(isLoggedIn$ | async) else landingHeader"
+              [ngTemplateOutlet]="coreHeader"
 ></ng-container>
 
 <ets-icon-lazy-holder></ets-icon-lazy-holder>
 
-<div class="route-content">
-    <router-outlet></router-outlet>
+<div class="page-content">
+    <ets-core-sidebar *ngIf="isLoggedIn$ | async"
+                      [navGroups]="sidebarGroups"
+    ></ets-core-sidebar>
+    <div class="route-content">
+        <router-outlet></router-outlet>
+    </div>
 </div>
 <!--<ets-account-starter-page></ets-account-starter-page>-->
 <!--<ets-account-card></ets-account-card>-->

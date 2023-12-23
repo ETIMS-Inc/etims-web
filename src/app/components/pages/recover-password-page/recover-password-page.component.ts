@@ -1,4 +1,8 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+} from "@angular/core";
 import {RecoverPassword} from "./recover-password-page.model";
 
 @Component({
@@ -11,6 +15,6 @@ export class RecoverPasswordPageComponent {
     @Input()
     public email: string = "your_mail_box@gmail.com";
     @Input()
-    public recoverTypeState: RecoverPassword;
+    public recoverTypeState: RecoverPassword = RecoverPassword.password;
     public recoverType = RecoverPassword;
 }

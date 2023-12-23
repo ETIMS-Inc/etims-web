@@ -2,6 +2,20 @@
 
 This project based on **Angular CLI** v16.
 
+# Showcases:
+![image](https://github.com/ETIMS-Inc/etims-web/assets/47894863/c5c473ab-adfc-4e5f-8fee-91c3533fc876)
+
+![image](https://github.com/ETIMS-Inc/etims-web/assets/47894863/7549b363-c37b-41ef-bca5-0260928b3c0d)
+
+![image](https://github.com/ETIMS-Inc/etims-web/assets/47894863/96767203-918e-4a23-9a0c-374c0cbac21d)
+
+![image](https://github.com/ETIMS-Inc/etims-web/assets/47894863/3a47289f-58b0-4bf6-8419-578bbee6f992)
+
+![image](https://github.com/ETIMS-Inc/etims-web/assets/47894863/500e2044-7dec-49d0-8607-8000f110c42e)
+
+![image](https://github.com/ETIMS-Inc/etims-web/assets/47894863/f3f42b00-d330-4090-8d3c-48ca75468e91)
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.

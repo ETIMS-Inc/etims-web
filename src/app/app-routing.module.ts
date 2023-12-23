@@ -3,44 +3,51 @@ import {
     RouterModule,
     Routes,
 } from "@angular/router";
+import {RoutePath} from "./models/app-routing.model";
+import {AuthMode} from "./components/pages/auth-page/auth-page.model";
 
 const routes: Routes = [
+    {path: RoutePath.InitPage, redirectTo: `/${RoutePath.Home}`, pathMatch: "full"},
     {
-        path: "",
-        redirectTo: "/home",
-        pathMatch: "full"
-    },
-    {
-        path: "home",
+        path: RoutePath.Home,
         loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
     },
     {
-        path: "recover-password",
+        path: RoutePath.RecoverPassword,
         loadChildren: () => import("./components/pages/recover-password-page/recover-password-page.module").then(m => m.RecoverPasswordPageModule),
     },
     {
-        path: "courses",
+        path: RoutePath.Courses,
         loadChildren: () => import("./components/pages/courses-list-page/courses-list-page.module").then(m => m.CoursesListPageModule),
+    },
+    {
+        path: RoutePath.Icons,
+        loadChildren: () => import("./components/pages/icons-page/icons-page.module").then(m => m.IconsPageModule),
+    },
+    {
+        path: RoutePath.SignIn,
+        loadComponent: () => import("./components/pages/auth-page/auth-page.component").then(m => m.AuthPageComponent),
+        data: {
+            mode: AuthMode.SIGN_IN,
+        },
+    },
+    {
+        path: RoutePath.SignUp,
+        loadComponent: () => import("./components/pages/auth-page/auth-page.component").then(m => m.AuthPageComponent),
+        data: {
+            mode: AuthMode.SIGN_UP,
+        },
     },
     {
         path: "course-details",
         loadChildren: () => import("./components/pages/course-details-page/course-details-page.module").then(m => m.CourseDetailsPageModule),
     },
     {
-        path: "sign-in",
-        loadChildren: () => import("./components/pages/login-page/login-page.module").then(m => m.LoginPageModule),
-
-    },
-    {
-        path: "sign-up",
-        loadChildren: () => import("./components/pages/register-page/register-page.module").then(m => m.RegisterPageModule),
-    },
-    {
         path: "**",
-        redirectTo: "/404"
+        redirectTo: `/${RoutePath.NotFound}`,
     },
     {
-        path: "404",
+        path: RoutePath.NotFound,
         loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),
     },
 ];

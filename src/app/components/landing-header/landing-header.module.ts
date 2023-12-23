@@ -10,7 +10,7 @@ import {OverlayPanelModule} from "primeng/overlaypanel";
 import {ScrollPanelModule} from "primeng/scrollpanel";
 import {SplitButtonModule} from "primeng/splitbutton";
 import {ToolbarModule} from "primeng/toolbar";
-import {LibModule} from "../lib/lib.module";
+import {IconComponent} from "../lib/icon/icon.component";
 import {LandingHeaderComponent} from "./landing-header.component";
 import {TabMenuModule} from "primeng/tabmenu";
 import {I18NextModule} from "angular-i18next";
@@ -35,8 +35,8 @@ import {I18NextModule} from "angular-i18next";
         ListboxModule,
         ScrollPanelModule,
         TabMenuModule,
-        LibModule,
         I18NextModule,
+        IconComponent,
     ],
 })
 export class LandingHeaderModule {

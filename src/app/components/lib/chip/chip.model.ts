@@ -1,4 +1,4 @@
 export interface Chip {
-    name: string;
+    label: string | number;
     color?: string;
 }
