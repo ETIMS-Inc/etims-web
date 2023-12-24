@@ -2,8 +2,10 @@ import {
     ChangeDetectionStrategy,
     Component,
 } from "@angular/core";
+import {Router} from "@angular/router";
 import {MenuItem} from "primeng/api";
 import {coursesTabs} from "../../../mocks/courses-tabs";
+import {RoutePath} from "../../../models/app-routing.model";
 import {CourseCardDisplayMode} from "../../course/course-card/course-card.component";
 import {CourseCard} from "../../course/course-card/course-card.model";
 import {CoursesTab} from "./courses-tab.model";
@@ -31,7 +33,15 @@ export class CoursesListPageComponent {
     public currentMode: DisplayMode = this.displayModes[0];
     public courseCardDisplayMode = CourseCardDisplayMode;
 
+
+    constructor(private router: Router) {
+    }
+
     public onActiveItemChange(tab: MenuItem) {
         this.activeTab = tab as CoursesTab;
+    }
+
+    public previewClicked() {
+        this.router.navigate([RoutePath.CourseDetails]);
     }
 }

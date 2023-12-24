@@ -52,6 +52,7 @@
             <ng-container *ngFor="let course of activeTab.courses">
                 <ets-course-card [card]="course"
                                  [mode]="currentMode.mode"
+                                 (previewClicked)="previewClicked()"
                 ></ets-course-card>
             </ng-container>
         </div>

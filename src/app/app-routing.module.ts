@@ -39,7 +39,7 @@ const routes: Routes = [
         },
     },
     {
-        path: "course-details",
+        path: RoutePath.CourseDetails,
         loadChildren: () => import("./components/pages/course-details-page/course-details-page.module").then(m => m.CourseDetailsPageModule),
     },
     {
