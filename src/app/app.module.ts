@@ -1,5 +1,8 @@
 import {CommonModule} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import {
+    HTTP_INTERCEPTORS,
+    HttpClientModule,
+} from "@angular/common/http";
 import {NgModule} from "@angular/core";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
@@ -10,6 +13,7 @@ import {RouterModule} from "@angular/router";
 import {I18NextModule} from "angular-i18next";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
+import {AuthInterceptor} from "./auth/auth.interceptor";
 import {CoreHeaderModule} from "./components/core-header/core-header.module";
 import {CoreSidebarComponent} from "./components/core-sidebar/core-sidebar.component";
 import {LandingHeaderModule} from "./components/landing-header/landing-header.module";

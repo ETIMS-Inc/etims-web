@@ -2,8 +2,8 @@ import {CommonModule} from "@angular/common";
 import {NgModule} from "@angular/core";
 import {ButtonModule} from "primeng/button";
 import {CardModule} from "primeng/card";
+import {IconComponent} from "../../lib/icon/icon.component";
 import {CourseDetailsMetricsComponent} from "./course-details-metrics.component";
-import {LibModule} from "../../lib/lib.module";
 
 @NgModule({
     declarations: [
@@ -13,7 +13,7 @@ import {LibModule} from "../../lib/lib.module";
         CommonModule,
         ButtonModule,
         CardModule,
-        LibModule,
+        IconComponent,
     ],
     exports: [
         CourseDetailsMetricsComponent,
