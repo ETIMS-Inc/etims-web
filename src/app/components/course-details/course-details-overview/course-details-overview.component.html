@@ -1,0 +1,14 @@
+<p-tabView class="course-details-overview">
+    <p-tabPanel
+        *ngFor="let item of tabPanels"
+        class="course-details-overview__item"
+        [header]="item?.header"
+    >
+        <h3 class="course-details-overview__item-caption">
+            {{ item?.contentCaption }}
+        </h3>
+        <p class="course-details-overview__item-content">
+            {{ item?.content }}
+        </p>
+    </p-tabPanel>
+</p-tabView>

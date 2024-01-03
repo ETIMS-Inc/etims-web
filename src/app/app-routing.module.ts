@@ -39,6 +39,10 @@ const routes: Routes = [
         },
     },
     {
+        path: RoutePath.CourseDetails,
+        loadChildren: () => import("./components/pages/course-details-page/course-details-page.module").then(m => m.CourseDetailsPageModule),
+    },
+    {
         path: "**",
         redirectTo: `/${RoutePath.NotFound}`,
     },

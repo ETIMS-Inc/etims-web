@@ -1,0 +1,42 @@
+.course-details-attributes {
+    ::ng-deep {
+        .p-card {
+            border-radius: 12px;
+            background: #e5e9f5;
+        }
+
+        .p-card .p-card-content {
+            padding: 0;
+        }
+    }
+
+    &__course-by-caption {
+        font-weight: 600;
+        margin-bottom: 16px;
+    }
+
+    &__course-by-wrapper {
+        display: flex;
+        margin-left: 4px;
+
+        & + & {
+            margin-top: 16px;
+        }
+    }
+
+    &__course-by-user {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-left: 12px;
+    }
+
+    &__course-by-initials {
+        font-weight: 700;
+    }
+
+    &__course-by-role {
+        font-weight: 400;
+        color: #777E90;
+    }
+}

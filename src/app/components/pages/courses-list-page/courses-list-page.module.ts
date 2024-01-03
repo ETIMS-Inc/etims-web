@@ -5,7 +5,7 @@ import {I18NextModule} from "angular-i18next";
 import {ButtonModule} from "primeng/button";
 import {SelectButtonModule} from "primeng/selectbutton";
 import {TabMenuModule} from "primeng/tabmenu";
-import {CourseCardModule} from "../../course/course-card/course-card.module";
+import {CourseCardComponent} from "../../course/course-card/course-card.component";
 import {EmptyContentModule} from "../../empty-content/empty-content.module";
 import {CoursesListPageRoutingModule} from "./courses-list-page-routing.module";
 import {CoursesListPageComponent} from "./courses-list-page.component";
@@ -23,7 +23,7 @@ import {CoursesListPageComponent} from "./courses-list-page.component";
         FormsModule,
         TabMenuModule,
         EmptyContentModule,
-        CourseCardModule,
+        CourseCardComponent,
     ],
 })
 export class CoursesListPageModule {

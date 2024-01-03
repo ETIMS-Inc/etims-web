@@ -93,5 +93,6 @@
 <ng-template #previewButton>
     <p-button styleClass="p-button-outlined"
               [label]="'label.button.preview' | i18next"
+              (onClick)="previewClicked.emit()"
     ></p-button>
 </ng-template>
