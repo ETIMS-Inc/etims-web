@@ -7,6 +7,7 @@
 <div class="page-content">
     <ets-core-sidebar *ngIf="isLoggedIn$ | async"
                       [navGroups]="sidebarGroups"
+                      [navBottomGroups]="sidebarBottomGroups"
     ></ets-core-sidebar>
     <div class="route-content">
         <router-outlet></router-outlet>

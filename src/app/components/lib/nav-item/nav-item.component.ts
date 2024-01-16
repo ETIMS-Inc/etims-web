@@ -6,6 +6,7 @@ import {
 } from "@angular/common";
 import {
     ChangeDetectionStrategy,
+    ChangeDetectorRef,
     Component,
     EventEmitter,
     Input,
@@ -15,19 +16,19 @@ import {I18NextModule} from "angular-i18next";
 import {TooltipModule} from "primeng/tooltip";
 import {Color} from "../../../models/colors";
 import {EtsAsPipe} from "../../../pipes/as.pipe";
-import {ChipComponent} from "../../lib/chip/chip.component";
-import {DotComponent} from "../../lib/dot/dot.component";
-import {IconComponent} from "../../lib/icon/icon.component";
+import {ChipComponent} from "../chip/chip.component";
+import {DotComponent} from "../dot/dot.component";
+import {IconComponent} from "../icon/icon.component";
 import {
-    CoreSidebarChipType,
-    CoreSidebarMode,
-    CoreSidebarNavItem,
-} from "../core-sidebar.model";
+    NavItemChipType,
+    NavItem,
+    NavItemDisplayMode,
+} from "./nav-item.model";
 
 @Component({
-    selector: "ets-sidebar-nav-item",
-    templateUrl: "./sidebar-nav-item.component.html",
-    styleUrls: ["./sidebar-nav-item.component.less"],
+    selector: "ets-nav-item",
+    templateUrl: "./nav-item.component.html",
+    styleUrls: ["./nav-item.component.less"],
     changeDetection: ChangeDetectionStrategy.OnPush,
     standalone: true,
     imports: [
@@ -43,24 +44,24 @@ import {
         DotComponent,
     ],
 })
-export class SidebarNavItemComponent {
-    @Output() public itemClicked: EventEmitter<CoreSidebarNavItem> = new EventEmitter();
-    public _item: CoreSidebarNavItem;
+export class NavItemComponent {
+    @Output() public itemClicked: EventEmitter<NavItem> = new EventEmitter();
+    public _item: NavItem;
     public _currentUrl: string;
-    public _mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
-    public sidebarMode = CoreSidebarMode;
+    public _mode: NavItemDisplayMode = NavItemDisplayMode.Collapsed;
+    public sidebarMode = NavItemDisplayMode;
     public displayNestedItems = false;
     public nestedUrls: string[] = [];
     public nestedItemSelected: boolean;
-    public coreSidebarNavItem: CoreSidebarNavItem;
+    public coreSidebarNavItem: NavItem;
 
-    public chipColors: Record<CoreSidebarChipType, string> = {
-        [CoreSidebarChipType.WARNING]: Color.Warning,
-        [CoreSidebarChipType.INFO]: Color.Info,
+    public chipColors: Record<NavItemChipType, string> = {
+        [NavItemChipType.WARNING]: Color.Warning,
+        [NavItemChipType.INFO]: Color.Info,
     }
 
     @Input()
-    set item(value: CoreSidebarNavItem) {
+    public set item(value: NavItem) {
         this._item = value;
 
         if (value.childrenItems) {
@@ -69,14 +70,13 @@ export class SidebarNavItemComponent {
     }
 
     @Input()
-    set currentUrl(value: string) {
+    public set currentUrl(value: string) {
         this._currentUrl = value;
-
         this.nestedItemSelected = this.nestedUrls.includes(value);
     }
 
     @Input()
-    set mode(value: CoreSidebarMode) {
+    public set mode(value: NavItemDisplayMode) {
         this._mode = value;
         this.displayNestedItems = this.nestedItemSelected;
     }
@@ -85,8 +85,8 @@ export class SidebarNavItemComponent {
         this.displayNestedItems = !this.displayNestedItems;
     }
 
-    public navItemClicked(navItem: CoreSidebarNavItem): void {
-        if (this._mode === CoreSidebarMode.Collapsed) {
+    public navItemClicked(navItem: NavItem): void {
+        if (this._mode === NavItemDisplayMode.Collapsed) {
             this.itemClicked.emit(navItem);
         } else {
             navItem.childrenItems ? this.toggleDisplayNestedItems() : this.itemClicked.emit(navItem);

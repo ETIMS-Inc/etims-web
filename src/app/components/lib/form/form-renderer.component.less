@@ -1,0 +1,28 @@
+@import "vars";
+
+.form-renderer {
+    &__form {
+        display: grid;
+        grid-template-columns: ~'repeat(auto-fill, minmax(250px, 1fr))';
+        gap: @size-md;
+    }
+
+    &__control {
+        display: flex;
+        flex-direction: column;
+        gap: @size-xs;
+
+        &__text-area {
+            max-width: 100%;
+            min-width: 100%;
+            min-height: @input-field-height;
+            max-height: 200px;
+        }
+
+        &__dropdown {
+            ::ng-deep.p-dropdown {
+                width: 100%;
+            }
+        }
+    }
+}

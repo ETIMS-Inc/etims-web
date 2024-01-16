@@ -16,17 +16,17 @@ import {
     filter,
     map,
     Observable,
+    startWith,
 } from "rxjs";
-import {coreSidebarNavGroups} from "../../mocks/sidebar";
 import {IconComponent} from "../lib/icon/icon.component";
+import {NavItemComponent} from "../lib/nav-item/nav-item.component";
 import {
-    CoreSidebarMode,
-    CoreSidebarNavGroup,
-    CoreSidebarNavItem,
-} from "./core-sidebar.model";
-import {SidebarNavItemComponent} from "./sidebar-nav-item/sidebar-nav-item.component";
+    NavItem,
+    NavItemDisplayMode,
+} from "../lib/nav-item/nav-item.model";
+import {CoreSidebarNavGroup} from "./core-sidebar.model";
 
-const expandControl: Record<"expand" | "collapse", CoreSidebarNavItem> = {
+const expandControl: Record<"expand" | "collapse", NavItem> = {
     expand: {
         name: "Expand",
         icon: "chevrons-right-arrows",
@@ -49,36 +49,38 @@ const expandedSidebarWidth = 200;
         IconComponent,
         NgForOf,
         NgIf,
-        SidebarNavItemComponent,
+        NavItemComponent,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoreSidebarComponent {
-    @Input() public mode: CoreSidebarMode = CoreSidebarMode.Collapsed;
-    @Input() public navGroups: CoreSidebarNavGroup[] = coreSidebarNavGroups;
+    @Input() public mode: NavItemDisplayMode = NavItemDisplayMode.Collapsed;
+    @Input() public navGroups: CoreSidebarNavGroup[];
+    @Input() public navBottomGroups: CoreSidebarNavGroup[];
 
     public width: number = undefined;
     public currentUrl: Observable<string>;
-    public expandControlItem: CoreSidebarNavItem = expandControl["expand"];
+    public expandControlItem: NavItem = expandControl["expand"];
 
     constructor(private router: Router) {
         this.currentUrl = router.events.pipe(
             filter(event => event instanceof NavigationEnd),
             map(event => (event as NavigationEnd).urlAfterRedirects),
+            startWith(router.url),
         );
     }
 
-    public itemClicked(item: CoreSidebarNavItem): void {
+    public itemClicked(item: NavItem): void {
         this.router.navigateByUrl(item.url);
     }
 
     public changeDisplayMode(): void {
-        if (this.mode === CoreSidebarMode.Collapsed) {
-            this.mode = CoreSidebarMode.Full;
+        if (this.mode === NavItemDisplayMode.Collapsed) {
+            this.mode = NavItemDisplayMode.Full;
             this.expandControlItem = expandControl.collapse;
             this.width = expandedSidebarWidth;
         } else {
-            this.mode = CoreSidebarMode.Collapsed;
+            this.mode = NavItemDisplayMode.Collapsed;
             this.expandControlItem = expandControl.expand;
             this.width = undefined;
         }

@@ -1,9 +1,8 @@
 import {
-    CoreSidebarChipType,
     CoreSidebarNavGroup,
 } from "../components/core-sidebar/core-sidebar.model";
+import {NavItemChipType} from "../components/lib/nav-item/nav-item.model";
 
-// TODO: use translations
 export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
     [
         {
@@ -46,7 +45,7 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             url: "/Temp1",
             chip: {
                 num: 5,
-                type: CoreSidebarChipType.INFO,
+                type: NavItemChipType.INFO,
             }
         },
         {
@@ -55,7 +54,7 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
             url: "/Temp2",
             chip: {
                 num: 2,
-                type: CoreSidebarChipType.WARNING,
+                type: NavItemChipType.WARNING,
             }
         },
     ],
@@ -68,10 +67,10 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
         {
             name: "sidebar.tab.settings",
             icon: "eye",
-            url: "/settings",
+            url: "/eye",
             chip: {
                 num: 2,
-                type: CoreSidebarChipType.WARNING,
+                type: NavItemChipType.WARNING,
             },
             childrenItems: [
                 {
@@ -79,14 +78,24 @@ export const coreSidebarNavGroups: CoreSidebarNavGroup[] = [
                     url: "/recover-password",
                     chip: {
                         num: 2,
-                        type: CoreSidebarChipType.WARNING,
+                        type: NavItemChipType.WARNING,
                     }
                 },
                 {
-                    name: "Temp",
-                    url: "/main",
+                    name: "Settings",
+                    url: "/settings",
                 },
             ],
+        },
+    ],
+];
+
+export const coreSidebarNavBottomGroups: CoreSidebarNavGroup[] = [
+    [
+        {
+            name: "sidebar.tab.settings",
+            icon: "settings",
+            url: "/settings",
         },
     ],
 ];

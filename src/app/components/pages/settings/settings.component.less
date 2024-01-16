@@ -1,0 +1,41 @@
+@import "vars";
+
+.settings-page {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: @size-xs-sm;
+    padding: @size-xs-sm;
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: @size-xs-sm;
+
+        &__header {
+            display: flex;
+            gap: @size-md;
+            align-items: center;
+            padding: @size-md;
+
+            &_title {
+                font-size: @main-title-font-size;
+            }
+
+            &_avatar {
+                --ets-icon-size: 100px;
+            }
+        }
+
+        &__form {
+            flex: 1;
+        }
+    }
+
+    &__menu {
+        height: min-content;
+        position: sticky;
+        top: @size-xs-sm;
+    }
+}

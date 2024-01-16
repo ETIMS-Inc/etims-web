@@ -6,8 +6,16 @@ import {
 import {RoutePath} from "./models/app-routing.model";
 import {AuthMode} from "./components/pages/auth-page/auth-page.model";
 
+const notFoundRoutes: Routes = [
+    {path: "**", redirectTo: RoutePath.NotFound},
+    {
+        path: RoutePath.NotFound,
+        loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),
+    },
+];
+
 const routes: Routes = [
-    {path: RoutePath.InitPage, redirectTo: `/${RoutePath.Home}`, pathMatch: "full"},
+    {path: RoutePath.InitPage, redirectTo: RoutePath.Home, pathMatch: "full"},
     {
         path: RoutePath.Home,
         loadChildren: () => import("./components/pages/home-page/home-page.module").then(m => m.HomePageModule),
@@ -39,14 +47,11 @@ const routes: Routes = [
         },
     },
     {
-        path: "**",
-        redirectTo: `/${RoutePath.NotFound}`,
+        path: RoutePath.Settings,
+        loadChildren: () => import("./components/pages/settings/settings.module").then(m => m.SettingsModule),
     },
-    {
-        path: RoutePath.NotFound,
-        loadChildren: () => import("./components/pages/not-found-page/not-found-page.module").then(m => m.NotFoundPageModule),
-    },
-];
+// @ts-ignore
+].concat(notFoundRoutes) as Routes;
 
 @NgModule({
     declarations: [],

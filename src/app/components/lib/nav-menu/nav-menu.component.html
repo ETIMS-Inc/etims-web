@@ -1,0 +1,8 @@
+<ets-card *ngIf="items">
+    <ets-nav-item *ngFor="let item of items"
+                  [currentUrl]="currentUrl && (currentUrl | async)"
+                  [item]="item"
+                  [mode]="navItemDisplayMode.Full"
+                  (itemClicked)="itemClicked($event)"
+    ></ets-nav-item>
+</ets-card>

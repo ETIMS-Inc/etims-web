@@ -1,0 +1,91 @@
+<form class="form-renderer__form"
+      [formGroup]="formRendererModel.form"
+>
+    <ng-container *ngFor="let field of formRendererModel.fields">
+        <div class="form-renderer__control">
+            <ng-container *ngIf="!field.hidden"
+                          [ngSwitch]="field.type"
+            >
+                <ng-container *ngSwitchCase="formFieldType.STRING">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+                    <input pInputText
+                           type="text"
+                           [disabled]="field.disabled"
+                           [formControlName]="field.controlName"
+                    />
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.TEXT_AREA">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+                    <textarea class="form-renderer__control__text-area"
+                              cols="30"
+                              pInputTextarea
+                              rows="5"
+                              [disabled]="field.disabled"
+                              [formControlName]="field.controlName"
+                              [required]="field.required"
+                    ></textarea>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.PASSWORD">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+                    <p-password [disabled]="field.disabled"
+                                [feedback]="false"
+                                [formControlName]="field.controlName"
+                                [required]="field.required"
+                                [toggleMask]="true"
+                    ></p-password>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.NUMBER">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+                    <p-inputNumber [disabled]="field.disabled"
+                                   [formControlName]="field.controlName"
+                                   [inputId]="'num-'+field.controlName"
+                                   [required]="field.required"
+                    ></p-inputNumber>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.CHECKBOX">
+                    <p-checkbox [disabled]="field.disabled"
+                                [formControlName]="field.controlName"
+                                [inputId]="'checkbox-'+field.controlName"
+                                [label]="field.label | i18next"
+                                [required]="field.required"
+                    ></p-checkbox>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.EMAIL">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+                    <input pInputText
+                           type="email"
+                           [disabled]="field.disabled"
+                           [formControlName]="field.controlName"
+                    />
+                </ng-container>
+
+                <ng-container *ngSwitchCase="formFieldType.DROPDOWN">
+                    <ets-label [required]="field.required"
+                               [value]="field.label"
+                    ></ets-label>
+
+                    <p-dropdown class="form-renderer__control__dropdown"
+                                optionLabel="label"
+                                [formControlName]="field.controlName"
+                                [options]="$any(field).options"
+                    ></p-dropdown>
+                </ng-container>
+            </ng-container>
+        </div>
+    </ng-container>
+</form>

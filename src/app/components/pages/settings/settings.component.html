@@ -1,0 +1,21 @@
+<div class="settings-page">
+    <ets-card class="settings-page__content">
+        <div class="settings-page__content__header">
+            <div class="settings-page__content__header_avatar">
+                <ets-icon [icon]="'user-round'"></ets-icon>
+            </div>
+            <div class="settings-page__content__header_title">Profile</div>
+        </div>
+        <ets-form class="settings-page__content__form"
+                  [formRendererModel]="form"
+        ></ets-form>
+        <p-button label="Submit"
+                  [disabled]="form.form.invalid"
+        ></p-button>
+    </ets-card>
+    <ets-nav-menu class="settings-page__menu"
+                  [items]="navMenuItems"
+                  (navChanged)="navChanged($event)"
+    ></ets-nav-menu>
+</div>
+

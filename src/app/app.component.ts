@@ -1,6 +1,9 @@
 import {Component} from "@angular/core";
 import {BehaviorSubject} from "rxjs";
-import {coreSidebarNavGroups} from "./mocks/sidebar";
+import {
+    coreSidebarNavBottomGroups,
+    coreSidebarNavGroups,
+} from "./mocks/sidebar";
 
 @Component({
     selector: "app-root",
@@ -11,4 +14,5 @@ export class AppComponent {
     public title = "etims-web";
     public isLoggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(true);
     public sidebarGroups = coreSidebarNavGroups;
+    public sidebarBottomGroups = coreSidebarNavBottomGroups;
 }
